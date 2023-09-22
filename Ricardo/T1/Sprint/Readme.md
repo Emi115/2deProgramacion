@@ -20,9 +20,12 @@ Para asentar los conocimientos mostrados en la parte teórica, se tendrá que pr
 - **Objetivo:** Familiarizarse con la declaración de variables y la identificación de tipos de datos.
 - Declara una variable para cada tipo de dato: Number, String, Boolean, Object, Null y Undefined.
 - Utiliza console.log para mostrar el valor y el tipo de cada variable.
+Analisis:En este ejercicio me pide que juegue con las variables de javascript
+Diseño: En este ejercicio voy a crear unas variables y con la herramienta f12 que se muestre en consola gracias a que es un archivo .html
+Interpretacion: ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/9f7cdb44-6f2d-4ae2-b438-b619281ccf88)
 
- En este ejercicio voy a crear unas variables y con la herramienta f12 que se muestre en consola gracias a que es un archivo .html
-![image](https://github.com/Emi115/2deProgramacion/assets/127744256/9f7cdb44-6f2d-4ae2-b438-b619281ccf88)
+ 
+
 
 ### Ejercicio 2: Operaciones Aritméticas
 - **Objetivo:** Realizar operaciones aritméticas básicas.
