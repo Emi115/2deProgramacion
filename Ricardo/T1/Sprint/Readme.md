@@ -21,6 +21,8 @@ Para asentar los conocimientos mostrados en la parte teórica, se tendrá que pr
 - Declara una variable para cada tipo de dato: Number, String, Boolean, Object, Null y Undefined.
 - Utiliza console.log para mostrar el valor y el tipo de cada variable.
 
+- ### En este ejercicio voy a crear unas variables y con la herramienta f12 que se muestre en consola gracias a que es un archivo .html
+
 ### Ejercicio 2: Operaciones Aritméticas
 - **Objetivo:** Realizar operaciones aritméticas básicas.
 - Declara dos variables numéricas.
