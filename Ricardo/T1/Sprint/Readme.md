@@ -15,16 +15,21 @@ Para asentar los conocimientos mostrados en la parte teórica, se tendrá que pr
 4. **Pruebas de la resolución del problema:** Es indispensable el realizar pruebas para verificar la integridad y correcto funcionamiento de la implementación realizada, para ello simplemente compararemos si el comportamiento esperado del análisis del problema se ha implementado de forma adecuada.
 
 ## Introducción a JavaScript (Básico)
-
 ### Ejercicio 1: Declaración y Tipos de Datos
+
 - **Objetivo:** Familiarizarse con la declaración de variables y la identificación de tipos de datos.
 - Declara una variable para cada tipo de dato: Number, String, Boolean, Object, Null y Undefined.
-- Utiliza console.log para mostrar el valor y el tipo de cada variable.
+- Utiliza `console.log` para mostrar el valor y el tipo de cada variable.
 
-<br>
-Analisis:En este ejercicio me pide que juegue con las variables de javascript<br>
-Diseño: En este ejercicio voy a crear unas variables y con la herramienta f12 que se muestre en consola gracias a que es un archivo .html<br>
-Interpretacion: ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/9f7cdb44-6f2d-4ae2-b438-b619281ccf88)<br>
+Analisis:
+En este ejercicio me pide que juegue con las variables de JavaScript.
+
+Diseño:
+En este ejercicio voy a crear unas variables y con la herramienta F12 que se muestre en la consola gracias a que es un archivo .html.
+
+Interpretacion: 
+![image](https://github.com/Emi115/2deProgramacion/assets/127744256/9f7cdb44-6f2d-4ae2-b438-b619281ccf88)
+
 
  
 
