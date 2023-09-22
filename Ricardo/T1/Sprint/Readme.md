@@ -22,6 +22,7 @@ Para asentar los conocimientos mostrados en la parte teórica, se tendrá que pr
 - Utiliza console.log para mostrar el valor y el tipo de cada variable.
 
  En este ejercicio voy a crear unas variables y con la herramienta f12 que se muestre en consola gracias a que es un archivo .html
+![image](https://github.com/Emi115/2deProgramacion/assets/127744256/9f7cdb44-6f2d-4ae2-b438-b619281ccf88)
 
 ### Ejercicio 2: Operaciones Aritméticas
 - **Objetivo:** Realizar operaciones aritméticas básicas.
