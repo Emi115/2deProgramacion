@@ -1,0 +1,143 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3cc11d24.ff01a2",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
+        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
+        "x": 330,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "adb07616bbef259e",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Piedra",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "bb97d0a4da5bb4d3"
+            ]
+        ]
+    },
+    {
+        "id": "4392e1517d7d0589",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "35924838bb4cf78c",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Papel",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "2",
+        "payloadType": "num",
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "bb97d0a4da5bb4d3"
+            ]
+        ]
+    },
+    {
+        "id": "35ad9294f4e1232f",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Tijera",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "3",
+        "payloadType": "num",
+        "x": 110,
+        "y": 360,
+        "wires": [
+            [
+                "bb97d0a4da5bb4d3"
+            ]
+        ]
+    },
+    {
+        "id": "bb97d0a4da5bb4d3",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Piedra papel tijera",
+        "func": "var opciones = [\"Piedra\", \"Papel\", \"Tijeras\"];\nvar seleccionUsuario = opciones[msg.payload - 1]; // Restamos 1 para convertir los números en opciones válidas\nvar seleccionComputadora = opciones[Math.floor(Math.random() * opciones.length)];\nvar resultado;\n\nif (seleccionUsuario === seleccionComputadora) {\n   resultado = \"Empate\";\n} else if (\n   (seleccionUsuario === \"Piedra\" && seleccionComputadora === \"Tijeras\") ||\n   (seleccionUsuario === \"Papel\" && seleccionComputadora === \"Piedra\") ||\n   (seleccionUsuario === \"Tijeras\" && seleccionComputadora === \"Papel\")\n) {\n   resultado = \"Ganaste\";\n} else {\n   resultado = \"Perdiste\";\n}\n\nmsg.payload = \"Usuario: \" + seleccionUsuario + \", Computadora: \" + seleccionComputadora + \", Resultado: \" + resultado;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 300,
+        "wires": [
+            [
+                "4392e1517d7d0589"
+            ]
+        ]
+    }
+]

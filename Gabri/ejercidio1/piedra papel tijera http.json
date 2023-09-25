@@ -1,0 +1,58 @@
+[
+    {
+        "id": "08401bf8c46c15dd",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6520266e79d19f88",
+        "type": "http in",
+        "z": "08401bf8c46c15dd",
+        "name": "/jugar",
+        "url": "/jugar",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 250,
+        "y": 140,
+        "wires": [
+            [
+                "73d07b1cbc366336"
+            ]
+        ]
+    },
+    {
+        "id": "73d07b1cbc366336",
+        "type": "function",
+        "z": "08401bf8c46c15dd",
+        "name": "function 1",
+        "func": "var opciones = [\"piedra\", \"papel\", \"tijeras\"];\nvar seleccionUsuario = msg.req.query.comando.toLowerCase(); // Convertir a minúsculas para comparación\nvar seleccionComputadora = opciones[Math.floor(Math.random() * opciones.length)];\nvar resultado;\n\nif (seleccionUsuario === seleccionComputadora) {\n   resultado = \"Empate\";\n} else if (\n   (seleccionUsuario === \"piedra\" && seleccionComputadora === \"tijeras\") ||\n   (seleccionUsuario === \"papel\" && seleccionComputadora === \"piedra\") ||\n   (seleccionUsuario === \"tijeras\" && seleccionComputadora === \"papel\")\n) {\n   resultado = \"Ganaste\";\n} else {\n   resultado = \"Perdiste\";\n}\n\nmsg.payload = \"Usuario: \" + seleccionUsuario + \", Computadora: \" + seleccionComputadora + \", Resultado: \" + resultado;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 140,
+        "wires": [
+            [
+                "a301ea0499e0738d"
+            ]
+        ]
+    },
+    {
+        "id": "a301ea0499e0738d",
+        "type": "http response",
+        "z": "08401bf8c46c15dd",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 710,
+        "y": 140,
+        "wires": []
+    }
+]
