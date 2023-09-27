@@ -31,12 +31,14 @@ Interpretacion:
 - **Objetivo:** Comprender los operadores de comparación y cómo funcionan.
 - Declara tres variables con diferentes valores.
 - Utiliza operadores de comparación para comparar estas variables entre sí y muestra los resultados en la consola.
+- ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/039eca16-07ff-462b-8edc-b071ac352c50)
+
 
 ### Ejercicio 4: Estructuras Condicionales
 - **Objetivo:** Implementar estructuras condicionales para controlar el flujo del programa.
 - Escribir un programa que tome un número como entrada.
 - Si el número es mayor que 10, mostrar un mensaje indicando que es mayor. Si es menor, mostrar otro mensaje. Si es exactamente 10, mostrar un mensaje indicativo. (alert)
-
+"C:\Users\Emi\Downloads\2023-09-27 20-35-04.gif"
 ### Ejercicio 5: Bucles
 - **Objetivo:** Implementar bucles para repetir acciones múltiples veces.
 - Escribir un bucle que muestre en la consola los números del 1 al 10.
