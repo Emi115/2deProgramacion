@@ -45,3 +45,5 @@ Interpretacion:
 - **Objetivo:** Implementar bucles para repetir acciones múltiples veces.
 - Escribir un bucle que muestre en la consola los números del 1 al 10.
 - Modificar el bucle anterior para mostrar solo los números pares entre 1 y 10.
+- ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/13579d08-6565-4317-bff1-d300329a2235)
+
