@@ -32,7 +32,7 @@ Interpretacion:
 - Declara tres variables con diferentes valores.
 - Utiliza operadores de comparación para comparar estas variables entre sí y muestra los resultados en la consola.
 - ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/039eca16-07ff-462b-8edc-b071ac352c50)
-
+[Click aqui](ejercicio3.html)
 
 ### Ejercicio 4: Estructuras Condicionales
 - **Objetivo:** Implementar estructuras condicionales para controlar el flujo del programa.
@@ -40,8 +40,10 @@ Interpretacion:
 - Si el número es mayor que 10, mostrar un mensaje indicando que es mayor. Si es menor, mostrar otro mensaje. Si es exactamente 10, mostrar un mensaje indicativo. (alert)
 - 
 [![2023-09-27-20-35-04.gif](https://i.postimg.cc/cJzPY8GZ/2023-09-27-20-35-04.gif)](https://postimg.cc/yJFfCxNr)
-
+[Click aqui](ejercicio4.html)
 ### Ejercicio 5: Bucles
 - **Objetivo:** Implementar bucles para repetir acciones múltiples veces.
 - Escribir un bucle que muestre en la consola los números del 1 al 10.
 - Modificar el bucle anterior para mostrar solo los números pares entre 1 y 10.
+
+[Click aqui](ejercicio5.html)
