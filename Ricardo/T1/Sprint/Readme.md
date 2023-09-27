@@ -16,7 +16,7 @@ En este ejercicio voy a crear unas variables y con la herramienta F12 que se mue
 
 Interpretacion: 
 ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/9f7cdb44-6f2d-4ae2-b438-b619281ccf88)
-
+[click aqui para ir ](ejericio1.html)
 
  
 
