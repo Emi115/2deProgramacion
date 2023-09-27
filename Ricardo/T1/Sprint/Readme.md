@@ -26,7 +26,7 @@ Interpretacion:
 - Declara dos variables numéricas.
 - Realiza y muestra en la consola las operaciones de suma, resta, multiplicación, división y módulo entre estas variables.
 ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/3b810a2d-53d3-4e41-876d-d97581429e32)
-
+[Click aqui](ejercicio2.html)
 ### Ejercicio 3: Comparaciones
 - **Objetivo:** Comprender los operadores de comparación y cómo funcionan.
 - Declara tres variables con diferentes valores.
