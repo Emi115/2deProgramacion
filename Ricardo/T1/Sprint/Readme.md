@@ -38,7 +38,7 @@ Interpretacion:
 - **Objetivo:** Implementar estructuras condicionales para controlar el flujo del programa.
 - Escribir un programa que tome un número como entrada.
 - Si el número es mayor que 10, mostrar un mensaje indicando que es mayor. Si es menor, mostrar otro mensaje. Si es exactamente 10, mostrar un mensaje indicativo. (alert)
-"C:\Users\Emi\Downloads\2023-09-27 20-35-04.gif"
+[2023-09-27-20-35-04.gif](https://postimg.cc/yJFfCxNr)
 ### Ejercicio 5: Bucles
 - **Objetivo:** Implementar bucles para repetir acciones múltiples veces.
 - Escribir un bucle que muestre en la consola los números del 1 al 10.
