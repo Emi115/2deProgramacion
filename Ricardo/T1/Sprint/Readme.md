@@ -17,7 +17,7 @@ En este ejercicio voy a crear unas variables y con la herramienta F12 que se mue
 Interpretacion: 
 ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/9f7cdb44-6f2d-4ae2-b438-b619281ccf88)
 -
-[Click aqui](ejercicio1.html)
+[Ejercicio 1](ejercicio1.html)
 
  
 
@@ -28,14 +28,14 @@ Interpretacion:
 - Realiza y muestra en la consola las operaciones de suma, resta, multiplicación, división y módulo entre estas variables.
 ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/3b810a2d-53d3-4e41-876d-d97581429e32)
 -
-[Click aqui](ejercicio2.html)
+[Ejercicio 2](ejercicio2.html)
 ### Ejercicio 3: Comparaciones
 - **Objetivo:** Comprender los operadores de comparación y cómo funcionan.
 - Declara tres variables con diferentes valores.
 - Utiliza operadores de comparación para comparar estas variables entre sí y muestra los resultados en la consola.
 - ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/039eca16-07ff-462b-8edc-b071ac352c50)
 -
-[Click aqui](ejercicio3.html)
+[Ejercicio 3](ejercicio3.html)
 
 ### Ejercicio 4: Estructuras Condicionales
 - **Objetivo:** Implementar estructuras condicionales para controlar el flujo del programa.
@@ -44,7 +44,7 @@ Interpretacion:
 - 
 [![2023-09-27-20-35-04.gif](https://i.postimg.cc/cJzPY8GZ/2023-09-27-20-35-04.gif)](https://postimg.cc/yJFfCxNr)
 -
-[Click aqui](ejercicio4.html)
+[Ejercicio 4](ejercicio4.html)
 ### Ejercicio 5: Bucles
 - **Objetivo:** Implementar bucles para repetir acciones múltiples veces.
 - Escribir un bucle que muestre en la consola los números del 1 al 10.
@@ -55,5 +55,5 @@ Interpretacion:
 =======
 - ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/13579d08-6565-4317-bff1-d300329a2235)
 -
-[Click aqui](ejercicio5.html)
+[Ejercicio 5](ejercicio5.html)
 
