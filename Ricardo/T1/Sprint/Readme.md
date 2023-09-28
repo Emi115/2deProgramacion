@@ -16,6 +16,7 @@ En este ejercicio voy a crear unas variables y con la herramienta F12 que se mue
 
 Interpretacion: 
 ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/9f7cdb44-6f2d-4ae2-b438-b619281ccf88)
+-
 [Click aqui](ejercicio1.html)
 
  
@@ -26,12 +27,14 @@ Interpretacion:
 - Declara dos variables numéricas.
 - Realiza y muestra en la consola las operaciones de suma, resta, multiplicación, división y módulo entre estas variables.
 ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/3b810a2d-53d3-4e41-876d-d97581429e32)
+-
 [Click aqui](ejercicio2.html)
 ### Ejercicio 3: Comparaciones
 - **Objetivo:** Comprender los operadores de comparación y cómo funcionan.
 - Declara tres variables con diferentes valores.
 - Utiliza operadores de comparación para comparar estas variables entre sí y muestra los resultados en la consola.
 - ![image](https://github.com/Emi115/2deProgramacion/assets/127744256/039eca16-07ff-462b-8edc-b071ac352c50)
+-
 [Click aqui](ejercicio3.html)
 
 ### Ejercicio 4: Estructuras Condicionales
@@ -40,6 +43,7 @@ Interpretacion:
 - Si el número es mayor que 10, mostrar un mensaje indicando que es mayor. Si es menor, mostrar otro mensaje. Si es exactamente 10, mostrar un mensaje indicativo. (alert)
 - 
 [![2023-09-27-20-35-04.gif](https://i.postimg.cc/cJzPY8GZ/2023-09-27-20-35-04.gif)](https://postimg.cc/yJFfCxNr)
+-
 [Click aqui](ejercicio4.html)
 ### Ejercicio 5: Bucles
 - **Objetivo:** Implementar bucles para repetir acciones múltiples veces.
