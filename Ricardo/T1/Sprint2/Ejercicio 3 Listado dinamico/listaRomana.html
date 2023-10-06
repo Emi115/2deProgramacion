@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Entradas</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Fondo gris */
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            background-color: #ffffff; /* Fondo blanco para el formulario */
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 0 auto;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Añadir Entradas</h1>
+        <input type="text" id="entrada" placeholder="Escribe algo...">
+        <button id="agregar">Añadir</button>
+        <ol id="lista"></ol>
+    </div>
+
+    <script>
+        document.getElementById('agregar').addEventListener('click', function() {
+            agregarEntrada();
+        });
+
+        document.getElementById('entrada').addEventListener('keyup', function(event) {
+            if (event.key === "Enter") {
+                agregarEntrada();
+                document.getElementById('entrada').focus(); // Establecer el foco en el campo de entrada
+            }
+        });
+
+        function agregarEntrada() {
+            var entradaTexto = document.getElementById('entrada').value.trim();
+            if (entradaTexto) {
+                var lista = document.getElementById('lista');
+                var nuevaEntrada = document.createElement('li');
+                nuevaEntrada.textContent = entradaTexto;
+                lista.appendChild(nuevaEntrada);
+                document.getElementById('entrada').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

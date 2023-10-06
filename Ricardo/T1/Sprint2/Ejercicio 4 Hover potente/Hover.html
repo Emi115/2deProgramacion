@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones con efectos</title>
+    <style>
+        body {
+            background-color: #808080; /* Fondo gris */
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            background-color: #808080; /* Fondo blanco para el contenido */
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 0 auto;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.5s; /* Transición de 0.5 segundos */
+        }
+        #boton1 {
+            /*background-color: transparent;  Fondo transparente */
+            background-color: #011b2c; /* Azul navy */
+            border: 2px solid #001f33; /* Borde */
+            color: #3498db; /* Color de texto azul */
+        }
+        #boton1:hover {
+            border-radius: 20px; /* Redondeo en hover */
+            background-color: #3498db; /* Azul navy en hover */
+            color: #ecf0f1; /* Blanco roto en hover */
+        }
+        #boton2 {
+            background-color: #011b2c; /* Azul navy */
+            color: #ecf0f1; /* Blanco roto */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Botones con efectos</h1>
+        <button id="boton1">Botón Bonito</button>
+        <button id="boton2" onclick="redirigirImagen()">Botón Simple</button>
+    </div>
+
+    <script>
+        function redirigirImagen() {
+            // Redirigir a la imagen especificada
+            window.location.href = '###########'; // Reemplaza ########### con la URL de la imagen
+        }
+    </script>
+</body>
+</html>

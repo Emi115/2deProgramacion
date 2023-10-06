@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Área</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #948b8b; /* Fondo gris */
+        }
+        input[type="number"] {
+            width: 80px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #333; /* Gris oscuro */
+            color: #fff; /* Texto blanco */
+            border: none;
+            transition: background-color 0.3s ease; /* Transición de color al hacer hover */
+        }
+        button:hover {
+            background-color: #555; /* Gris más claro al hacer hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Área</h1>
+    <label for="ancho">Ancho:</label>
+    <input type="number" id="ancho" min="0"><br><br>
+
+    <label for="alto">Alto:</label>
+    <input type="number" id="alto" min="0"><br><br>
+
+    <button id="calcularArea">Calcular Área</button><br><br>
+
+    <p id="resultado"></p>
+
+    <script>
+        document.getElementById('calcularArea').addEventListener('click', function() {
+            var ancho = parseFloat(document.getElementById('ancho').value);
+            var alto = parseFloat(document.getElementById('alto').value);
+
+            if (!isNaN(ancho) && !isNaN(alto)) {
+                var area = ancho * alto;
+                document.getElementById('resultado').textContent = 'Área: ' + area;
+            } else {
+                document.getElementById('resultado').textContent = 'Ponme valores, si no no puedo calcular';
+            }
+        });
+    </script>
+</body>
+</html>
