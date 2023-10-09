@@ -1,9 +1,8 @@
-const fs = require('fs'); // Importamos el módulo 'fs' (file system) para trabajar con archivos.
-const readline = require('readline'); // Importamos el módulo 'readline' para manejar la entrada y salida en la consola.
-
+const fs = require('fs');
+const readline = require('readline');
 const rl = readline.createInterface({
-  input: process.stdin, // Establecemos la entrada estándar (teclado) como entrada.
-  output: process.stdout // Establecemos la salida estándar (consola) como salida.
+  input: process.stdin,
+  output: process.stdout
 });
 
 function menu() {
@@ -12,33 +11,55 @@ function menu() {
   console.log('2. Editar nota existente');
   console.log('3. Eliminar nota');
   console.log('4. Salir');
-  rl.question('Seleccione una opción: ', (opcion) => { // Preguntamos al usuario por una opción.
+  rl.question('Seleccione una opción: ', (opcion) => {
     if (opcion === '1') {
-      crearNuevaNota(); // Si elige la opción 1, llamamos a la función para crear una nueva nota.
+      crearNuevaNota();
     } else if (opcion === '2') {
-      editarNota(); // Si elige la opción 2, llamamos a la función para editar una nota existente.
+      editarNota();
     } else if (opcion === '3') {
-      eliminarNota(); // Si elige la opción 3, llamamos a la función para eliminar una nota.
+      eliminarNota();
     } else if (opcion === '4') {
-      rl.close(); // Si elige la opción 4, cerramos la interfaz de readline y salimos del programa.
+      rl.close();
     } else {
       console.log('Opción no válida. Intente nuevamente.');
-      menu(); // Si la opción no es válida, mostramos un mensaje y volvemos a mostrar el menú.
+      menu();
     }
   });
 }
 
 function crearNuevaNota() {
-  rl.question('Ingrese el nombre de la nueva nota: ', (nombreNota) => { // Preguntamos por el nombre de la nueva nota.
-    rl.question('Escriba el contenido de la nota (presione dos veces Enter para finalizar):\n', (contenido) => {
-      const notaPath = `${nombreNota}.note`; // Generamos el nombre del archivo de nota con la extensión .note.
-      fs.writeFile(notaPath, contenido, (err) => { // Escribimos el contenido en el archivo de nota.
+  rl.question('Ingrese el nombre de la nueva nota: ', (nombreNota) => {
+    let contenido = '';
+    const notaPath = `${nombreNota}.note`;
+
+    rl.setPrompt(`Escriba el contenido de la nota (presione Tab y enter para finalizar):\n`);
+    rl.prompt();
+
+    rl.on('line', (line) => {
+      if (line === '\t') { // Salir al presionar Tab y Enter
+        rl.removeAllListeners('line');
+        rl.removeAllListeners('close');
+        fs.writeFile(notaPath, contenido, (err) => {
+          if (err) {
+            console.error(`Error al crear la nota: ${err}`);
+          } else {
+            console.log(`Nota "${nombreNota}" creada con éxito.`);
+          }
+          menu();
+        });
+      } else {
+        contenido += line + '\n';
+      }
+    });
+
+    rl.on('close', () => {
+      fs.writeFile(notaPath, contenido, (err) => {
         if (err) {
           console.error(`Error al crear la nota: ${err}`);
         } else {
           console.log(`Nota "${nombreNota}" creada con éxito.`);
         }
-        menu(); // Volvemos al menú principal.
+        menu();
       });
     });
   });
@@ -63,7 +84,28 @@ function editarNota() {
         editarNota();
         return;
       }
-      rl.question(`Edite la nota "${notaSeleccionada}" (presione dos veces Enter para finalizar):\n`, (contenido) => {
+      let contenido = '';
+      rl.setPrompt(`Edite la nota "${notaSeleccionada}" (presione Tab y enter para finalizar):\n`);
+      rl.prompt();
+
+      rl.on('line', (line) => {
+        if (line === '\t') { // Salir al presionar Tab y Enter
+          rl.removeAllListeners('line');
+          rl.removeAllListeners('close');
+          fs.writeFile(notaSeleccionada, contenido, (err) => { // Escribimos el contenido en el archivo de nota seleccionado.
+            if (err) {
+              console.error(`Error al editar la nota: ${err}`);
+            } else {
+              console.log(`Nota "${notaSeleccionada}" editada con éxito.`);
+            }
+            menu(); // Volvemos al menú principal.
+          });
+        } else {
+          contenido += line + '\n';
+        }
+      });
+
+      rl.on('close', () => {
         fs.writeFile(notaSeleccionada, contenido, (err) => { // Escribimos el contenido en el archivo de nota seleccionado.
           if (err) {
             console.error(`Error al editar la nota: ${err}`);
@@ -108,4 +150,4 @@ function eliminarNota() {
   });
 }
 
-menu(); // Iniciamos el programa mostrando el menú principal.
+menu();
