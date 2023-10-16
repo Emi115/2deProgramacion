@@ -10,3 +10,8 @@ function textoConColorAleatorio(texto) {
 const texto = 'no me gusta faker nose usarlo';
 const textoColoreado = textoConColorAleatorio(texto);
 console.log(`Texto en ${textoColoreado}`);
+console.log(`Texto en ${textoColoreado}`);
+console.log(`Texto en ${textoColoreado}`);
+console.log(`Texto en ${textoColoreado}`);
+console.log(`Texto en ${textoColoreado}`);
+console.log(`Texto en ${textoColoreado}`);
