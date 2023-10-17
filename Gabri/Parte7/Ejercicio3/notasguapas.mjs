@@ -8,11 +8,11 @@ const rl = readline.createInterface({
 });
 
 function menu() {
-  console.log("===== Editor de Notas =====");
-  console.log("1. Crear nueva nota");
-  console.log("2. Editar nota existente");
+  console.log(`=====${chalk.bgRgb("Eliminar nota")}===== `);
+  console.log(`1. ${chalk.green("Añadir nota")}`);
+  console.log(`2. ${chalk.yellow("Edit nota")}`);
   console.log(`3. ${chalk.red("Eliminar nota")}`);
-  console.log("4. Salir");
+  console.log(`4. ${chalk.blue("Salir")}`);
   rl.question("Seleccione una opción: ", (opcion) => {
     if (opcion === "1") {
       crearNuevaNota();
