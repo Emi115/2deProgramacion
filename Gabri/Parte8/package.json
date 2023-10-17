@@ -1,0 +1,32 @@
+{
+  "name": "Illocabesa",
+  "version": "1.0.0",
+  "description": "Mi proyecto de ejemplo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "prueba": "nodemon index.js",
+    "clear:modules": "rimraf **/node_modules",
+    "clear:locks": "rimraf **/package-lock.json",
+    "clear:env": "rimraf **/.env",
+    "copy:env": "for d in workspaces/*; do cp ${d}/.env.template ${d}/.env; done",
+    "crear:js": "touch files/$1.js",
+    "crearcarpeta": "mkdir",
+
+    "borrar": "rimraf files",
+    "borrarjs": "rimraf files/*.js",
+
+    "date": "echo %date%",
+    "copy-config": "copy package.json ..\\otro-proyecto\\package.json"
+
+  },
+  "author": "Emi",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.0.0",
+    "rimraf": "^5.0.5"
+  }
+}
