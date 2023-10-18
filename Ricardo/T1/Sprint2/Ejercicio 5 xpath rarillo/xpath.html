@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5: Detección de Clics y Generación de XPath</title>
+</head>
+<body>
+    <h1>Ejercicio 5: Detección de Clics y Generación de XPath</h1>
+    
+    <button id="button1">Botón 1</button>
+    <button id="button2">Botón 2</button>
+    <button id="button3">Botón 3</button>
+    
+    <div id="xpathDisplay">XPath del elemento clicado:</div>
+
+    <script>
+        // Función para generar el XPath de un elemento
+        function getXPath(element) {
+            if (element.id !== '') {
+                return `id("${element.id}")`;
+            }
+            if (element === document.body) {
+                return element.tagName.toLowerCase();
+            }
+
+            const siblings = element.parentNode.childNodes;
+            let index = 1;
+
+            for (let i = 0; i < siblings.length; i++) {
+                const sibling = siblings[i];
+                if (sibling === element) {
+                    return `${getXPath(element.parentNode)}/${element.tagName.toLowerCase()}[${index}]`;
+                }
+
+                if (sibling.nodeType === 1 && sibling.tagName === element.tagName) {
+                    index++;
+                }
+            }
+        }
+
+        // Función para manejar el clic en cualquier elemento del documento
+        function handleClick(event) {
+            const clickedElement = event.target;
+            const xpath = getXPath(clickedElement);
+
+            alert(`XPath del elemento clicado:\n${xpath}`);
+        }
+
+        // Agregar un evento de clic a todo el documento
+        document.addEventListener('click', handleClick);
+    </script>
+</body>
+</html>
