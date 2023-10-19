@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón e Iframe</title>
+</head>
+
+<body>
+
+    <button id="mainButton">Botón Principal</button>
+
+    <iframe id="myIframe" width="200" height="200" frameborder="0" srcdoc='<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Contenido Iframe</title>
+        </head>
+        <body>
+            <button id="iframeButton">Botón Iframe</button>
+        </body>
+        </html>'>
+    </iframe>
+
+    <script>
+        document.addEventListener('click', function(event) {
+            let clickedElement = event.target;
+            if (clickedElement.tagName === 'BUTTON') {
+                let xpath = getXPath(clickedElement);
+                alert(xpath);
+            }
+        });
+
+        function getXPath(element) {
+            if (element.tagName === 'HTML') {
+                return '/HTML';
+            }
+            if (element === document.body) {
+                return '/HTML/BODY';
+            }
+
+            let path = getXPath(element.parentNode);
+            if (element.parentNode) {
+                let tag = element.tagName.toLowerCase();
+                let id = element.id ? ('[@id="' + element.id + '"]') : '';
+                path += '/' + tag + id;
+                let siblings = element.parentNode.children;
+                if (siblings.length > 1) {
+                    let index = 1;
+                    for (let i = 0; i < siblings.length; i++) {
+                        if (siblings[i] === element) {
+                            path += '[' + index + ']';
+                            break;
+                        }
+                        if (siblings[i].tagName === element.tagName) {
+                            index++;
+                        }
+                    }
+                }
+            }
+            return path;
+        }
+
+        window.onload = function () {
+            var iframe = document.getElementById('myIframe');
+            var iframeContent = iframe.contentDocument || iframe.contentWindow.document;
+            iframeContent.addEventListener('click', function(event) {
+                let clickedElement = event.target;
+                if (clickedElement.tagName === 'BUTTON') {
+                    let xpath = getXPath(clickedElement);
+                    alert(xpath);
+                }
+            });
+        };
+    </script>
+</body>
+
+</html>
