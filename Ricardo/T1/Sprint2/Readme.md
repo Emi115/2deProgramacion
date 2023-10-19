@@ -55,16 +55,20 @@ El diseño proporcionaría una experiencia de usuario clara y concisa, centránd
 
 #Implementacion ⚙️
 #####Ejercicio 1: Cambio de Color con Botón
-Agregar un botón con un evento de clic que cambie el color de fondo de la página utilizando JavaScript y CSS.
+Agregar un botón con un evento de clic que cambie el color de fondo de la página utilizando JavaScript y CSS.<a href="https://imgur.com/izSHJ4l"><img src="https://i.imgur.com/izSHJ4l.gif" title="source: imgur.com" /></a>
 
 #####Ejercicio 2: Calculadora de Área
 Crear un formulario con dos campos de entrada y un botón que, al hacer clic, calculará el área y mostrará el resultado en la página.
+<a href="https://imgur.com/qizNuii"><img src="https://i.imgur.com/qizNuii.gif" title="source: imgur.com" /></a>
 
 #####Ejercicio 3: Listado Dinámico
 Generar una lista HTML dinámica que permita al usuario agregar elementos a través de un formulario.
+<a href="https://imgur.com/SWxy5go"><img src="https://i.imgur.com/SWxy5go.gif" title="source: imgur.com" /></a>
 
 #####Ejercicio 4: Hover y Estilo Dinámico
 Implementar un botón que cambie su estilo (por ejemplo, color de fondo) cuando se coloca el cursor sobre él (efecto hover) utilizando CSS y JavaScript.
-
+<a href="https://imgur.com/PNc8Z3L"><img src="https://i.imgur.com/PNc8Z3L.gif" title="source: imgur.com" /></a>
 #####Ejercicio 5: Detección de Clics y Generación de XPath
 Agregar un detector de clics a toda la página y, cuando se haga clic en cualquier elemento, generar su XPath único y mostrarlo en una alerta o en una sección dedicada de la página.
+
+<a href="https://imgur.com/Y2cPW8F"><img src="https://i.imgur.com/Y2cPW8F.gif" title="source: imgur.com" /></a>
