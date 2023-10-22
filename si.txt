@@ -1,0 +1,59 @@
+Desafio 1
+            background-color: #A3A3A3;
+            color: #1F1FFF;
+Para mi este es mejor ya que el azul no es tan chillon
+       
+Desafio 2
+Subtitulos automaticos usando ia
+
+Desafio 3
+En las mismas herramientas de desarrollo, en la pestaña "Console", puedes desactivar JavaScript. Para hacer esto, ve a la pestaña "Sources" y, en la barra lateral izquierda, desactiva la casilla que dice "Enable JavaScript".
+y En la parte superior de las herramientas de desarrollo, busca la pestaña "Network" y activa la casilla "Disable cache".
+Desafio 4
+
+Para indicar el idioma de una página web, puedes utilizar el atributo lang en la etiqueta <html>
+
+Desafio 5
+
+si por si algo falla que se pueda llegar a tener contexto
+
+Desafio 6
+
+Accesibilidad: Cumple con las pautas de accesibilidad web (WCAG), apuntando al nivel de conformidad AA o incluso AAA según sea necesario.
+Compatibilidad con navegadores: Asegúrate de que el sitio sea compatible con los navegadores más utilizados.
+Rendimiento: Optimiza el rendimiento del sitio para garantizar tiempos de carga rápidos.
+Seguridad: Implementa medidas sólidas de seguridad, incluyendo encriptación de datos y protección contra ataques.
+Cumplimiento normativo: Asegúrate de cumplir con leyes y regulaciones relevantes, como GDPR, CCPA y otras normativas de la industria.
+Pruebas exhaustivas: Realiza pruebas de funcionalidad, usabilidad, rendimiento y seguridad de manera exhaustiva.
+Documentación: Documenta el código, la arquitectura y los procesos internos para facilitar el mantenimiento y la colaboración.
+
+
+
+
+
+Desafio 7
+Mantenimiento
+Reutilización de código
+Claridad y legibilidad
+Colaboración eficiente
+Adaptabilidad a dispositivos
+Cambio de diseño sin cambiar la estructura
+Eficiencia en la carga de la página
+Desafio 8
+Reorganización de Encabezados
+Reemplazo de Divs por Elementos Semánticos
+Validación del HTML
+Uso de Herramientas de Accesibilidad
+Revisión Manual
+Añadir Atributos ARIA si es Necesario
+Desafio 9
+
+Desafio 10
+
+Desafio 11
+
+Desafio 12
+
+Desafio 13
+
+
