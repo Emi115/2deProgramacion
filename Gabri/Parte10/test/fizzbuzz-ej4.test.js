@@ -1,5 +1,5 @@
 import test from 'ava';
-import fizzbuzz from "../src/fizzbuzz-ej4.js";
+import fizzbuzz from "/Parte10/fizzbuzz-ej4.js";
 
 const n = 100;
 const condition = {

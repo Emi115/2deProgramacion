@@ -1,5 +1,5 @@
 import test from 'ava';
-import dateCompare from "../src/dateCompare.js";
+import dateCompare from "/Parte10/dateCompare.js";
 
 const date1 = '2022-12-07T00:00:00.000Z';
 const date2 = '2022-11-22T00:00:00.000Z';

@@ -1,5 +1,5 @@
 //import {jest} from '@jest/globals';
-import fizzbuzz from "../src/fizzbuzz.js";
+import fizzbuzz from "/Parte10/fizzbuzz.js";
 
 describe('Testing fizzbuzz function', () => {
     test("Return 1", () => {

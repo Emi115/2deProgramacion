@@ -1,5 +1,5 @@
 import test from 'ava';
-import fizzbuzz from "../src/fizzbuzz.js";
+import fizzbuzz from "/Parte10/fizzbuzz.js";
 
 test("Fizzbuzz = 1", t =>{
     const result = fizzbuzz(1);
