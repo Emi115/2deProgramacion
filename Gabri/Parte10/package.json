@@ -16,8 +16,8 @@
     "test:report": "nyc --reporter=html ava",
     "test:purge": "rm -r .nyc_output .scannerwork coverage"
   },
-  "author": "Andrea Angel",
-  "license": "ISC",
+  "author": "A",
+  "license": "MIT",
   "devDependencies": {
     "@jest/globals": "^29.3.0",
     "ava": "^5.0.1",
