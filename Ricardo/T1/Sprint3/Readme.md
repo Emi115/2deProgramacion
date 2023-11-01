@@ -123,18 +123,18 @@ Código de implementación del ejercicio 5.
 
 ## Planes de prueba 
 
-- **Ejercicio 1:** [Filtrado de propiedades de un objeto](/src/ejer1/)
+- **Ejercicio 1:** [Filtrado de propiedades de un objeto](/src/ejer1/Plan1.xlsx)
 
 
-- **Ejercicio 2:** [Transposición de matrices](/src/ejer2)
+- **Ejercicio 2:** [Transposición de matrices](/src/ejer2/Plan2.xlsx)
 
 
-- **Ejercicio 3:** [Fusión de objetos sin duplicados](/src/ejer3)
+- **Ejercicio 3:** [Fusión de objetos sin duplicados](/src/ejer3/Plan3.xlsx)
 
 
-- **Ejercicio 4:** [Cadena más larga en un array](/src/ejer4)
+- **Ejercicio 4:** [Cadena más larga en un array](/src/ejer4/Plan4.xlsx)
 
 
 
-- **Ejercicio 5:** [Ordenamiento interactivo de tabla de personas](/src/ejer5)
-- **Ejercicio 6:** [ Análisis y Transformación Avanzada de Datos](/src/ejer6)
+- **Ejercicio 5:** [Ordenamiento interactivo de tabla de personas](/src/ejer5/Plan1.xlsx)
+- **Ejercicio 6:** [ Análisis y Transformación Avanzada de Datos](/src/ejer6/Plan1.xlsx)
