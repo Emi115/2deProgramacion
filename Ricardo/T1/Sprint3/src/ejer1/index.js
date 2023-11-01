@@ -10,7 +10,9 @@ function filtrarPropiedades(obj, propiedades) {
 }
 
 // Ejemplo de uso
-var entrada = { a: 1, b: 2, c: 3, d: 4 };
-var props = ["a", "c"];
-var salida = filtrarPropiedades(entrada, props);
+const entrada = {
+  a: 1, b: 2, c: 3, d: 4,
+};
+const props = ['a', 'c'];
+const salida = filtrarPropiedades(entrada, props);
 console.log(salida); // Salida: {a: 1, c: 3}

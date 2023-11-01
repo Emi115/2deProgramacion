@@ -11,8 +11,10 @@ function fusionarObjetos(obj1, obj2) {
 }
 
 // Ejemplo de uso
-var PEPE = { a: 1, b: 2, c: 3, d: 4 };
-var MANUEL = { b: 2, z: 3 };
-var PEPEMANUEL = fusionarObjetos(PEPE, MANUEL);
+const PEPE = {
+  a: 1, b: 2, c: 3, d: 4,
+};
+const MANUEL = { b: 2, z: 3 };
+const PEPEMANUEL = fusionarObjetos(PEPE, MANUEL);
 console.log(PEPEMANUEL);
 // Salida: {a: 1, b: 2, c: 3, d: 4, z: 3}

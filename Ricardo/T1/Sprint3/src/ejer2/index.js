@@ -14,12 +14,12 @@ function transponerMatriz(matriz) {
 }
 
 // Ejemplo de uso
-var matriz = [
+const matriz = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9],
 ];
-var matrizTranspuesta = transponerMatriz(matriz);
+const matrizTranspuesta = transponerMatriz(matriz);
 console.log(matrizTranspuesta);
 // Salida:
 // [

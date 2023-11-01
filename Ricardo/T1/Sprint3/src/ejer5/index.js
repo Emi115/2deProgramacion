@@ -15,9 +15,8 @@ function ordenarTabla(personas, columna) {
 
     if (ordenActual === "ascendente") {
       return valorA.localeCompare(valorB);
-    } else {
-      return valorB.localeCompare(valorA);
     }
+    return valorB.localeCompare(valorA);
   }
 
   // Ordenar la tabla según la columna seleccionada y el orden actual
@@ -38,8 +37,7 @@ function ordenarTabla(personas, columna) {
       <tbody>
         ${personas
           .map(
-            (persona) =>
-              `<tr>
+            (persona) => `<tr>
                 <td>${persona.Nombre}</td>
                 <td>${persona.Edad}</td>
                 <td>${persona.DNI}</td>
@@ -61,7 +59,7 @@ function ordenarTabla(personas, columna) {
 }
 
 // Ejemplo de uso
-var tabla = [
+const tabla = [
   {
     Nombre: "Ana",
     Edad: 25,

@@ -1,6 +1,6 @@
 function cadenaMasLarga(arr) {
   // Inicializamos dos variables para mantener un seguimiento de la cadena más larga y su longitud.
-  let cadenaMasLarga = "";
+  let cadenaMasLarga = '';
   let longitud = 0;
 
   // Recorremos todas las cadenas en el array proporcionado.
@@ -15,21 +15,21 @@ function cadenaMasLarga(arr) {
   }
 
   // Retornamos un objeto con la cadena más larga y su longitud.
-  return { cadena: cadenaMasLarga, longitud: longitud };
+  return { cadena: cadenaMasLarga, longitud };
 }
 
 // Ejemplos
-var arrayDeCadenas = ["manzana", "banana", "fresa", "sandía", "uva"];
-var resultado = cadenaMasLarga(arrayDeCadenas);
+const arrayDeCadenas = ['manzana', 'banana', 'fresa', 'sandía', 'uva'];
+const resultado = cadenaMasLarga(arrayDeCadenas);
 console.log(resultado);
 // Salida: { cadena: "sandía", longitud: 7 }
 
-var cadenas4 = ["manzana", "banana", "fresa y kiwi", "uva verde"];
-var resultado4 = cadenaMasLarga(cadenas4);
+const cadenas4 = ['manzana', 'banana', 'fresa y kiwi', 'uva verde'];
+const resultado4 = cadenaMasLarga(cadenas4);
 console.log(resultado4);
 // Salida: { cadena: "fresa y kiwi", longitud: 12 }
 
-var cadenas3 = ["", "", ""];
-var resultado3 = cadenaMasLarga(cadenas3);
+const cadenas3 = ['', '', ''];
+const resultado3 = cadenaMasLarga(cadenas3);
 console.log(resultado3);
 // Salida: { cadena: "", longitud: 0 }
