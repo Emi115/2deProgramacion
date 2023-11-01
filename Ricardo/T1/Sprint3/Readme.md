@@ -123,7 +123,7 @@ Código de implementación del ejercicio 5.
 
 ## Planes de prueba 
 
-- **Ejercicio 1:** [Filtrado de propiedades de un objeto](src\ejer1\Plan1.xlsx)
+- **Ejercicio 1:** [Filtrado de propiedades de un objeto](Ricardo/T1/Sprint3/src/ejer1/index.html)
 
 
 - **Ejercicio 2:** [Transposición de matrices](/src/ejer2/Plan2.xlsx)
