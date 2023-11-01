@@ -1,3 +1,4 @@
+
 ---
 ## Boletín de Ejercicios - Sprint 3
 
@@ -97,52 +98,43 @@ Descripción:
 Dado un conjunto de datos en forma de array con información sobre estudiantes, sus calificaciones en diferentes asignaturas y detalles adicionales, implementa funciones para analizar, filtrar y transformar estos datos.
 
 ---
-
 ## Implementación ⚙️
-
 ## Ejercicio 1: Filtrado de propiedades de un objeto
-
 Código de implementación del ejercicio 1.
-
 - **Ejercicio 1:** [Filtrado de propiedades de un objeto](/src/ejer1/)
-  [![image.png](https://i.postimg.cc/wjn7y0Zh/image.png)](https://postimg.cc/zySJ4SJB)
-
+[![image.png](https://i.postimg.cc/wjn7y0Zh/image.png)](https://postimg.cc/zySJ4SJB)
 ## Ejercicio 2: Transposición de matrices
-
 Código de implementación del ejercicio 2.
-
 - **Ejercicio 2:** [Transposición de matrices](/src/ejer2)
-  [![image.png](https://i.postimg.cc/ZnzQWtF1/image.png)](https://postimg.cc/DJ56NNNg)
-
+[![image.png](https://i.postimg.cc/ZnzQWtF1/image.png)](https://postimg.cc/DJ56NNNg)
 ## Ejercicio 3: Fusión de objetos sin duplicados
-
 Código de implementación del ejercicio 3.
-
 - **Ejercicio 3:** [Fusión de objetos sin duplicados](/src/ejer3)
-  [![image.png](https://i.postimg.cc/G2fyKdS5/image.png)](https://postimg.cc/wyhMT8zX)
-
+[![image.png](https://i.postimg.cc/G2fyKdS5/image.png)](https://postimg.cc/wyhMT8zX)
 ## Ejercicio 4: Cadena más larga en un array
-
 Código de implementación del ejercicio 4.
-
 - **Ejercicio 4:** [Cadena más larga en un array](/src/ejer4)
-  [![image.png](https://i.postimg.cc/05ptQ4Mq/image.png)](https://postimg.cc/SjxL1DfZ)
+[![image.png](https://i.postimg.cc/05ptQ4Mq/image.png)](https://postimg.cc/SjxL1DfZ)
 
 ## Ejercicio 5: Ordenamiento interactivo de tabla de personas
-
 Código de implementación del ejercicio 5.
-
 - **Ejercicio 5:** [Ordenamiento interactivo de tabla de personas](/src/ejer5)
 
-## Planes de prueba
+
+## Planes de prueba 
 
 - **Ejercicio 1:** [Filtrado de propiedades de un objeto](/src/ejer1/)
 
+
 - **Ejercicio 2:** [Transposición de matrices](/src/ejer2)
+
 
 - **Ejercicio 3:** [Fusión de objetos sin duplicados](/src/ejer3)
 
+
 - **Ejercicio 4:** [Cadena más larga en un array](/src/ejer4)
+
+
 
 - **Ejercicio 5:** [Ordenamiento interactivo de tabla de personas](/src/ejer5)
 - **Ejercicio 6:** [ Análisis y Transformación Avanzada de Datos](/src/ejer6)
