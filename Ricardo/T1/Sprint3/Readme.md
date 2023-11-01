@@ -137,4 +137,4 @@ Código de implementación del ejercicio 5.
 
 
 - **Ejercicio 5:** [Ordenamiento interactivo de tabla de personas](/src/ejer5/Plan1.xlsx)
-- **Ejercicio 6:** [ Análisis y Transformación Avanzada de Datos](/SPRINT3/src/ejer6/Plan1.xlsx)
+- **Ejercicio 6:** [ Análisis y Transformación Avanzada de Datos](/SPRINT3/src/ejer1/Plan1.xlsx)
