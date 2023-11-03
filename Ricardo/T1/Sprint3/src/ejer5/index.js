@@ -56,6 +56,9 @@ function ordenarTabla(personas, columna) {
   } else {
     document.body.appendChild(tablaHTML);
   }
+
+  // Imprimir información sobre el orden en la consola
+  console.log(`Tabla ordenada por ${columna} de forma ${ordenActual}`);
 }
 
 // Ejemplo de uso

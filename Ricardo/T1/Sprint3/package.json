@@ -1,0 +1,12 @@
+{
+  "name": "sprint3",
+  "version": "1.0.0",
+  "description": "---\r ## Boletín de Ejercicios - Sprint 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
