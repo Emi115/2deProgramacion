@@ -1,0 +1,11 @@
+{
+  // Deshabilita la capacidad de arrastrar y soltar código en el editor.
+  "editor.dragAndDrop": false,
+
+  // Configuración adicional, si es necesario.
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.rulers": [99, 100],
+  "terminal.integrated.tabs.title": "${cwdFolder}"
+}
