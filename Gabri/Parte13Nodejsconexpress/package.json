@@ -5,7 +5,9 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon src/index.js",
+    "stop": "pkill -f 'node src/index.js'"
+    ,"inicia": "nodemon C:\\Users\\Emi\\Documentos\\Github\\2deProgramacion\\Gabri\\Parte13Nodejsconexpress\\src\\e4.js"
   },
   "keywords": [],
   "author": "Emilio Gordillo",
