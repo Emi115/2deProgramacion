@@ -1,20 +1,11 @@
-import express from 'express';
-
+const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/page', (req, res) => {
-  res.send('This is a page.');
-});
-
-app.get('/error', (req, res) => {
-  res.status(404).send('404 - Page not found.');
-});
-
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+    res.send('<h1>Hello, this is a basic web page!</h1>');
 });
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+    console.log(`Server listening at http://localhost:${port}`);
 });
