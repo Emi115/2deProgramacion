@@ -144,7 +144,7 @@ Código de implementación del ejercicio 6.
 [![2023-11-08-20-35-43-3.gif](https://i.postimg.cc/3xKG4ryR/2023-11-08-20-35-43-3.gif)](https://postimg.cc/2VKygD7R)
 ## Planes de prueba
 
-- **Ejercicio 1:** [Filtrado de propiedades de un objeto](Ricardo/T1/Sprint3/src/ejer1/index.html)
+- **Ejercicio 1:** [Filtrado de propiedades de un objeto](/src/ejer1/Plan1.xlsx)
 
 - **Ejercicio 2:** [Transposición de matrices](/src/ejer2/Plan2.xlsx)
 
