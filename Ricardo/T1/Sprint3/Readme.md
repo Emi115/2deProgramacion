@@ -1,5 +1,4 @@
-
----
+--
 ## Boletín de Ejercicios - Sprint 3
 
 # 🔎 Análisis del problema
@@ -98,43 +97,60 @@ Descripción:
 Dado un conjunto de datos en forma de array con información sobre estudiantes, sus calificaciones en diferentes asignaturas y detalles adicionales, implementa funciones para analizar, filtrar y transformar estos datos.
 
 ---
+
 ## Implementación ⚙️
+
 ## Ejercicio 1: Filtrado de propiedades de un objeto
+
 Código de implementación del ejercicio 1.
+
 - **Ejercicio 1:** [Filtrado de propiedades de un objeto](/src/ejer1/)
-[![image.png](https://i.postimg.cc/wjn7y0Zh/image.png)](https://postimg.cc/zySJ4SJB)
+  [![image.png](https://i.postimg.cc/wjn7y0Zh/image.png)](https://postimg.cc/zySJ4SJB)
+
 ## Ejercicio 2: Transposición de matrices
+
 Código de implementación del ejercicio 2.
+
 - **Ejercicio 2:** [Transposición de matrices](/src/ejer2)
-[![image.png](https://i.postimg.cc/ZnzQWtF1/image.png)](https://postimg.cc/DJ56NNNg)
+  [![image.png](https://i.postimg.cc/ZnzQWtF1/image.png)](https://postimg.cc/DJ56NNNg)
+
 ## Ejercicio 3: Fusión de objetos sin duplicados
+
 Código de implementación del ejercicio 3.
+
 - **Ejercicio 3:** [Fusión de objetos sin duplicados](/src/ejer3)
-[![image.png](https://i.postimg.cc/G2fyKdS5/image.png)](https://postimg.cc/wyhMT8zX)
+  [![image.png](https://i.postimg.cc/G2fyKdS5/image.png)](https://postimg.cc/wyhMT8zX)
+
 ## Ejercicio 4: Cadena más larga en un array
+
 Código de implementación del ejercicio 4.
+
 - **Ejercicio 4:** [Cadena más larga en un array](/src/ejer4)
-[![image.png](https://i.postimg.cc/05ptQ4Mq/image.png)](https://postimg.cc/SjxL1DfZ)
+  [![image.png](https://i.postimg.cc/05ptQ4Mq/image.png)](https://postimg.cc/SjxL1DfZ)
 
 ## Ejercicio 5: Ordenamiento interactivo de tabla de personas
+
 Código de implementación del ejercicio 5.
-- **Ejercicio 5:** [Ordenamiento interactivo de tabla de personas](/src/ejer5)
+
+- **Ejercicio 5:** [Ordenamiento interactivo de tabla de personas](/src/ejer5/index.html)
+[![2023-11-08-20-35-43-1.gif](https://i.postimg.cc/kXGcz45S/2023-11-08-20-35-43-1.gif)](https://postimg.cc/3dMmD3mr)
+## Ejercicio 6: Análisis y Transformación Avanzada de Datos
 
 
-## Planes de prueba 
+Código de implementación del ejercicio 6.
+
+- **Ejercicio 6:** [Análisis y Transformación Avanzada de Datos
+](/src/ejer5/index.html)
+[![2023-11-08-20-35-43-3.gif](https://i.postimg.cc/3xKG4ryR/2023-11-08-20-35-43-3.gif)](https://postimg.cc/2VKygD7R)
+## Planes de prueba
 
 - **Ejercicio 1:** [Filtrado de propiedades de un objeto](Ricardo/T1/Sprint3/src/ejer1/index.html)
 
-
 - **Ejercicio 2:** [Transposición de matrices](/src/ejer2/Plan2.xlsx)
-
 
 - **Ejercicio 3:** [Fusión de objetos sin duplicados](/src/ejer3/Plan3.xlsx)
 
-
 - **Ejercicio 4:** [Cadena más larga en un array](/src/ejer4/Plan4.xlsx)
 
-
-
-- **Ejercicio 5:** [Ordenamiento interactivo de tabla de personas](/src/ejer5/Plan1.xlsx)
-- **Ejercicio 6:** [ Análisis y Transformación Avanzada de Datos](\2deProgramacion\Ricardo\T1\Sprint3\src\ejer1\Plan1.xlsx)
+- **Ejercicio 5:** [Ordenamiento interactivo de tabla de personas](/src/ejer5/Plan5.xlsx)
+- **Ejercicio 6:** [ Análisis y Transformación Avanzada de Datos](/src/ejer6/Plan6.xlsx)
