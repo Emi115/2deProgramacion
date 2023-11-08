@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla Ordenada</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-
-    <!-- Importa el archivo JavaScript -->
-    <script src="index.js"></script>
-
+    <table id="personas-table">
+        <thead>
+            <tr>
+                <th onclick="ordenarTabla('Nombre')">Nombre</th>
+                <th onclick="ordenarTabla('Edad')">Edad</th>
+                <th onclick="ordenarTabla('DNI')">DNI</th>
+                <th onclick="ordenarTabla('Tiene/No tiene hijos')">Tiene/No tiene hijos</th>
+                <th onclick="ordenarTabla('Fecha de nacimiento')">Fecha de nacimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
 </body>
 </html>

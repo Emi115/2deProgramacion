@@ -1,0 +1,50 @@
+/* Estilo básico para la tabla */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #dddddd;
+}
+
+/* Encabezado de columna */
+th {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+
+th:hover {
+  background-color: #e6e6e6;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #dddddd;
+}
+
+/* Resaltar filas pares */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Resaltar filas impares */
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Estilo para resaltar la fila seleccionada */
+tr.selected {
+  background-color: #ffc107; /* Amarillo */
+  color: #333;
+}
+
+/* Estilo para el texto del encabezado */
+th:hover {
+  background-color: #e6e6e6;
+  color: #333;
+}
+
+/* Añadir un poco de espacio alrededor de la tabla */
+#personas-table {
+  margin: 20px;
+}
