@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparativa de Pokémon</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        margin: 20px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      label {
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      input {
+        padding: 5px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 7px;
+        cursor: pointer;
+        background-color: rgb(119, 76, 175);
+        color: white;
+        border: none;
+        border-radius: 3px;
+      }
+
+      #pokemon-table {
+        margin-top: 20px;
+        border-collapse: collapse;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #pokemon-table th,
+      #pokemon-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+
+      #pokemon-table th {
+        background-color: #5e4caf;
+        color: white;
+      }
+
+      #winner-message {
+        margin-top: 20px;
+        color: #614caf;
+        font-weight: bold;
+      }
+
+      #error-message {
+        color: red;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Comparativa de Pokémon</h1>
+
+    <form id="pokemon-comparison-form">
+      <label for="pokemon1-input">Primer Pokémon:</label>
+      <input type="text" id="pokemon1-input" required />
+      <label for="pokemon2-input">Segundo Pokémon:</label>
+      <input type="text" id="pokemon2-input" required />
+      <button type="submit">Comparar</button>
+    </form>
+
+    <table id="pokemon-table">
+      <thead>
+        <tr>
+          <th>Estadísticas</th>
+          <th>Primer Pokémon</th>
+          <th>Segundo Pokémon</th>
+        </tr>
+      </thead>
+      <tbody id="pokemon-table-body"></tbody>
+    </table>
+
+    <div id="winner-message"></div>
+    <div id="error-message"></div>
+
+    <script>
+      const comparisonForm = document.getElementById("pokemon-comparison-form");
+
+      comparisonForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const pokemon1Name = document
+          .getElementById("pokemon1-input")
+          .value.trim();
+        const pokemon2Name = document
+          .getElementById("pokemon2-input")
+          .value.trim();
+
+        if (pokemon1Name !== "" && pokemon2Name !== "") {
+          compararEstadisticasPokemon(pokemon1Name, pokemon2Name);
+        } else {
+          mostrarError("Por favor, ingresa los nombres de ambos Pokémon.");
+        }
+      });
+
+      function compararEstadisticasPokemon(pokemon1, pokemon2) {
+        const urlBase = "https://pokeapi.co/api/v2/pokemon/";
+        const urlPokemon1 = `${urlBase}${pokemon1.toLowerCase()}`;
+        const urlPokemon2 = `${urlBase}${pokemon2.toLowerCase()}`;
+
+        Promise.all([
+          fetch(urlPokemon1).then((response) => response.json()),
+          fetch(urlPokemon2).then((response) => response.json()),
+        ])
+          .then(([datosPokemon1, datosPokemon2]) => {
+            // Limpiar mensajes de error y ganador
+            limpiarError();
+            limpiarGanador();
+
+            // Crear una tabla para mostrar las estadísticas
+            const pokemonTableBody =
+              document.getElementById("pokemon-table-body");
+            pokemonTableBody.innerHTML = ""; // Limpiar contenido anterior
+
+            // Comparar estadísticas y mostrar en la tabla
+            const estadisticas = [
+              "hp",
+              "attack",
+              "defense",
+              "special-attack",
+              "special-defense",
+              "speed",
+            ];
+            estadisticas.forEach((stat) => {
+              const fila = document.createElement("tr");
+              const nombreStat = document.createElement("td");
+              nombreStat.textContent = stat.replace("-", " ").toUpperCase();
+              fila.appendChild(nombreStat);
+
+              const valorPokemon1 = document.createElement("td");
+              valorPokemon1.textContent = datosPokemon1.stats.find(
+                (s) => s.stat.name === stat
+              ).base_stat;
+              fila.appendChild(valorPokemon1);
+
+              const valorPokemon2 = document.createElement("td");
+              valorPokemon2.textContent = datosPokemon2.stats.find(
+                (s) => s.stat.name === stat
+              ).base_stat;
+              fila.appendChild(valorPokemon2);
+
+              pokemonTableBody.appendChild(fila);
+            });
+
+            // Determinar al ganador
+            const totalPokemon1 = datosPokemon1.stats.reduce(
+              (total, stat) => total + stat.base_stat,
+              0
+            );
+            const totalPokemon2 = datosPokemon2.stats.reduce(
+              (total, stat) => total + stat.base_stat,
+              0
+            );
+
+            const winnerMessage = document.getElementById("winner-message");
+            if (totalPokemon1 > totalPokemon2) {
+              winnerMessage.textContent = `${pokemon1.capitalize()} es el ganador con mejores estadísticas generales.`;
+            } else if (totalPokemon2 > totalPokemon1) {
+              winnerMessage.textContent = `${pokemon2.capitalize()} es el ganador con mejores estadísticas generales.`;
+            } else {
+              winnerMessage.textContent =
+                "¡Es un empate! Ambos Pokémon tienen estadísticas generales iguales.";
+            }
+          })
+          .catch((error) => {
+            console.error(error.message);
+
+            // Mostrar mensaje de error en caso de problema
+            mostrarError(`Error: ${error.message}`);
+          });
+      }
+
+      function mostrarError(mensaje) {
+        const errorMessageDiv = document.getElementById("error-message");
+        errorMessageDiv.textContent = mensaje;
+      }
+
+      function limpiarError() {
+        const errorMessageDiv = document.getElementById("error-message");
+        errorMessageDiv.textContent = "";
+      }
+
+      function limpiarGanador() {
+        const winnerMessage = document.getElementById("winner-message");
+        winnerMessage.textContent = "";
+      }
+
+      // Función para capitalizar la primera letra de una cadena
+      String.prototype.capitalize = function () {
+        return this.charAt(0).toUpperCase() + this.slice(1);
+      };
+    </script>
+  </body>
+</html>

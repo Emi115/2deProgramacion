@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Información Básica del Pokémon</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        margin: 20px;
+        background-color: rgba(44, 43, 43, 0.192)
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      label {
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      input {
+        padding: 5px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 7px;
+        cursor: pointer;
+        background-color: #6b4caf;
+        color: white;
+        border: none;
+        border-radius: 3px;
+      }
+
+      #pokemon-info {
+        margin-top: 20px;
+      }
+
+      #pokemon-info h2 {
+        color: #333;
+      }
+
+      #pokemon-info p {
+        color: #555;
+      }
+
+      #pokemon-info img {
+        margin-top: 10px;
+        max-width: 200px;
+      }
+
+      #error-message {
+        color: rgb(75, 0, 0);
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Información Básica del Pokémon</h1>
+
+    <form id="pokemon-form">
+      <label for="pokemon-input">Nombre del Pokémon:</label>
+      <input type="text" id="pokemon-input" required />
+      <button type="submit">Buscar</button>
+    </form>
+
+    <div id="pokemon-info"></div>
+    <div id="error-message"></div>
+
+    <script>
+      const pokemonForm = document.getElementById("pokemon-form");
+      const pokemonInput = document.getElementById("pokemon-input");
+
+      pokemonForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const pokemonName = pokemonInput.value.trim();
+        if (pokemonName !== "") {
+          obtenerInformacionPokemon(pokemonName);
+        } else {
+          mostrarError("Por favor, ingresa el nombre de un Pokémon.");
+        }
+      });
+
+      function obtenerInformacionPokemon(nombrePokemon) {
+        const urlBase = "https://pokeapi.co/api/v2/pokemon/";
+        const urlPokemon = `${urlBase}${nombrePokemon.toLowerCase()}`;
+
+        fetch(urlPokemon)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(
+                `No se pudo obtener la información de ${nombrePokemon}`
+              );
+            }
+            return response.json();
+          })
+          .then((datosPokemon) => {
+            // Limpiar mensajes de error
+            limpiarError();
+
+            // Crear un elemento para mostrar la información del Pokémon
+            const pokemonInfoDiv = document.getElementById("pokemon-info");
+            pokemonInfoDiv.innerHTML = ""; // Limpiar contenido anterior
+
+            // Mostrar nombre, id y tipos
+            const nombre = document.createElement("h2");
+            nombre.textContent = `Nombre: ${nombrePokemon.capitalize()}`;
+            pokemonInfoDiv.appendChild(nombre);
+
+            const id = document.createElement("p");
+            id.textContent = `ID: ${datosPokemon.id}`;
+            pokemonInfoDiv.appendChild(id);
+
+            const tipos = document.createElement("p");
+            tipos.textContent = `Tipos: ${datosPokemon.types
+              .map((tipo) => tipo.type.name)
+              .join(", ")}`;
+            pokemonInfoDiv.appendChild(tipos);
+
+            // Mostrar imagen
+            const imagen = document.createElement("img");
+            imagen.src = datosPokemon.sprites.front_default;
+            imagen.alt = `Imagen de ${nombrePokemon.capitalize()}`;
+            pokemonInfoDiv.appendChild(imagen);
+          })
+          .catch((error) => {
+            console.error(error.message);
+
+            // Mostrar mensaje de error en caso de problema
+            mostrarError(`Error: ${error.message}`);
+          });
+      }
+
+      function mostrarError(mensaje) {
+        const errorMessageDiv = document.getElementById("error-message");
+        errorMessageDiv.textContent = mensaje;
+      }
+
+      function limpiarError() {
+        const errorMessageDiv = document.getElementById("error-message");
+        errorMessageDiv.textContent = "";
+      }
+
+      // Función para capitalizar la primera letra de una cadena
+      String.prototype.capitalize = function () {
+        return this.charAt(0).toUpperCase() + this.slice(1);
+      };
+    </script>
+  </body>
+</html>
