@@ -1,211 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadena de Evolución y Habilidades</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      margin: 20px;
-      background-color: #f5f5f5;
-    }
-
-    h1 {
-      color: #673ab7;
-    }
-
-    form {
-      margin-top: 20px;
-    }
-
-    label {
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    input {
-      padding: 5px;
-      margin-right: 10px;
-    }
-
-    button {
-      padding: 7px;
-      cursor: pointer;
-      background-color: #673ab7;
-      color: white;
-      border: none;
-      border-radius: 3px;
-    }
-
-    #pokemon-info {
-      margin-top: 20px;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(103, 58, 183, 0.7);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-      color: #673ab7;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>PokeAPI Explorer</title>
 </head>
 <body>
-
-  <h1>Cadena de Evolución y Habilidades</h1>
-
-  <form id="evolution-form">
-    <label for="pokemon-input">Nombre del Pokémon:</label>
-    <input type="text" id="pokemon-input" required>
-    <button type="submit">Buscar</button>
-  </form>
-
-  <div id="pokemon-info"></div>
-
-  <!-- Modal para detalles de habilidades -->
-  <div class="modal" id="ability-modal">
-    <div class="modal-content">
-      <span class="close-button" onclick="cerrarModal()">&times;</span>
-      <h2 id="ability-title"></h2>
-      <p id="ability-description"></p>
-    </div>
-  </div>
-
-  <script>
-    const evolutionForm = document.getElementById("evolution-form");
-
-    evolutionForm.addEventListener("submit", function(event) {
-      event.preventDefault();
-      const pokemonName = document.getElementById("pokemon-input").value.trim();
-
-      if (pokemonName !== "") {
-        obtenerInformacionPokemon(pokemonName);
-      } else {
-        mostrarError("Por favor, ingresa el nombre de un Pokémon.");
-      }
-    });
-
-    function obtenerInformacionPokemon(nombrePokemon) {
-      const urlBase = "https://pokeapi.co/api/v2/pokemon/";
-      const urlPokemon = `${urlBase}${nombrePokemon.toLowerCase()}`;
-
-      fetch(urlPokemon)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`No se pudo obtener la información para ${nombrePokemon}`);
-          }
-          return response.json();
-        })
-        .then(datosPokemon => {
-          // Limpiar mensajes de error
-          limpiarError();
-
-          // Crear un elemento para mostrar la información del Pokémon
-          const pokemonInfoDiv = document.getElementById("pokemon-info");
-          pokemonInfoDiv.innerHTML = "";  // Limpiar contenido anterior
-
-          // Mostrar imagen del Pokémon
-          const imagen = document.createElement("img");
-          imagen.src = datosPokemon.sprites.front_default;
-          imagen.alt = `Imagen de ${nombrePokemon}`;
-          pokemonInfoDiv.appendChild(imagen);
-
-          // Mostrar información de evolución
-          if (datosPokemon.species) {
-            obtenerCadenaEvolucion(datosPokemon.species.url, pokemonInfoDiv);
-          }
-        })
-        .catch(error => {
-          console.error(error.message);
-
-          // Mostrar mensaje de error en caso de problema
-          mostrarError(`Error: ${error.message}`);
-        });
-    }
-
-    function obtenerCadenaEvolucion(urlEvolucion, parentElement) {
-      fetch(urlEvolucion)
-        .then(response => response.json())
-        .then(datosEvolucion => {
-          // Mostrar información de evolución
-          const evolutionDetails = datosEvolucion.evolution_chain;
-          if (evolutionDetails) {
-            const title = document.createElement("h2");
-            title.textContent = "Cadena de Evolución";
-            parentElement.appendChild(title);
-
-            mostrarEvoluciones(evolutionDetails.chain, parentElement);
-          }
-        })
-        .catch(error => {
-          console.error(error.message);
-
-          // Mostrar mensaje de error en caso de problema
-          mostrarError(`Error: ${error.message}`);
-        });
-    }
-
-    function mostrarEvoluciones(evolution, parentElement) {
-      // Mostrar detalles de la evolución actual
-      const details = document.createElement("p");
-      details.textContent = `Evoluciona a: ${evolution.species.name}`;
-      parentElement.appendChild(details);
-
-      // Mostrar imagen del Pokémon en evolución
-      const imagenEvolucion = document.createElement("img");
-      imagenEvolucion.src = `https://pokeapi.co/media/sprites/pokemon/${evolution.species.url.split("/")[6]}.png`;
-      imagenEvolucion.alt = `Imagen de ${evolution.species.name}`;
-      parentElement.appendChild(imagenEvolucion);
-
-      // Mostrar evoluciones recursivamente
-      if (evolution.evolves_to && evolution.evolves_to.length > 0) {
-        const nextEvolutions = document.createElement("div");
-        parentElement.appendChild(nextEvolutions);
-
-        evolution.evolves_to.forEach(nextEvolution => {
-          mostrarEvoluciones(nextEvolution, nextEvolutions);
-        });
-      }
-    }
-
-    function mostrarError(mensaje) {
-      const pokemonInfoDiv = document.getElementById("pokemon-info");
-      pokemonInfoDiv.innerHTML = "";  // Limpiar contenido anterior
-
-      const errorMessageDiv = document.createElement("div");
-      errorMessageDiv.textContent = mensaje;
-      errorMessageDiv.style.color = "#ff5722"; // Color naranja
-      pokemonInfoDiv.appendChild(errorMessageDiv);
-    }
-
-    function cerrarModal() {
-      const modal = document.getElementById("ability-modal");
-      modal.style.display = "none";
-    }
-
-    // ... (el resto del código JavaScript permanece sin cambios)
-  </script>
-
+    <header>
+        <h1>PokeAPI Explorer</h1>
+    </header>
+    <main>
+        <section id="pokemon-details">
+            <!-- Aquí se mostrarán los detalles del Pokémon y su cadena evolutiva -->
+            <label for="pokemon-input">Ingresa el nombre o número del Pokémon:</label>
+            <input type="text" id="pokemon-input" placeholder="Ej. bulbasaur">
+            <button id="show-more-button">Ver más detalles</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>

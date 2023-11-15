@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Meta tags y estilos -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comparativa de Pokémon</title>
@@ -68,11 +69,17 @@
         color: red;
         margin-top: 10px;
       }
+
+      .pokemon-image {
+        max-width: 50px;
+        max-height: 50px;
+      }
     </style>
   </head>
   <body>
     <h1>Comparativa de Pokémon</h1>
 
+    <!-- Formulario de comparación -->
     <form id="pokemon-comparison-form">
       <label for="pokemon1-input">Primer Pokémon:</label>
       <input type="text" id="pokemon1-input" required />
@@ -81,20 +88,23 @@
       <button type="submit">Comparar</button>
     </form>
 
+    <!-- Tabla para mostrar estadísticas -->
     <table id="pokemon-table">
       <thead>
         <tr>
           <th>Estadísticas</th>
-          <th>Primer Pokémon</th>
-          <th>Segundo Pokémon</th>
+          <th id="pokemon1-name">Nombre del Primer Pokémon</th>
+          <th id="pokemon2-name">Nombre del Segundo Pokémon</th>
         </tr>
       </thead>
       <tbody id="pokemon-table-body"></tbody>
     </table>
 
+    <!-- Mensaje del ganador y mensaje de error -->
     <div id="winner-message"></div>
     <div id="error-message"></div>
 
+    <!-- Script de JavaScript -->
     <script>
       const comparisonForm = document.getElementById("pokemon-comparison-form");
 
@@ -163,6 +173,12 @@
               pokemonTableBody.appendChild(fila);
             });
 
+            // Mostrar imágenes y nombres de los Pokémon
+            mostrarImagen("pokemon1-image", datosPokemon1.sprites.front_default);
+            mostrarImagen("pokemon2-image", datosPokemon2.sprites.front_default);
+            mostrarNombre("pokemon1-name", datosPokemon1.name);
+            mostrarNombre("pokemon2-name", datosPokemon2.name);
+
             // Determinar al ganador
             const totalPokemon1 = datosPokemon1.stats.reduce(
               (total, stat) => total + stat.base_stat,
@@ -175,9 +191,9 @@
 
             const winnerMessage = document.getElementById("winner-message");
             if (totalPokemon1 > totalPokemon2) {
-              winnerMessage.textContent = `${pokemon1.capitalize()} es el ganador con mejores estadísticas generales.`;
+              winnerMessage.textContent = `${datosPokemon1.name.capitalize()} es el ganador con mejores estadísticas generales.`;
             } else if (totalPokemon2 > totalPokemon1) {
-              winnerMessage.textContent = `${pokemon2.capitalize()} es el ganador con mejores estadísticas generales.`;
+              winnerMessage.textContent = `${datosPokemon2.name.capitalize()} es el ganador con mejores estadísticas generales.`;
             } else {
               winnerMessage.textContent =
                 "¡Es un empate! Ambos Pokémon tienen estadísticas generales iguales.";
@@ -189,6 +205,25 @@
             // Mostrar mensaje de error en caso de problema
             mostrarError(`Error: ${error.message}`);
           });
+      }
+
+      function mostrarImagen(imageContainerId, url) {
+        const imageContainer = document.getElementById(imageContainerId);
+        if (imageContainer) {
+          const imagen = document.createElement("img");
+          imagen.src = url;
+          imagen.alt = "Imagen del Pokémon";
+          imagen.classList.add("pokemon-image");
+          imageContainer.innerHTML = ""; // Limpiar contenido anterior
+          imageContainer.appendChild(imagen);
+        }
+      }
+
+      function mostrarNombre(nameContainerId, nombre) {
+        const nameContainer = document.getElementById(nameContainerId);
+        if (nameContainer) {
+          nameContainer.textContent = nombre.capitalize();
+        }
       }
 
       function mostrarError(mensaje) {

@@ -65,38 +65,50 @@
   <body>
     <h1>Información Básica del Pokémon</h1>
 
+    <!-- Formulario de búsqueda -->
     <form id="pokemon-form">
       <label for="pokemon-input">Nombre del Pokémon:</label>
       <input type="text" id="pokemon-input" required />
       <button type="submit">Buscar</button>
     </form>
 
+    <!-- Contenedor para mostrar la información del Pokémon -->
     <div id="pokemon-info"></div>
     <div id="error-message"></div>
 
+    <!-- Script de JavaScript -->
     <script>
       const pokemonForm = document.getElementById("pokemon-form");
       const pokemonInput = document.getElementById("pokemon-input");
 
+      // Evento de submit del formulario
       pokemonForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        const pokemonName = pokemonInput.value.trim();
-        if (pokemonName !== "") {
-          obtenerInformacionPokemon(pokemonName);
+        const pokemonNameOrId = pokemonInput.value.trim();
+        if (pokemonNameOrId !== "") {
+          obtenerInformacionPokemon(pokemonNameOrId);
         } else {
-          mostrarError("Por favor, ingresa el nombre de un Pokémon.");
+          mostrarError("Por favor, ingresa el nombre o número de un Pokémon.");
         }
       });
 
-      function obtenerInformacionPokemon(nombrePokemon) {
+      // Función para obtener información del Pokémon
+      function obtenerInformacionPokemon(nombrePokemonOrId) {
         const urlBase = "https://pokeapi.co/api/v2/pokemon/";
-        const urlPokemon = `${urlBase}${nombrePokemon.toLowerCase()}`;
+
+        // Verificar si el valor ingresado es un número
+        const isNumber = !isNaN(nombrePokemonOrId);
+
+        // Construir la URL del Pokémon
+        const urlPokemon = isNumber
+          ? `${urlBase}${nombrePokemonOrId}`
+          : `${urlBase}${nombrePokemonOrId.toLowerCase()}`;
 
         fetch(urlPokemon)
           .then((response) => {
             if (!response.ok) {
               throw new Error(
-                `No se pudo obtener la información de ${nombrePokemon}`
+                `No se pudo obtener la información de ${nombrePokemonOrId}`
               );
             }
             return response.json();
@@ -111,7 +123,7 @@
 
             // Mostrar nombre, id y tipos
             const nombre = document.createElement("h2");
-            nombre.textContent = `Nombre: ${nombrePokemon.capitalize()}`;
+            nombre.textContent = `Nombre: ${datosPokemon.name.capitalize()}`;
             pokemonInfoDiv.appendChild(nombre);
 
             const id = document.createElement("p");
@@ -127,7 +139,7 @@
             // Mostrar imagen
             const imagen = document.createElement("img");
             imagen.src = datosPokemon.sprites.front_default;
-            imagen.alt = `Imagen de ${nombrePokemon.capitalize()}`;
+            imagen.alt = `Imagen de ${datosPokemon.name.capitalize()}`;
             pokemonInfoDiv.appendChild(imagen);
           })
           .catch((error) => {
@@ -138,11 +150,13 @@
           });
       }
 
+      // Función para mostrar mensajes de error
       function mostrarError(mensaje) {
         const errorMessageDiv = document.getElementById("error-message");
         errorMessageDiv.textContent = mensaje;
       }
 
+      // Función para limpiar mensajes de error
       function limpiarError() {
         const errorMessageDiv = document.getElementById("error-message");
         errorMessageDiv.textContent = "";

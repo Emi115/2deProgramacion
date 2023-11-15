@@ -1,0 +1,37 @@
+body {
+    background-color: #f0f0f0; /* Gris claro */
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #7e57c2; /* Morado claro */
+    color: #ffffff; /* Blanco */
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #ffffff; /* Blanco */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#pokemon-details {
+    /* Estilos para la sección de detalles del Pokémon */
+}
+
+button {
+    background-color: #7e57c2; /* Morado claro */
+    color: #ffffff; /* Blanco */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5e35b1; /* Morado más oscuro al pasar el ratón */
+}
