@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* styles.css */
+
+      body {
+        background-color: #f0f0f0; /* Gris claro */
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        background-color: #7e57c2; /* Morado claro */
+        color: #ffffff; /* Blanco */
+        text-align: center;
+        padding: 1rem;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 2rem auto;
+        background-color: #ffffff; /* Blanco */
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #pokemon-details {
+        /* Estilos para la sección de detalles del Pokémon */
+      }
+
+      button {
+        background-color: #7e57c2; /* Morado claro */
+        color: #ffffff; /* Blanco */
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #5e35b1; /* Morado más oscuro al pasar el ratón */
+      }
+
+      /* Estilos para el modal */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+
+    <title>PokeAPI Explorer</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>PokeAPI Explorer</h1>
+    </header>
+    <main>
+      <section id="pokemon-details">
+        <!-- Aquí se mostrarán los detalles del Pokémon y su cadena evolutiva -->
+        <label for="pokemon-input"
+          >Ingresa el nombre o número del Pokémon:</label
+        >
+        <input type="text" id="pokemon-input" placeholder="Ej. bulbasaur" />
+        <button id="show-more-button">Ver más detalles</button>
+      </section>
+      <!-- Sección para mostrar imágenes de las formas evolutivas -->
+      <section id="evolution-images"></section>
+    </main>
+
+    <!-- Modal para mostrar detalles de habilidades -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="ability-details"></p>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const pokemonDetailsElement =
+          document.getElementById("pokemon-details");
+        const showMoreButton = document.getElementById("show-more-button");
+        const pokemonInputElement = document.getElementById("pokemon-input");
+        const evolutionImagesElement =
+          document.getElementById("evolution-images");
+
+        showMoreButton.addEventListener("click", () => {
+          const pokemonInput = pokemonInputElement.value.trim();
+
+          if (pokemonInput) {
+            fetchPokemonData(pokemonInput)
+              .then((pokemonData) => {
+                displayPokemonDetails(pokemonData);
+                return fetch(evolutionChainUrl(pokemonData.species.url));
+              })
+              .then((response) => response.json())
+              .then((evolutionChainData) => {
+                displayEvolutionChain(evolutionChainData);
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                showAlert(
+                  "No se pudo obtener información del Pokémon. Asegúrate de ingresar un nombre o número válido."
+                );
+              });
+          } else {
+            showAlert("Ingresa un nombre o número de Pokémon válido.");
+          }
+        });
+
+        function fetchPokemonData(pokemonInput) {
+          return fetch(
+            `https://pokeapi.co/api/v2/pokemon/${pokemonInput.toLowerCase()}`
+          ).then((response) => response.json());
+        }
+
+        function evolutionChainUrl(speciesUrl) {
+          const speciesId = speciesUrl.split("/").reverse()[1];
+          return `https://pokeapi.co/api/v2/evolution-chain/${speciesId}`;
+        }
+
+        function displayPokemonDetails(pokemonData) {
+          pokemonDetailsElement.innerHTML = "";
+          evolutionImagesElement.innerHTML = ""; // Limpiar el contenido anterior
+
+          const pokemonImage = createImageElement(
+            pokemonData.sprites.front_default,
+            `Imagen de ${pokemonData.name}`
+          );
+          pokemonDetailsElement.appendChild(pokemonImage);
+
+          const pokemonName = document.createElement("p");
+          pokemonName.textContent = `Nombre: ${pokemonData.name}`;
+          pokemonDetailsElement.appendChild(pokemonName);
+
+          // Mostrar botones para cada habilidad
+          pokemonData.abilities.forEach((ability) => {
+            const abilityButton = createButtonElement(
+              ability.ability.name,
+              () => showAbilityDetails(ability.ability.name)
+            );
+            pokemonDetailsElement.appendChild(abilityButton);
+          });
+        }
+
+        function createImageElement(src, alt) {
+          const image = document.createElement("img");
+          image.src = src;
+          image.alt = alt;
+          return image;
+        }
+
+        function createButtonElement(text, clickHandler) {
+          const button = document.createElement("button");
+          button.textContent = text;
+          button.addEventListener("click", clickHandler);
+          return button;
+        }
+
+        function displayEvolutionChain(evolutionChainData) {
+          const evolutionChain = document.createElement("p");
+          evolutionChain.textContent = "Cadena Evolutiva:";
+          evolutionImagesElement.appendChild(evolutionChain);
+
+          // Mostrar las etapas de evolución
+          displayEvolutionStages(
+            evolutionChainData.chain,
+            evolutionImagesElement
+          );
+        }
+
+        function displayEvolutionStages(evolutionStage, parentElement) {
+          const stageName = document.createElement("span");
+          stageName.textContent = evolutionStage.species.name;
+
+          // Mostrar la imagen de la forma evolutiva
+          const stageImage = createImageElement(
+            `https://pokeapi.co/media/sprites/pokemon/${
+              evolutionStage.species.url.split("/").reverse()[1]
+            }.png`,
+            `Imagen de ${evolutionStage.species.name}`
+          );
+          parentElement.appendChild(stageImage);
+          parentElement.appendChild(stageName);
+
+          if (evolutionStage.evolves_to.length > 0) {
+            const arrow = document.createElement("span");
+            arrow.textContent = " -> ";
+            parentElement.appendChild(arrow);
+
+            // Recursivamente mostrar las siguientes etapas de evolución
+            displayEvolutionStages(evolutionStage.evolves_to[0], parentElement);
+          }
+        }
+
+        function showAlert(message) {
+          alert(message);
+        }
+
+        // Modal para mostrar detalles de habilidades
+        const modal = document.getElementById("modal");
+        const closeBtn = document.getElementsByClassName("close")[0];
+        const abilityDetails = document.getElementById("ability-details");
+
+        closeBtn.onclick = function () {
+          modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+          if (event.target === modal) {
+            modal.style.display = "none";
+          }
+        };
+
+        function showAbilityDetails(abilityName) {
+          // Aquí deberías realizar una solicitud adicional para obtener detalles de la habilidad,
+          // ya sea desde la misma PokeAPI o cualquier otra fuente de datos.
+          // Por ahora, simplemente mostraremos el nombre de la habilidad en el modal.
+          abilityDetails.textContent = `Detalles de la habilidad: ${abilityName}`;
+          modal.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
