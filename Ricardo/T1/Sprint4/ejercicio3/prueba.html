@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar Cadena de Evolución de Pokémon</title>
+    <title>Buscar Cadena de Evolución y Habilidades de Pokémon</title>
 
     <style>
         body {
@@ -42,13 +42,21 @@
 
         #resultado {
             font-weight: bold;
+            text-align: center;
+        }
+
+        .habilidad {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            margin-left: 5px;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Buscar Cadena de Evolución de Pokémon</h1>
+    <h1>Buscar Cadena de Evolución y Habilidades de Pokémon</h1>
 
     <label for="pokemonInput">Nombre del Pokémon:</label>
     <input type="text" id="pokemonInput">
@@ -82,6 +90,7 @@
                 } else {
                     resultadoDiv.innerText = `Cadena de evolución de ${pokemonInput}:`;
                     mostrarCadenaEvolucion(evolutionChainData.chain);
+                    listarHabilidades(data.id);
                 }
             } catch (error) {
                 console.error(`Error al obtener la cadena de evolución de ${pokemonInput}: ${error}`);
@@ -92,21 +101,49 @@
             const resultadoDiv = document.getElementById('resultado');
 
             if (chain.species) {
-                resultadoDiv.innerText += `\n${chain.species.name}`;
+                resultadoDiv.innerHTML += `<br>${chain.species.name}`;
 
                 if (chain.evolves_to && chain.evolves_to.length > 0) {
+                    resultadoDiv.innerHTML += ' evoluciona a:';
                     for (const evolution of chain.evolves_to) {
                         mostrarCadenaEvolucion(evolution);
                     }
                 } else {
-                    resultadoDiv.innerText += ' (fin)';
+                    resultadoDiv.innerHTML += ' (fin)';
                 }
+            }
+        }
+
+        async function listarHabilidades(pokemonId) {
+            try {
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`);
+                const data = await response.json();
+
+                const resultadoDiv = document.getElementById('resultado');
+                resultadoDiv.innerHTML += '<br><br>Habilidades:';
+
+                for (const ability of data.abilities) {
+                    resultadoDiv.innerHTML += ` <span class="habilidad" onclick="mostrarDetalles('${ability.ability.url}')">${ability.ability.name}</span>`;
+                }
+            } catch (error) {
+                console.error(`Error al obtener las habilidades del Pokémon: ${error}`);
+            }
+        }
+
+        async function mostrarDetalles(url) {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                alert(`Detalles de la habilidad:\n\nNombre: ${data.name}\nDescripción: ${data.effect_entries[0].effect}`);
+            } catch (error) {
+                console.error(`Error al obtener detalles de la habilidad: ${error}`);
             }
         }
 
         function borrarTexto() {
             document.getElementById('pokemonInput').value = '';
-            document.getElementById('resultado').innerText = '';
+            document.getElementById('resultado').innerHTML = '';
         }
     </script>
 
