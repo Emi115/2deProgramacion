@@ -1,0 +1,177 @@
+Abra evoluciona a Kadabra y a su vez a Alakazam.
+Aerodactyl no tiene evolución.
+Alakazam no tiene evolución.
+Alolan Diglett evoluciona a Alolan Dugtrio.
+Alolan Geodude evoluciona a Alolan Graveler y a su vez a Alolan Golem.
+Alolan Grimer evoluciona a Alolan Muk.
+Alolan Meowth evoluciona a Alolan Persian.
+Alolan Ninetales no tiene evolución.
+Alolan Raichu no tiene evolución.
+Alolan Sandshrew evoluciona a Alolan Sandslash.
+Alolan Vulpix evoluciona a Alolan Ninetales.
+Arbok no tiene evolución.
+Arcanine no tiene evolución.
+Articuno no tiene evolución.
+Beedrill no tiene evolución.
+Bellsprout evoluciona a Weepinbell y a su vez a Victreebel.
+Bellossom evoluciona con Piedra solar.
+Blastoise no tiene evolución.
+Blissey no tiene evolución.
+Bulbasaur evoluciona a Ivysaur y a su vez a Venusaur.
+Butterfree no tiene evolución.
+Caterpie evoluciona a Metapod y a su vez a Butterfree.
+Chansey no tiene evolución.
+Charizard no tiene evolución.
+Charmander evoluciona a Charmeleon y a su vez a Charizard.
+Charmeleon evoluciona a Charizard.
+Clefable no tiene evolución.
+Clefairy evoluciona a Clefable.
+Cleffa evoluciona a Clefairy y a su vez a Clefable.
+Cloyster no tiene evolución.
+Cubone evoluciona a Marowak y a su vez a Alolan Marowak.
+Dewgong no tiene evolución.
+Diglett evoluciona a Dugtrio.
+Ditto no tiene evolución.
+Dodrio no tiene evolución.
+Doduo evoluciona a Dodrio.
+Dragonair evoluciona a Dragonite.
+Dratini evoluciona a Dragonair y a su vez a Dragonite.
+Drowzee evoluciona a Hypno.
+Dugtrio no tiene evolución.
+Dugtrio de Alola no tiene evolución.
+Eevee evoluciona a Espeon, Flareon, Glaceon, Jolteon, Leafeon, Sylveon, y a su vez a Umbreon y Vaporeon.
+Electabuzz evoluciona a Electivire por intercambio equipado con Electrizador.
+Electrode no tiene evolución.
+Elekid evoluciona a Electabuzz y a su vez a Electivire por intercambio equipado con Electrizador.
+Exeggcute evoluciona a Exeggutor y a su vez a Alolan Exeggutor.
+Exeggutor no tiene evolución.
+Exeggutor de Alola no tiene evolución.
+Farfetch'd no tiene evolución.
+Fearow no tiene evolución.
+Flareon no tiene evolución.
+Gastly evoluciona a Haunter y a su vez a Gengar.
+Gengar no tiene evolución.
+Geodude evoluciona a Graveler y a su vez a Golem.
+Geodude de Alola evoluciona a Graveler de Alola y a su vez a Golem de Alola.
+Gyarados no tiene evolución.
+Happiny evoluciona a Chansey y a su vez a Blissey por amistad y nivel.
+Haunter evoluciona a Gengar por intercambio.
+Hitmonchan no tiene evolución.
+Hitmonlee no tiene evolución.
+Hitmontop no tiene evolución.
+Horsea evoluciona a Seadra y a su vez a Kingdra por intercambio equipado con Escama dragón.
+Hypno no tiene evolución.
+Igglybuff evoluciona a Jigglypuff y a su vez a Wigglytuff.
+Ivysaur evoluciona a Venusaur.
+Jigglypuff evoluciona a Wigglytuff.
+Jolteon no tiene evolución.
+Jynx no tiene evolución.
+Kabuto evoluciona a Kabutops.
+Kabutops no tiene evolución.
+Kadabra evoluciona a Alakazam.
+Kakuna evoluciona a Beedrill.
+Kangaskhan no tiene evolución.
+Kingdra no tiene evolución.
+Kingler no tiene evolución.
+Koffing evoluciona a Weezing.
+Krabby evoluciona a Kingler.
+Lapras no tiene evolución.
+Lickilicky no tiene evolución.
+Lickitung evoluciona a Lickilicky.
+Machamp no tiene evolución.
+Machoke evoluciona a Machamp por intercambio.
+Machop evoluciona a Machoke y a su vez a Machamp por intercambio.
+Magby evoluciona a Magmar y a su vez a Magmortar por intercambio equipado con Magmatizador.
+Magmar no tiene evolución.
+Magmortar no tiene evolución.
+Magnemite evoluciona a Magneton y a su vez a Magnezone.
+Magnezone no tiene evolución.
+Mankey evoluciona a Primeape.
+Marowak no tiene evolución.
+Marowak de Alola no tiene evolución.
+Meowth evoluciona a Persian.
+Meowth de Alola evoluciona a Persian de Alola.
+Metapod evoluciona a Butterfree.
+Mew no tiene evolución.
+Mewtwo no tiene evolución.
+Mime Jr. evoluciona a Mr. Mime.
+Mr. Mime no tiene evolución.
+Muk no tiene evolución.
+Muk de Alola no tiene evolución.
+Nidoking no tiene evolución.
+Nidoran♀ evoluciona a Nidorina y a su vez a Nidoqueen.
+Nidoran♂ evoluciona a Nidorino y a su vez a Nidoking.
+Nidoqueen no tiene evolución.
+Nidorina evoluciona a Nidoqueen.
+Nidorino evoluciona a Nidoking.
+Ninetales no tiene evolución.
+Ninetales de Alola no tiene evolución.
+Oddish evoluciona a Gloom y a su vez a Vileplume y a Bellossom por Piedra solar.
+Omanyte evoluciona a Omastar.
+Omastar no tiene evolución.
+Onix evoluciona por intercambio equipado con Rev. metálico a Steelix.
+Paras evoluciona a Parasect.
+Parasect no tiene evolución.
+Persian no tiene evolución.
+Persian de Alola no tiene evolución.
+Pidgeot no tiene evolución.
+Pidgeotto evoluciona a Pidgeot.
+Pidgey evoluciona a Pidgeotto y a su vez a Pidgeot.
+Pikachu evoluciona a Raichu y a su vez a Raichu de Alola.
+Pichu evoluciona a Pikachu y a su vez a Raichu.
+Pidgey evoluciona a Pidgeotto y a su vez a Pidgeot.
+Pidgeotto evoluciona a Pidgeot.
+Pinsir no tiene evolución.
+Poliwrath no tiene evolución.
+Politoed no tiene evolución.
+Poliwag evoluciona a Poliwhirl y a su vez a Poliwrath y a Politoed por intercambio equipado con Roca del rey.
+Ponyta evoluciona a Rapidash.
+Primeape no tiene evolución.
+Psyduck evoluciona a Golduck.
+Raichu no tiene evolución.
+Raichu de Alola no tiene evolución.
+Rapidash no tiene evolución.
+Raticate no tiene evolución.
+Rattata evoluciona a Raticate.
+Rattata de Alola evoluciona a Raticate de Alola.
+Rhydon no tiene evolución.
+Rhyhorn evoluciona a Rhydon y a su vez a Rhyperior por intercambio equipado con Protector.
+Rhyperior no tiene evolución.
+Sandshrew evoluciona a Sandslash y a su vez a Sandslash de Alola.
+Sandslash no tiene evolución.
+Sandslash de Alola no tiene evolución.
+Scizor no tiene evolución.
+Scyther evoluciona por intercambio equipado con Rev. metálico a Scizor.
+Seadra evoluciona a Kingdra por intercambio equipado con Escama dragón.
+Seaking no tiene evolución.
+Seel evoluciona a Dewgong.
+Shellder evoluciona a Cloyster.
+Slowbro no tiene evolución.
+Slowking evoluciona por intercambio equipado con Roca del rey.
+Slowpoke evoluciona a Slowbro y a su vez a Slowking por intercambio equipado con Roca del rey.
+Smoochum evoluciona a Jynx.
+Sneasel no tiene evolución.
+Snorlax no tiene evolución.
+Spearow evoluciona a Fearow.
+Squirtle evoluciona a Wartortle y a su vez a Blastoise.
+Starmie no tiene evolución.
+Staryu evoluciona a Starmie por Piedra agua.
+Steelix no tiene evolución.
+Tangela evoluciona a Tangrowth.
+Tauros no tiene evolución.
+Tentacool evoluciona a Tentacruel.
+Tentacruel no tiene evolución.
+Tyrogue evoluciona a Hitmonlee, Hitmonchan, o Hitmontop dependiendo de las estadísticas de ataque y defensa.
+Umbreon no tiene evolución.
+Vaporeon no tiene evolución.
+Venonat evoluciona a Venomoth.
+Venusaur no tiene evolución.
+Victreebel no tiene evolución.
+Vileplume no tiene evolución.
+Voltorb evoluciona a Electrode.
+Vulpix evoluciona a Ninetales y a su vez a Ninetales de Alola.
+Wartortle evoluciona a Blastoise.
+Weepinbell evoluciona a Victreebel.
+Weezing no tiene evolución.
+Wigglytuff no tiene evolución.
+Zubat evoluciona a Golbat y a su vez a Crobat.
