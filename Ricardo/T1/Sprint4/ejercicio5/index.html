@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explorador de Películas</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f0f0f0; /* Fondo gris */
+      }
+
+      h1 {
+        color: purple; /* Texto morado */
+      }
+
+      label {
+        display: block;
+        margin: 20px 0 10px 0;
+      }
+
+      select,
+      input {
+        padding: 8px;
+        margin-bottom: 20px;
+      }
+
+      #resultados {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .pelicula {
+        border: 1px solid #ddd;
+        margin: 10px;
+        padding: 10px;
+        width: 300px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Explorador de Películas</h1>
+
+    <label for="keyword">Palabra clave:</label>
+    <input type="text" id="keyword" placeholder="Ej. Batman" />
+
+    <label for="genre">Género:</label>
+    <select id="genre">
+      <option value="">Todos los géneros</option>
+      <option value="28">Acción</option>
+      <option value="35">Comedia</option>
+      <option value="18">Drama</option>
+    </select>
+
+    <button onclick="buscarPeliculas()">Buscar</button>
+
+    <div>
+      <h2>Favoritos</h2>
+      <ul id="favoritos"></ul>
+    </div>
+
+    <div id="resultados"></div>
+
+    <script>
+      const apiKey = "933e67c48c6c85100f89537e1ec04f37"; // Reemplaza 'tu_api_key' con tu clave de API de TMDB
+
+      const favoritosDiv = document.getElementById("favoritos");
+
+      async function buscarPeliculas() {
+        const keyword = document.getElementById("keyword").value;
+        const genre = document.getElementById("genre").value;
+
+        try {
+          const response = await fetch(
+            `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${keyword}&with_genres=${genre}`
+          );
+          const data = await response.json();
+
+          mostrarResultados(data.results);
+        } catch (error) {
+          console.error(`Error al buscar películas: ${error}`);
+        }
+      }
+
+      function agregarFavorito(pelicula) {
+        const existente = Array.from(favoritosDiv.children).find(
+          (fav) => fav.dataset.id === pelicula.id.toString()
+        );
+
+        if (!existente) {
+          const favoritoLi = document.createElement("li");
+          favoritoLi.textContent = pelicula.title;
+          favoritoLi.dataset.id = pelicula.id;
+
+          const eliminarBtn = document.createElement("button");
+          eliminarBtn.textContent = "Eliminar";
+          eliminarBtn.onclick = () => eliminarFavorito(pelicula.id);
+
+          favoritoLi.appendChild(eliminarBtn);
+          favoritosDiv.appendChild(favoritoLi);
+        }
+      }
+
+      function eliminarFavorito(id) {
+        const favoritoLi = Array.from(favoritosDiv.children).find(
+          (fav) => fav.dataset.id === id.toString()
+        );
+
+        if (favoritoLi) {
+          favoritosDiv.removeChild(favoritoLi);
+        }
+      }
+
+      function mostrarResultados(peliculas) {
+        const resultadosDiv = document.getElementById("resultados");
+        resultadosDiv.innerHTML = "";
+
+        if (peliculas.length === 0) {
+          resultadosDiv.innerHTML = "<p>No se encontraron resultados.</p>";
+          return;
+        }
+
+        peliculas.forEach((pelicula) => {
+          const peliculaDiv = document.createElement("div");
+          peliculaDiv.classList.add("pelicula");
+
+          peliculaDiv.innerHTML = `
+            <h3>${pelicula.title} (${
+            pelicula.release_date
+              ? pelicula.release_date.slice(0, 4)
+              : "Desconocido"
+          })</h3>
+            <p>${pelicula.overview}</p>
+            <p>Puntuación: ${pelicula.vote_average}</p>
+            <button onclick="agregarFavorito(${JSON.stringify(pelicula)})">Añadir a favoritos</button>
+          `;
+
+          resultadosDiv.appendChild(peliculaDiv);
+        });
+      }
+    </script>
+  </body>
+</html>

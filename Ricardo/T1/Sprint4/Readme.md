@@ -108,11 +108,7 @@ Añadir al ejercicio 4 la capacidad de añadir/eliminar películas a una lista d
 
 ### Implementación ⚙️
 
-- **Ejercicio 5:** [Películas favoritas](/src/sprint2/ejercicio5)
-  ![GIF Ejercicio 5](URL_DEL_GIF)
+- **Ejercicio 5:** [Películas favoritas](/ejercicio5/index.html)
+<img src=C:\Users\emiom\Documents\2deProgramacion\Ricardo\T1\Sprint4\ejercicio5.gif/>
 
-## Formato de entrega
-
-- Cada ejercicio en HTML diferente en la carpeta SPRINT 4 del repositorio.
-- Vídeo en formato .gif para cada ejercicio interactivo en el README.md del repositorio en la carpeta del sprint correspondiente.
-- Captura de pantalla de los ejercicios estáticos en el README.md del repositorio en la carpeta del sprint correspondiente.
+[Plan de Pruebas](/Planpruebas.xlsx)
