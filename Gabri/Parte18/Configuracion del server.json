@@ -1,0 +1,56 @@
+{
+    "info": {
+      "_postman_id": "unique-identifier",
+      "name": "Users API",
+      "description": "API testing collection for Users",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Add User",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/users",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "users"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get Users",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/users",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "users"
+            ]
+          }
+        },
+        "response": []
+      }
+    ],
+    "protocolProfileBehavior": {
+      "disableBodyPruning": true
+    }
+  }
+  
