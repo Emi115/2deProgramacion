@@ -1,0 +1,20 @@
+{
+    // Versión de la configuración
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Tipo de configuración para ejecutar en Node.js
+            "type": "node",
+            // Tipo de solicitud: lanzar el programa
+            "request": "launch",
+            // Nombre de la configuración que aparecerá en Visual Studio Code
+            "name": "Launch Program",
+            // Archivos que se omitirán al depurar
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            // Programa que se ejecutará (en este caso, el archivo actual)
+            "program": "${file}"
+        }
+    ]
+}
