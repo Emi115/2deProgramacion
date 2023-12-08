@@ -5,41 +5,38 @@ const path = require('path');
 // Ruta a la carpeta donde se almacenan las notas
 const notasPath = path.join(__dirname, '..', 'notas');
 
-// Obtener todas las notas con sus contenidos
+// Obtener todas las notas (títulos solamente)
 const getNotas = (req, res) => {
   try {
-    const notas = fs.readdirSync(notasPath).map((nota) => {
-      const notaPath = path.join(notasPath, nota);
-      const contenido = fs.readFileSync(notaPath, 'utf-8');
-      return { titulo: nota, contenido };
-    });
+    const notas = fs.readdirSync(notasPath);
     res.json(notas);
   } catch (error) {
     res.status(500).send('Error al obtener las notas');
   }
 };
 
-// Crear una nueva nota
-const createNota = (req, res) => {
-  const { titulo, contenido } = req.body;
-  const notaPath = path.join(notasPath, `${titulo}.txt`);
+// Crear o actualizar una nota
+const createOrUpdateNota = (req, res) => {
+  const { titulo } = req.params;
+  const { contenido } = req.body;
+  const notaPath = path.join(notasPath, `${titulo}.html`);
 
   try {
     fs.writeFileSync(notaPath, contenido);
-    res.json({ mensaje: 'Nota creada exitosamente' });
+    res.json({ mensaje: 'Nota creada o actualizada exitosamente' });
   } catch (error) {
-    res.status(500).send('Error al crear la nota');
+    res.status(500).send('Error al crear o actualizar la nota');
   }
 };
 
 // Obtener el contenido de una nota por su título
 const getNotaById = (req, res) => {
   const { id } = req.params;
-  const notaPath = path.join(notasPath, `${id}`);
+  const notaPath = path.join(notasPath, `${id}.html`);
 
   try {
     const contenido = fs.readFileSync(notaPath, 'utf-8');
-    res.json({ titulo: id, contenido });
+    res.send(contenido);
   } catch (error) {
     res.status(404).send('Nota no encontrada');
   }
@@ -48,7 +45,7 @@ const getNotaById = (req, res) => {
 // Eliminar una nota por su título
 const deleteNota = (req, res) => {
   const { id } = req.params;
-  const notaPath = path.join(notasPath, `${id}`);
+  const notaPath = path.join(notasPath, `${id}.html`);
 
   try {
     fs.unlinkSync(notaPath);
@@ -60,7 +57,7 @@ const deleteNota = (req, res) => {
 
 module.exports = {
   getNotas,
-  createNota,
+  createOrUpdateNota,
   getNotaById,
   deleteNota,
 };

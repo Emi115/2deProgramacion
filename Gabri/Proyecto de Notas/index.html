@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notas</title>
+</head>
+<body>
+  <h1>Notas</h1>
+
+  <div>
+    <h2>Lista de Notas</h2>
+    <ul id="notas-list"></ul>
+  </div>
+
+  <div>
+    <h2>Editar Nota</h2>
+    <textarea id="nota-contenido" rows="4" cols="50"></textarea>
+    <button onclick="guardarNota()">Guardar</button>
+  </div>
+
+  <script>
+    // Función para cargar la lista de notas
+    async function cargarNotas() {
+      const response = await fetch('http://localhost:3000/api/notas');
+      const notas = await response.json();
+
+      const notasList = document.getElementById('notas-list');
+      notasList.innerHTML = '';
+
+      notas.forEach(nota => {
+        const listItem = document.createElement('li');
+        listItem.textContent = nota;
+        listItem.addEventListener('click', () => cargarNota(nota));
+        notasList.appendChild(listItem);
+      });
+    }
+
+    // Función para cargar una nota específica
+    async function cargarNota(nota) {
+      const response = await fetch(`http://localhost:3000/api/notas/${nota}`);
+      const contenido = await response.text();
+
+      const notaContenido = document.getElementById('nota-contenido');
+      notaContenido.value = contenido;
+    }
+
+    // Función para guardar una nota
+    async function guardarNota() {
+      const notaContenido = document.getElementById('nota-contenido').value;
+
+      // Obtén el título de la nota desde la lista (podrías tener una lista desplegable u otro método para seleccionar la nota)
+      const selectedItem = document.querySelector('#notas-list li.active');
+      if (!selectedItem) {
+        alert('Selecciona una nota antes de guardar.');
+        return;
+      }
+
+      const titulo = selectedItem.textContent;
+
+      // Realiza la solicitud POST para actualizar la nota
+      const response = await fetch(`http://localhost:3000/api/notas/${titulo}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ contenido: notaContenido }),
+      });
+
+      if (response.ok) {
+        alert('Nota actualizada correctamente.');
+      } else {
+        alert('Error al actualizar la nota.');
+      }
+    }
+
+    // Cargar notas al cargar la página
+    cargarNotas();
+  </script>
+</body>
+</html>

@@ -5,7 +5,7 @@ const notasController = require('../controllers/notasController');
 
 // Rutas para las notas
 router.get('/', notasController.getNotas);
-router.post('/', notasController.createNota);
+router.post('/:titulo', notasController.createOrUpdateNota);
 router.get('/:id', notasController.getNotaById);
 router.delete('/:id', notasController.deleteNota);
 
