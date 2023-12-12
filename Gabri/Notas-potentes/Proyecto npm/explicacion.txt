@@ -1,0 +1,13 @@
+Resumen de archivos
+src/controllers/index.js: Controlador para la ruta raíz ("/") que devuelve un mensaje de saludo.
+src/controllers/notas.js: Controladores para las operaciones CRUD de notas (recogerNotas, crearNota, editarNota, eliminarNota).
+src/loaders/express.js: Configuración e inicialización del servidor Express.
+src/loaders/index.js: Inicialización de la aplicación utilizando los módulos loaders.
+src/routes/index.js: Rutas principales de la aplicación, incluyendo la ruta raíz y las rutas de notas.
+src/routes/notas.js: Rutas específicas para las operaciones CRUD de notas.
+src/services/notas.js: Funciones de servicio para crear, editar y eliminar notas utilizando el sistema de archivos.
+src/utils/index.js: Exporta el módulo de registro (logger) para ser utilizado en otras partes de la aplicación.
+src/utils/logger.js: Configuración del logger utilizando la biblioteca Winston.
+src/app.js: Creación e inicialización de la instancia de la aplicación Express.
+src/config.js: Configuración de la aplicación, incluyendo el número de puerto y la configuración específica para las notas.
+src/index.js: Inicialización y ejecución del servidor Express.

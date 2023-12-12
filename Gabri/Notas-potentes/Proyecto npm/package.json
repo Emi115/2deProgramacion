@@ -1,0 +1,40 @@
+{
+  "type": "commonjs",
+  "name": "notas-potentes",
+  "version": "0.0.1",
+  "description": "Si",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "ava",
+    "@comment notas": "Atajamos la ejecución de notas entrando directamente a las opciones.",
+    "notas:crear": "node editorNotas.js 1",
+    "notas:editar": "node editorNotas.js 2",
+    "notas:eliminar": "node editorNotas.js 3",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ignore-path .gitignore ."
+  },
+  "author": "Sesar caesar",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^5.1.0",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-ava": "^13.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.10",
+    "nodemon": "^2.0.20"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.test.js"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "jest": "^29.3.1",
+    "sinon": "^15.0.1",
+    "winston": "^3.8.2"
+  }
+}
