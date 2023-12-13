@@ -1,14 +1,24 @@
-<!-- ejercicio4.html -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicio 4</title>
+  <title>Lista de Tareas</title>
 </head>
 <body>
-  <h1>Ejercicio 4</h1>
-  pulse f12 para ver la consola
+  <h1>Lista de Tareas</h1>
+  <form id="taskForm">
+    <label for="taskTitle">Título de la tarea:</label>
+    <input type="text" id="taskTitle" required>
+    <button type="button" onclick="addTask()">Añadir Tarea</button>
+  </form>
+
+  <h2>Todas las Tareas</h2>
+  <ul id="allTasks"></ul>
+
+  <h2>Tareas Importantes</h2>
+  <ul id="importantTasks"></ul>
+
   <script src="/JS/ejercicio4.js"></script>
 </body>
 </html>
