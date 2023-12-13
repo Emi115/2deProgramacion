@@ -1,10 +1,14 @@
-/* eslint-disable no-param-reassign */
-// Importamos el marco de pruebas 'ava' y la biblioteca 'sinon' para espiar funciones.
-// eslint-disable-next-line import/no-unresolved
+// Cambia la importación de 'ava' y 'sinon'
 import test from 'ava';
 import sinon from 'sinon';
+// a
+const test = require('ava');
+const sinon = require('sinon');
 
-// Importamos las funciones del servicio de notas que queremos probar.
+// Cambia la importación de las funciones del servicio de notas
+import { crearNota, editarNota, eliminarNota } from '../src/services/notas';
+// a
+const { crearNota, editarNota, eliminarNota } = require('../src/services/notas');
 const { crearNota, editarNota, eliminarNota } = require('../src/services/notas');
 
 // Configuramos espias (spies) para las funciones del servicio antes de cada prueba.
