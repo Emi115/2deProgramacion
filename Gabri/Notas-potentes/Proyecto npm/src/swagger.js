@@ -9,7 +9,7 @@ const options = {
       description: 'API para gestionar notas',
     },
   },
-  apis: ['./src/controllers/*.js'], // Rutas a los controladores de tu API
+  apis: ['./src/controllers/*.js'], // Rutas a los controladores de la API
 };
 
 const swaggerSpec = swaggerJSDoc(options);
