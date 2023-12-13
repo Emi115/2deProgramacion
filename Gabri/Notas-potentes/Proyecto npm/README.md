@@ -1,3 +1,6 @@
+# Video de explicación [Haz clic aquí](https://github.com/tu-usuario/tu-repositorio/raw/tu-rama/Camino/al/Archivo/Probando%20aplicacion13-12-2023.mkv)
+
+
 Notas potentes
 • Adaptar el proyecto de gestor de notas para que si le indicamos argumentos, acceda directamente a la opción seleccionada.
 • Añadir en el package.json unos scripts para atajar la ejecución de notas entrando directamente a las opciones.
