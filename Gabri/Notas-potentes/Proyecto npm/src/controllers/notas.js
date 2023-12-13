@@ -39,6 +39,16 @@ function recogerNotasPorFecha(req, res) {
   res.status(200).set('Content-Type', 'text/plain').send(nombresOrdenados);
   logger.info('OK - Notas mostradas ordenadas por fecha');
 }
+// filtrar notas
+function filtrarNotasPorTexto(req, res) {
+  const { texto } = req.query;
+  const files = fs.readdirSync('./files');
+  const notasFiltradas = files.filter(file => {
+    const contenido = fs.readFileSync(`./files/${file}`, 'utf-8');
+    return contenido.includes(texto);
+  });
+  res.status(200).send(notasFiltradas.join('\n'));
+}
 
 // Controlador para crear una nueva nota.
 function crearNota(req, res) {
@@ -87,4 +97,5 @@ module.exports = {
   crearNota,
   editarNota,
   eliminarNota,
+  filtrarNotasPorTexto,
 };

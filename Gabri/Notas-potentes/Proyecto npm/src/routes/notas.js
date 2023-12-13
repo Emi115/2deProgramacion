@@ -4,7 +4,8 @@ const express = require('express');
 
 // Importamos los controladores relacionados con las notas.
 const {
-  recogerNotas, crearNota, editarNota, eliminarNota,
+  // eslint-disable-next-line no-unused-vars
+  recogerNotas, recogerNotasPorFecha, crearNota, editarNota, eliminarNota, filtrarNotasPorTexto,
 } = require('../controllers/notas');
 
 // Creamos un enrutador de Express.
@@ -12,6 +13,8 @@ const router = express.Router();
 
 // Definimos una ruta para manejar solicitudes GET en la ruta principal ("/notas") utilizando el controlador recogerNotas.
 router.get('/', recogerNotas);
+// filtrar y buscar en las notas
+router.get('/filtrar', filtrarNotasPorTexto);
 
 // Definimos una ruta para manejar solicitudes POST en la ruta principal ("/notas") utilizando el controlador crearNota.
 router.post('/', crearNota);
