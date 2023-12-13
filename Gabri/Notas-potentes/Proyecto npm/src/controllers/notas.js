@@ -7,11 +7,37 @@ const { logger } = require('../utils');
 const notasService = require('../services/notas');
 
 // Controlador para obtener la lista de notas.
+
+// Controlador para obtener la lista de notas.
 function recogerNotas(req, res) {
-  // Leemos los archivos en el directorio de notas y los enviamos como respuesta.
-  const files = fs.readdirSync('./files');
-  res.status(200).send(files);
+  // Leemos los archivos en el directorio de notas y los ordenamos alfabéticamente.
+  const files = fs.readdirSync('./files').sort();
+  const notasList = files.join('\n'); // Convertimos el array de notas en un solo string con saltos de línea.
+  res.set('Content-Type', 'text/plain'); // Establecemos el tipo de contenido como texto plano.
+  res.status(200).send(notasList);
   logger.info('OK - Notas mostradas');
+}
+
+// Controlador para obtener la lista de notas ordenadas por fecha.
+function recogerNotasPorFecha(req, res) {
+  // Leemos los archivos en el directorio de notas.
+  const files = fs.readdirSync('./files');
+
+  // Obtenemos la información de fecha de creación de cada archivo y la almacenamos en un array de objetos.
+  const notasConFecha = files.map(file => {
+    const { ctime } = fs.statSync(`./files/${file}`);
+    return { file, ctime };
+  });
+
+  // Ordenamos el array de objetos por fecha de creación en orden ascendente.
+  const notasOrdenadasPorFecha = notasConFecha.sort((a, b) => a.ctime - b.ctime);
+
+  // Extraemos solo los nombres de archivo ordenados y los unimos en un solo string con saltos de línea.
+  const nombresOrdenados = notasOrdenadasPorFecha.map(nota => nota.file).join('\n');
+
+  // Enviamos la lista de notas ordenadas por fecha como respuesta.
+  res.status(200).set('Content-Type', 'text/plain').send(nombresOrdenados);
+  logger.info('OK - Notas mostradas ordenadas por fecha');
 }
 
 // Controlador para crear una nueva nota.
@@ -57,6 +83,7 @@ function eliminarNota(req, res) {
 // Exportamos los controladores para que puedan ser utilizados en otras partes de la aplicación.
 module.exports = {
   recogerNotas,
+  recogerNotasPorFecha,
   crearNota,
   editarNota,
   eliminarNota,

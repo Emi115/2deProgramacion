@@ -4,7 +4,8 @@ const express = require('express');
 
 // Importamos los controladores y el enrutador de notas.
 const { rootController } = require('../controllers');
-const { recogerNotas } = require('../controllers/notas');
+// Importamos los controladores relacionados con las notas.
+const { recogerNotas, recogerNotasPorFecha } = require('../controllers/notas');
 const notasRouter = require('./notas');
 
 // Creamos un enrutador de Express.
@@ -18,6 +19,9 @@ router.use('/notas', notasRouter);
 
 // Definimos una ruta para manejar solicitudes GET en "/notas" utilizando el controlador recogerNotas.
 router.get('/notas', recogerNotas);
+
+// Definimos una ruta para manejar solicitudes GET en la ruta "/notas_fecha" utilizando el controlador recogerNotasPorFecha.
+router.get('/notas_fecha', recogerNotasPorFecha);
 
 // Exportamos el enrutador para que pueda ser utilizado en otras partes de la aplicación.
 module.exports = router;
