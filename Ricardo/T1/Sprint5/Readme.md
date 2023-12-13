@@ -1,6 +1,7 @@
 ## Boletín de Ejercicios - Sprint 5
 
 ### Ejercicio 1: "Hola Mundo" en TypeScript
+<img src="ejercicio1.gif"/>
 
 **Objetivo:** Crear un programa simple que imprima "Hola Mundo" en la consola.
 
@@ -16,6 +17,7 @@
 - Quitar la exclamación “Hola Mundo” y verificar que transpila e imprime “Hola Mundo”.
 
 ### Ejercicio 2: Función con Tipos Básicos con Typescript
+<img src="ejercicio2.gif"/>
 
 **Objetivo:** Escribir una función que acepte un nombre (string) y una edad (number) y devuelva un saludo personalizado.
 
@@ -28,6 +30,7 @@
 - Hacer que se pida introducir un nombre y una edad, tras esto, tendría que salir un texto que indique “Hola! mi nombre es {{nombre}} y tengo {{edad}} años”.
 
 ### Ejercicio 3: Uso de Interfaces con Typescript
+<img src="ejercicio3.gif"/>
 
 **Objetivo:** Crear una interfaz para un objeto "Usuario" y utilizarla para crear un usuario.
 
@@ -40,6 +43,7 @@
 - Instanciar un array de 5 Usuarios e imprimir por consola la frase “Hola! soy el usuario {{nombre}}, tengo {{edad}} años y mi correo electrónico es {{correo electrónico}}” para cada usuario.
 
 ### Ejercicio 4: Manipulación de Arrays con Typescript
+<img src="ejercicio4.gif"/>
 
 **Objetivo:** Crear una aplicación simple que maneje una lista de tareas (to-do list) usando arrays en TypeScript.
 
@@ -56,6 +60,7 @@
 - Ver que aparece en la lista de “Importante” y en la de tareas normal.
 
 ### Ejercicio 5: Crear una Pokedex con PokeAPI con Typescript
+<img src="ejercicio5.gif"/>
 
 **Objetivo:** Construir una aplicación en TypeScript que utilice la PokeAPI para mostrar información de Pokémon.
 

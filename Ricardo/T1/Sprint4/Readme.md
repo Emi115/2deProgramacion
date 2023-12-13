@@ -25,7 +25,8 @@ Realizar una petición a la PokeAPI para obtener información básica de un Pok�
 ### Implementación ⚙️
 
 - **Ejercicio 1:** [Información Básica del Pokémon](/ejercicio1/index.html)
-<img src="C:\Users\emiom\Documents\2deProgramacion\Ricardo\T1\Sprint4\ejercicio1.gif"/>
+<img src="ejercicio1.gif"/>
+
 
 ## Ejercicio 2: Comparativa de Pokémon
 
@@ -38,7 +39,7 @@ Obtener datos de dos Pokémon elegidos por el usuario. Comparar sus estadística
 ### Implementación ⚙️
 
 - **Ejercicio 2:** [Comparativa de Pokémon](/ejercicio2/index.html)
-<img src="C:\Users\emiom\Documents\2deProgramacion\Ricardo\T1\Sprint4\ejercicio2.gif"/>
+<img src="ejercicio2.gif"/>
 
 ## Ejercicio 3: Evoluciones y Habilidades
 
@@ -58,7 +59,7 @@ Dado un Pokémon específico, buscar su cadena de evolución completa. Listar ca
 ### Implementación ⚙️
 
 - **Ejercicio 3:** [Evoluciones y Habilidades](/ejercicio3/index.html)
-  <img src="C:\Users\emiom\Documents\2deProgramacion\Ricardo\T1\Sprint4\ejercicio3.gif"/>
+  <img src="ejercicio3.gif"/>
 
 ## Ejercicio 4: Explorador de Películas
 
@@ -87,7 +88,7 @@ Implementar la paginación para los resultados para que los usuarios puedan nave
 
 - **Ejercicio 4:** [Explorador de Películas](/ejercicio4/index.html)
 
-  <img src="C:\Users\emiom\Documents\2deProgramacion\Ricardo\T1\Sprint4\ejercicio4.gif"/>
+  <img src="ejercicio4.gif"/>
 
 ## Ejercicio 5: Películas favoritas
 
@@ -109,6 +110,6 @@ Añadir al ejercicio 4 la capacidad de añadir/eliminar películas a una lista d
 ### Implementación ⚙️
 
 - **Ejercicio 5:** [Películas favoritas](/ejercicio5/index.html)
-<img src=C:\Users\emiom\Documents\2deProgramacion\Ricardo\T1\Sprint4\ejercicio5.gif/>
+<img src=ejercicio5.gif/>
 
 [Plan de Pruebas](/Planpruebas.xlsx)
