@@ -5,14 +5,14 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #808080; /* Fondo gris */
+    background-color: #525252; /* Fondo gris */
     color: rgb(0, 0, 0); /* Texto rojo */
   }
   
   .pokedex {
     width: 300px;
     height: 500px;
-    background-color: #ff0000;
+    background-color: #a80000;
     border-radius: 15px;
     padding: 20px;
     box-sizing: border-box;
