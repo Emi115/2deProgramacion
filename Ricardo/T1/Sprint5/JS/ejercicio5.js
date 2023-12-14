@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,38 +34,76 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var apiUrl = "https://pokeapi.co/api/v2/pokemon/";
-function buscarPokemon(nombreOId) {
+function searchPokemon() {
     return __awaiter(this, void 0, void 0, function () {
-        var response, pokemon, error_1;
+        var input, name, response, data, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(apiUrl).concat(nombreOId.toLowerCase()))];
+                    input = document.getElementById('pokemon-input');
+                    name = input.value.toLowerCase();
+                    _a.label = 1;
                 case 1:
+                    _a.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("https://pokeapi.co/api/v2/pokemon/".concat(name))];
+                case 2:
                     response = _a.sent();
                     return [4 /*yield*/, response.json()];
-                case 2:
-                    pokemon = _a.sent();
-                    // Imprimir información del Pokémon
-                    console.log("Nombre: ".concat(pokemon.name));
-                    console.log("ID: ".concat(pokemon.id));
-                    console.log("Tipos: ".concat(pokemon.types.join(", ")));
-                    console.log("Estad\u00EDsticas:");
-                    pokemon.stats.forEach(function (stat) { return console.log("".concat(stat.name, ": ").concat(stat.base_stat)); });
-                    console.log("Movimientos: ".concat(pokemon.moves.map(function (move) { return move.move.name; }).join(", ")));
-                    console.log("Evoluci\u00F3n: ".concat(pokemon.evolution_chain[0].species.name));
-                    return [3 /*break*/, 4];
                 case 3:
+                    data = _a.sent();
+                    displayPokemonInfo(data);
+                    return [3 /*break*/, 5];
+                case 4:
                     error_1 = _a.sent();
-                    console.error("Error al buscar el Pokémon:", error_1);
-                    return [3 /*break*/, 4];
-                case 4: return [2 /*return*/];
+                    displayError();
+                    return [3 /*break*/, 5];
+                case 5: return [2 /*return*/];
             }
         });
     });
 }
-// Prueba
-var nombrePokemon = prompt("Ingrese el nombre o ID del Pokémon:");
-buscarPokemon(nombrePokemon);
+function displayPokemonInfo(pokemon) {
+    var image = document.getElementById('pokemon-image');
+    image.src = pokemon.sprites.front_default;
+    image.alt = "Imagen de ".concat(pokemon.name);
+    var name = document.getElementById('pokemon-name');
+    name.textContent = "Nombre: ".concat(pokemon.name);
+    var type = document.getElementById('pokemon-type');
+    type.textContent = "Tipo: ".concat(pokemon.types.map(function (t) { return t.type.name; }).join(', '));
+    var statsList = document.getElementById('pokemon-stats-list');
+    statsList.innerHTML = '';
+    pokemon.stats.forEach(function (stat) {
+        var statItem = document.createElement('li');
+        statItem.textContent = "".concat(traducirStat(stat.stat.name), ": ").concat(stat.base_stat);
+        statsList.appendChild(statItem);
+    });
+    var movesSelect = document.getElementById('pokemon-moves-select');
+    movesSelect.innerHTML = '';
+    pokemon.moves.slice(0, 5).forEach(function (move) {
+        var moveOption = document.createElement('option');
+        moveOption.value = move.move.name;
+        moveOption.textContent = move.move.name;
+        movesSelect.appendChild(moveOption);
+    });
+}
+function displayError() {
+    // Aquí puedes agregar la lógica para mostrar un mensaje de error en la interfaz de usuario
+}
+function traducirStat(statName) {
+    switch (statName) {
+        case 'hp':
+            return 'PS';
+        case 'attack':
+            return 'Ataque';
+        case 'defense':
+            return 'Defensa';
+        case 'special-attack':
+            return 'Ataque Especial';
+        case 'special-defense':
+            return 'Defensa Especial';
+        case 'speed':
+            return 'Velocidad';
+        default:
+            return statName;
+    }
+}

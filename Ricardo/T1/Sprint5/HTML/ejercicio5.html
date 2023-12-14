@@ -1,14 +1,33 @@
-<!-- ejercicio5.html -->
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicio 5</title>
+    <title>Pokédex</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/stryles.css">
 </head>
 <body>
-  <h1>Ejercicio 5</h1>
-  pulse f12 para ver la consola
-  <script src="/JS/ejercicio5.js"></script>
+    <div class="pokedex">
+        <div class="search-container">
+            <input type="text" id="pokemon-input" placeholder="Ingresa el nombre o ID del Pokémon">
+            <button onclick="searchPokemon()">Buscar</button>
+        </div>
+        <div id="pokemon-display">
+            <div class="pokemon-info">
+                <img id="pokemon-image" src="" alt="Imagen del Pokémon">
+                <div>
+                    <h2 id="pokemon-name"></h2>
+                    <p id="pokemon-type"></p>
+                </div>
+            </div>
+            <div class="pokemon-details">
+                <ul id="pokemon-stats-list">
+                    <!-- Las estadísticas del Pokémon se añadirán aquí dinámicamente -->
+                </ul>
+                <select id="pokemon-moves-select">
+                    <!-- Los movimientos del Pokémon se añadirán aquí dinámicamente -->
+                </select>
+            </div>
+        </div>
+    </div>
+    <script src="/JS/ejercicio5.js"></script>
 </body>
 </html>
