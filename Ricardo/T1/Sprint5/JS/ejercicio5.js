@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 function searchPokemon() {
     return __awaiter(this, void 0, void 0, function () {
-        var input, name, response, data, error_1;
+        var input, name, response, data, evolutionResponse, evolutionData, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -44,7 +44,7 @@ function searchPokemon() {
                     name = input.value.toLowerCase();
                     _a.label = 1;
                 case 1:
-                    _a.trys.push([1, 4, , 5]);
+                    _a.trys.push([1, 6, , 7]);
                     return [4 /*yield*/, fetch("https://pokeapi.co/api/v2/pokemon/".concat(name))];
                 case 2:
                     response = _a.sent();
@@ -52,12 +52,19 @@ function searchPokemon() {
                 case 3:
                     data = _a.sent();
                     displayPokemonInfo(data);
-                    return [3 /*break*/, 5];
+                    return [4 /*yield*/, fetch("https://pokeapi.co/api/v2/pokemon-species/".concat(name))];
                 case 4:
+                    evolutionResponse = _a.sent();
+                    return [4 /*yield*/, evolutionResponse.json()];
+                case 5:
+                    evolutionData = _a.sent();
+                    displayPokemonEvolution(evolutionData);
+                    return [3 /*break*/, 7];
+                case 6:
                     error_1 = _a.sent();
                     displayError();
-                    return [3 /*break*/, 5];
-                case 5: return [2 /*return*/];
+                    return [3 /*break*/, 7];
+                case 7: return [2 /*return*/];
             }
         });
     });
@@ -77,33 +84,39 @@ function displayPokemonInfo(pokemon) {
         statItem.textContent = "".concat(traducirStat(stat.stat.name), ": ").concat(stat.base_stat);
         statsList.appendChild(statItem);
     });
-    var movesSelect = document.getElementById('pokemon-moves-select');
-    movesSelect.innerHTML = '';
-    pokemon.moves.slice(0, 5).forEach(function (move) {
-        var moveOption = document.createElement('option');
-        moveOption.value = move.move.name;
-        moveOption.textContent = move.move.name;
-        movesSelect.appendChild(moveOption);
+    var movesDiv = document.getElementById('pokemon-moves');
+    movesDiv.innerHTML = '';
+    pokemon.moves.slice(0, 4).forEach(function (move) {
+        var moveItem = document.createElement('p');
+        moveItem.textContent = move.move.name;
+        movesDiv.appendChild(moveItem);
     });
+}
+function displayPokemonEvolution(pokemonSpecies) {
+    var evolutionDiv = document.getElementById('pokemon-evolution');
+    evolutionDiv.innerHTML = '';
+    if (pokemonSpecies.evolves_from_species) {
+        var evolutionItem = document.createElement('p');
+        evolutionItem.textContent = "Evoluciona de: ".concat(pokemonSpecies.evolves_from_species.name);
+        evolutionDiv.appendChild(evolutionItem);
+    }
+    else {
+        var evolutionItem = document.createElement('p');
+        evolutionItem.textContent = 'No evoluciona de ningún otro Pokémon';
+        evolutionDiv.appendChild(evolutionItem);
+    }
 }
 function displayError() {
     // Aquí puedes agregar la lógica para mostrar un mensaje de error en la interfaz de usuario
 }
 function traducirStat(statName) {
     switch (statName) {
-        case 'hp':
-            return 'PS';
-        case 'attack':
-            return 'Ataque';
-        case 'defense':
-            return 'Defensa';
-        case 'special-attack':
-            return 'Ataque Especial';
-        case 'special-defense':
-            return 'Defensa Especial';
-        case 'speed':
-            return 'Velocidad';
-        default:
-            return statName;
+        case 'hp': return 'PS';
+        case 'attack': return 'Ataque';
+        case 'defense': return 'Defensa';
+        case 'special-attack': return 'Ataque Especial';
+        case 'special-defense': return 'Defensa Especial';
+        case 'speed': return 'Velocidad';
+        default: return statName;
     }
 }

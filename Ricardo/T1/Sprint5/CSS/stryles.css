@@ -5,45 +5,48 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f00;
-    color: #fff;
-}
-
-.pokedex {
+    background-color: #808080; /* Fondo gris */
+    color: rgb(0, 0, 0); /* Texto rojo */
+  }
+  
+  .pokedex {
     width: 300px;
     height: 500px;
-    background-color: #000;
+    background-color: #ff0000;
     border-radius: 15px;
     padding: 20px;
     box-sizing: border-box;
-}
-
-.search-container {
+    border: 5px solid #000; /* Borde negro */
+  }
+  
+  .search-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#pokemon-input {
+  }
+  
+  #pokemon-input {
     margin-bottom: 10px;
-}
-
-.pokemon-info {
+    border-radius: 5px; /* Radio del borde */
+  }
+  
+  .pokemon-info {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.pokemon-details {
+  }
+  
+  .pokemon-details {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#pokemon-moves {
-    display: none;
-}
-
-#pokemon-moves-select {
-    display: block;
-}
+  }
+  
+  #pokemon-moves {
+    display: block; /* Muestra los movimientos */
+  }
+  
+  #pokemon-evolution {
+    display: block; /* Muestra la evolución */
+  }
+  
