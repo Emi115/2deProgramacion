@@ -1,0 +1,121 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0f2027;
+  background: linear-gradient(
+    to bottom,
+    #f5d7db,
+    #f1916d,
+    #bd83b8,
+    #473e66,
+    #1b3358,
+    #06142e
+  );
+  overflow: hidden;
+  position: relative; /* Agregado: Posición relativa para que los elementos absolutos se posicionen respecto a este */
+}
+
+/* Estilos para el contenedor del carrusel de imágenes */
+.carrusel {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: slid 40s linear infinite;
+  z-index: 1; /* Agregado: Asegura que el carrusel esté en la capa superior */
+}
+
+/* Estilos para cada elemento (imagen) del carrusel */
+.carrusel span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+}
+
+/* Estilos para las imágenes dentro de cada elemento del carrusel */
+.carrusel span img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: 1.5s;
+  user-select: none;
+  /*pointer-events: none;*/
+  filter: brightness(100%) saturate(100%); /* Ajustado: Máxima calidad de imagen */
+}
+
+/* Efecto de escala y translación en la imagen al pasar el ratón por encima */
+.carrusel span:hover img {
+  transform: translateY(-20px) scale(1.2);
+}
+
+/* Animación para rotar el carrusel en 360 grados */
+@keyframes slid {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+/* Estilos para el título */
+#Texto1 {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff; /* Color blanco por defecto */
+  font-size: 30px;
+  z-index: 2;
+  padding: 5px;
+  font-family: "Arial", sans-serif;
+  transition: color 0.3s, font-size 0.3s;
+  text-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+}
+
+/* Efecto de animación al hacer hover */
+#Texto1:hover {
+  color: #1b3358; /* Cambiado: Color azul al hacer hover */
+  font-size: 36px;
+  text-shadow: 0 0 20px rgba(0, 0, 255, 0.9);
+}
+button {
+  margin-top: 20px; /* Ajustado: Agregado espacio entre el texto y el botón */
+}
+
+/* Estilos para el botón */
+button {
+  position: absolute;
+  top: 800px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff; /* Color blanco por defecto */
+  font-size: 30px;
+  z-index: 2;
+  padding: 5px;
+  font-family: "Arial", sans-serif;
+  transition: color 0.3s, font-size 0.3s;
+  text-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+}
+
+/* Efecto de hover para el botón */
+button:hover {
+  color: #1b3358; /* Cambiado: Color azul al hacer hover */
+  font-size: 36px;
+  text-shadow: 0 0 20px rgba(0, 0, 255, 0.9);
+}
