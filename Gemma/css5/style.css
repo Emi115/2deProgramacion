@@ -1,0 +1,30 @@
+/* Estado normal */
+a {
+    color: red;
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Estado hover (cursor sobre el enlace) */
+a:hover {
+    color: white;
+    background-color: red;
+    text-decoration: underline; /* Subrayado */
+}
+
+/* Estado activo */
+a:active {
+    color: orange;
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Estado visitado */
+a:visited {
+    color: darkgreen;
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Estado de foco (teclado) */
+a:focus {
+    color: blue;
+    text-decoration: underline; /* Subrayado */
+}

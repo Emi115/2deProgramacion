@@ -1,0 +1,53 @@
+/* Estilos para las columnas */
+td:nth-child(1) {
+    background-color: #FFF; /* Blanco */
+    border: 1px solid #000; /* Borde negro */
+}
+
+td:nth-child(2) {
+    background-color: #FF0000; /* Rojo */
+    border: 1px solid #000; /* Borde negro */
+}
+
+td:nth-child(3) {
+    background-color: green; /* Verde */
+    border: 1px solid #000; /* Borde negro */
+}
+
+td:nth-child(4) {
+    background-color: #0000FF; /* Azul */
+    border: 1px solid #000; /* Borde negro */
+}
+
+/* Estilos para los textos en las filas */
+tr:nth-child(1) td {
+    color: teal;
+}
+
+tr:nth-child(2) td {
+    color: red;
+}
+
+tr:nth-child(3) td {
+    color: blue;
+}
+
+tr:nth-child(4) td {
+    color: orange;
+}
+
+tr:nth-child(5) td {
+    color: purple;
+}
+
+tr:nth-child(6) td {
+    color: olive;
+}
+
+tr:nth-child(7) td {
+    color: fuchsia;
+}
+
+tr:nth-child(8) td {
+    color: green;
+}

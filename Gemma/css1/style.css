@@ -1,0 +1,46 @@
+/* Estilos para el texto principal */
+body {
+    color: #00F;
+    background-color: #CCFFCC; /* Cambiado a #CCFFCC */
+    font-family: Georgia, Cambria, serif;
+    font-size: 16px;
+}
+
+/* Estilos para el encabezado de nivel 1 */
+h1 {
+    color: #F00;
+    font-family: Verdana, Calibri, sans-serif;
+    font-size: 32px;
+}
+
+/* Estilos para el encabezado de nivel 2 */
+h2 {
+    color: #A00;
+    font-family: Verdana, Calibri, sans-serif;
+    font-size: 24px;
+}
+
+
+
+/* Estilos para "Internet" y la "Web" */
+.strong {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Estilos para "Hypertext Markup Language", "Cascading Style Sheets", HTML y CSS */
+span {
+    color: #FFF;
+    background-color: #000;
+    font-style: italic;
+}
+
+/* Estilos específicos para la lista y palabras clave */
+.book-info {
+    color: #060; /* Verde para las palabras clave */
+}
+
+/* Estilo específico para las listas */
+ul {
+    color: #00F; /* Azul para las listas */
+}
