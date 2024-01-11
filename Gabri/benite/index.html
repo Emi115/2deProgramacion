@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Escalar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    input {
+      padding: 8px;
+      margin: 5px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: rgb(29, 35, 29);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Calculadora de Escalar</h2>
+
+  <label for="numeroA">Número A:</label>
+  <input type="number" id="numeroA">
+
+  <br>
+
+  <label for="numeroB">Número B:</label>
+  <input type="number" id="numeroB">
+
+  <br>
+
+  <button onclick="calcularEscalar()">Calcular Escalar</button>
+
+  <br>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcularEscalar() {
+      var numeroA = parseFloat(document.getElementById("numeroA").value);
+      var numeroB = parseFloat(document.getElementById("numeroB").value);
+
+      if (isNaN(numeroA) || isNaN(numeroB)) {
+        alert("Por favor, ingresa números válidos");
+        return;
+      }
+
+      var escalar = Math.sqrt(numeroA ** 2 + numeroB ** 2);
+
+      document.getElementById("resultado").innerHTML = "El escalar es: " + escalar;
+    }
+  </script>
+
+</body>
+</html>
