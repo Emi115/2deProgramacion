@@ -3,9 +3,9 @@ import React from 'react';
 import MyApp from './Myapp'; // Asegúrate de que la ruta y mayúsculas sean correctas
 function App() {
   return (
-    <div>
+
       <MyApp />
-    </div>
+
   );
 }
 

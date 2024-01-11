@@ -8,17 +8,9 @@ body {
   align-items: center;
   height: 100vh;
   background: #0f2027;
-  background: linear-gradient(
-    to bottom,
-    #f5d7db,
-    #f1916d,
-    #bd83b8,
-    #473e66,
-    #1b3358,
-    #06142e
-  );
+  background: linear-gradient( to bottom, #f5d7db, #f1916d, #bd83b8, #473e66, #1b3358, #06142e );
   overflow: hidden;
-  position: relative; /* Agregado: Posición relativa para que los elementos absolutos se posicionen respecto a este */
+  position: relative;
 }
 
 /* Estilos para el contenedor del carrusel de imágenes */
@@ -54,7 +46,6 @@ body {
   object-fit: cover;
   transition: 1.5s;
   user-select: none;
-  /*pointer-events: none;*/
   filter: brightness(100%) saturate(100%); /* Ajustado: Máxima calidad de imagen */
 }
 
@@ -73,13 +64,14 @@ body {
   }
 }
 
+
 /* Estilos para el título */
 #Texto1 {
   position: absolute;
   top: 80px;
   left: 50%;
   transform: translateX(-50%);
-  color: #ffffff; /* Color blanco por defecto */
+  color: #ffffff;
   font-size: 30px;
   z-index: 2;
   padding: 5px;
@@ -90,12 +82,9 @@ body {
 
 /* Efecto de animación al hacer hover */
 #Texto1:hover {
-  color: #1b3358; /* Cambiado: Color azul al hacer hover */
+  color: #1b3358;
   font-size: 36px;
   text-shadow: 0 0 20px rgba(0, 0, 255, 0.9);
-}
-button {
-  margin-top: 20px; /* Ajustado: Agregado espacio entre el texto y el botón */
 }
 
 /* Estilos para el botón */
@@ -104,7 +93,7 @@ button {
   top: 800px;
   left: 50%;
   transform: translateX(-50%);
-  color: #ffffff; /* Color blanco por defecto */
+  color: #ffffff;
   font-size: 30px;
   z-index: 2;
   padding: 5px;
@@ -115,7 +104,7 @@ button {
 
 /* Efecto de hover para el botón */
 button:hover {
-  color: #1b3358; /* Cambiado: Color azul al hacer hover */
+  color: #1b3358;
   font-size: 36px;
   text-shadow: 0 0 20px rgba(0, 0, 255, 0.9);
 }
