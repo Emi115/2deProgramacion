@@ -1,0 +1,179 @@
+\Swapi\src\app.js: const express = require('express');
+const swapiRoutes = require('./routes/swapiRoutes');
+
+const app = express();
+
+app.set('view engine', 'ejs');
+app.set('views', './src/views');
+
+app.use('/swapi', swapiRoutes);
+
+// Ruta principal para ir a la vista directamente
+app.get('/', (req, res) => {
+  res.redirect('/swapi/personajes');
+});
+
+module.exports = app;
+
+\Swapi\src\index.js:const app = require('./app');
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+
+\Swapi\src\controllers\swapiController.js:const swapiService = require('../services/swapiService');
+
+exports.getPersonajes = async (req, res) => {
+  try {
+    const personajes = await swapiService.obtenerPersonajes();
+    res.render('personajes', { personajes });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+// ...código existente...
+
+exports.buscarPersonaje = async (req, res) => {
+    try {
+        const nombre = req.query.nombre;
+        const personajes = await swapiService.buscarPersonajePorNombre(nombre);
+        res.render('personajes', { personajes });
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+};
+
+
+\Swapi\src\routes\swapiRoutes.js:const express = require('express');
+const swapiController = require('../controllers/swapiController');
+
+const router = express.Router();
+
+router.get('/personajes', swapiController.getPersonajes);
+
+module.exports = router;
+// ...código existente...
+
+router.get('/buscar', swapiController.buscarPersonaje);
+
+module.exports = router;
+
+
+\Swapi\src\services\swapiService.js:const axios = require('axios');
+const apiUrl = 'https://swapi.dev/api';
+
+// Función auxiliar para obtener los nombres de una lista de URLs
+async function obtenerNombresPorUrls(urls) {
+    const promesas = urls.map(url => axios.get(url).then(resp => resp.data.name));
+    return Promise.all(promesas);
+}
+
+// Función para buscar personajes por nombre
+exports.buscarPersonajePorNombre = async (nombre) => {
+    const url = `${apiUrl}/people/?search=${encodeURIComponent(nombre)}`;
+    const respuesta = await axios.get(url);
+    const personajes = respuesta.data.results;
+
+    // Procesar cada personaje para obtener detalles adicionales
+    for (const personaje of personajes) {
+        // Verificar y obtener los nombres de las naves espaciales y vehículos
+        personaje.starshipNames = personaje.starships && personaje.starships.length > 0 
+            ? await obtenerNombresPorUrls(personaje.starships) 
+            : [];
+        personaje.vehicleNames = personaje.vehicles && personaje.vehicles.length > 0 
+            ? await obtenerNombresPorUrls(personaje.vehicles) 
+            : [];
+    }
+
+    return personajes;
+};
+// Función para obtener todos los personajes
+exports.obtenerPersonajes = async () => {
+    try {
+        const respuesta = await axios.get(`${apiUrl}/people`);
+        const personajes = respuesta.data.results;
+
+        // Similar al proceso realizado en buscarPersonajePorNombre
+        for (const personaje of personajes) {
+            personaje.starshipNames = personaje.starships && personaje.starships.length > 0 
+                ? await obtenerNombresPorUrls(personaje.starships) 
+                : [];
+            personaje.vehicleNames = personaje.vehicles && personaje.vehicles.length > 0 
+                ? await obtenerNombresPorUrls(personaje.vehicles) 
+                : [];
+        }
+
+        return personajes;
+    } catch (error) {
+        console.error('Error al obtener personajes:', error);
+        throw error;
+    }
+};
+
+
+\Swapi\src\views\personajes.ejs:<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Personajes de Star Wars</title>
+</head>
+<body>
+    <h1>Buscar Personaje de Star Wars</h1>
+    <form action="/swapi/buscar" method="get">
+        <input type="text" name="nombre" placeholder="Escribe el nombre del personaje">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <h2>Resultados:</h2>
+    <% personajes.forEach(personaje => { %>
+        <div>
+            <h3><%= personaje.name %></h3>
+            <p>Altura: <%= personaje.height %> cm</p>
+            <p>Peso: <%= personaje.mass %> kg</p>
+            <p>Color de pelo: <%= personaje.hair_color %></p>
+            <!-- ... otros detalles del personaje ... -->
+
+            <% if (personaje.vehicleNames && personaje.vehicleNames.length > 0) { %>
+                <h4>Vehículos:</h4>
+                <ul>
+                    <% personaje.vehicleNames.forEach(vehicleName => { %>
+                        <li><%= vehicleName %></li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No se encontraron vehículos.</p>
+            <% } %>
+
+            <% if (personaje.starshipNames && personaje.starshipNames.length > 0) { %>
+                <h4>Naves espaciales:</h4>
+                <ul>
+                    <% personaje.starshipNames.forEach(starshipName => { %>
+                        <li><%= starshipName %></li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No se encontraron naves espaciales.</p>
+            <% } %>
+        </div>
+    <% }); %>
+</body>
+</html>
+
+\Swapi\src\views\style.css:body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+select, button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+}

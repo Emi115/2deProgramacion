@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Personajes de Star Wars</title>
+</head>
+<body>
+    <h1>Buscar Personaje de Star Wars</h1>
+    <form action="/swapi/buscar" method="get">
+        <input type="text" name="nombre" placeholder="Escribe el nombre del personaje">
+        <button type="submit">Buscar</button>
+    </form>
+    <h2>Resultados:</h2>
+    <% personajes.forEach(personaje => { %>
+        <div>
+            <h3><%= personaje.name %></h3>
+            <p>Altura: <%= personaje.height %> cm</p>
+            <p>Peso: <%= personaje.mass %> kg</p>
+            <p>Color de pelo: <%= personaje.hair_color %></p>
+            <% if (personaje.vehicleNames && personaje.vehicleNames.length > 0) { %>
+                <h4>Vehículos:</h4>
+                <ul>
+                    <% personaje.vehicleNames.forEach(vehicleName => { %>
+                        <li><%= vehicleName %></li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No se encontraron vehículos.</p>
+            <% } %>
+            <% if (personaje.starshipNames && personaje.starshipNames.length > 0) { %>
+                <h4>Naves espaciales:</h4>
+                <ul>
+                    <% personaje.starshipNames.forEach(starshipName => { %>
+                        <li><%= starshipName %></li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No se encontraron naves espaciales.</p>
+            <% } %>
+        </div>
+    <% }); %>
+</body>
+</html>
