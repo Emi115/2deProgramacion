@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/7779c009-f8cd-48e2-8ef1-f8be5dcd6a04/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/ZudaderasEmi115",
+    "appService.deploySubpath": "build"
+}

@@ -3,7 +3,7 @@ const swapiController = require('../controllers/swapiController');
 
 const router = express.Router();
 
-// Define a route to get data from SWAPI
+// Define una ruta para obtener datos de SWAPI
 router.get('/:endpoint', swapiController.getData);
 
 module.exports = router;
