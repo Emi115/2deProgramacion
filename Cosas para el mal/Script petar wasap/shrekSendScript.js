@@ -1,27 +1,42 @@
-async function enviarScript(scriptText){
+async function enviarScript(scriptText) {
+	// Dividir el texto del script en líneas y eliminar líneas vacías
 	const lines = scriptText.split(/[\n\t]+/).map(line => line.trim()).filter(line => line);
-	main = document.querySelector("#main"),
-	textarea = main.querySelector(`div[contenteditable="true"]`)
-	
-	if(!textarea) throw new Error("Não há uma conversa aberta")
-	
-	for(const line of lines){
-		console.log(line)
-	
-		textarea.focus();
-		document.execCommand('insertText', false, line);
-		textarea.dispatchEvent(new Event('change', {bubbles: true}));
-	
-		setTimeout(() => {
-			(main.querySelector(`[data-testid="send"]`) || main.querySelector(`[data-icon="send"]`)).click();
-		}, 100);
-		
-		if(lines.indexOf(line) !== lines.length - 1) await new Promise(resolve => setTimeout(resolve, 250));
+	// Obtener el elemento principal y el área de texto editable
+	const main = document.querySelector("#main");
+	const textarea = main.querySelector(`div[contenteditable="true"]`);
+  
+	// Verificar si hay una conversación abierta
+	if (!textarea) {
+	  throw new Error("No hay una conversación abierta");
 	}
-	
+  
+	// Iterar sobre cada línea del script
+	for (const line of lines) {
+	  console.log(line);
+  
+	  // Enfocar el área de texto editable
+	  textarea.focus();
+	  // Insertar el texto de la línea actual en el área de texto
+	  document.execCommand('insertText', false, line);
+	  // Despachar un evento de cambio en el área de texto
+	  textarea.dispatchEvent(new Event('change', { bubbles: true }));
+  
+	  // Esperar un breve período de tiempo antes de hacer clic en el botón de enviar
+	  setTimeout(() => {
+		(main.querySelector(`[data-testid="send"]`) || main.querySelector(`[data-icon="send"]`)).click();
+	  }, 100);
+  
+	  // Si no es la última línea, esperar 250 ms antes de continuar con la siguiente línea
+	  if (lines.indexOf(line) !== lines.length - 1) {
+		await new Promise(resolve => setTimeout(resolve, 250));
+	  }
+	}
+  
+	// Devolver la cantidad de líneas enviadas
 	return lines.length;
-}
-
+  }
+  
+  // Llamar a la función enviarScript con el script proporcionado
 enviarScript(`
 Juan Tornay: Un Hombre de Extraordinario Talento y Carácter Inspirador
 
@@ -68,18 +83,4 @@ El liderazgo de Juan Tornay en el campo de la conservación no se limitó a su t
 A. Colaboraciones Internacionales
 
 Juan Tornay colaboró con científicos y organizaciones de todo el mundo para abordar los desafíos globales relacionados con la conservación. Sus esfuerzos en la creación de redes de trabajo permitieron la transferencia de conocimientos y la implementación de estrategias efectivas de conservación en diversos lugares del planeta.
-
-B. Defensa de Políticas Ambientales
-
-El compromiso de Juan con la conservación lo llevó a involucrarse activamente en la promoción de políticas ambientales sólidas a nivel local y nacional. Trabajó incansablemente para abogar por la protección de áreas naturales, la regulación de actividades perjudiciales para el medio ambiente y la promoción de prácticas sostenibles.
-
-Su capacidad para conectar con líderes políticos y convencerlos de la importancia de la conservación lo convirtió en una figura influyente en la formulación de políticas ambientales.
-
-IV. Impacto en la Sociedad
-
-El legado de Juan Tornay se extiende mucho más allá de sus logros en la ciencia y la conservación. Su influencia en la sociedad es evidente en la forma en que ha inspirado a las personas a cuidar del medio ambiente y a trabajar juntas para un futuro sostenible.
-
-A. Inspiración para las Generaciones Futuras
-
-El compromiso y la pasión de Juan Tornay por la conservación
 `).then(e => console.log(`Código finalizado, ${e} mensagens enviadas`)).catch(console.error)
