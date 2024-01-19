@@ -6,38 +6,3 @@ node_modules/
 
 # Ignorar archivos RAR a cualquier nivel de profundidad
 **/*.rar
-
-# Ignorar directorios de construcción o compilación
-build/
-dist/
-out/
-target/
-
-# Ignorar archivos de configuración locales
-.env
-.env.local
-.env.development
-.env.test
-.env.production
-.env.local.php
-
-# Ignorar archivos de clase compilados
-*.class
-
-# Ignorar archivos de respaldo generados por editores
-*~
-*.bak
-
-# Ignorar archivos y directorios específicos de lenguajes o marcos
-# Agrega aquí cualquier archivo o carpeta relacionada con tu lenguaje o marco específico
-
-# Ignorar archivos de registro y caché de aplicaciones
-*.log
-*.cache
-*.sqlite
-
-# Ignorar archivos de respaldo generados por sistemas operativos
-#.DS_Store
-
-# Ignorar archivos de dependencias específicos
-#/vendor/

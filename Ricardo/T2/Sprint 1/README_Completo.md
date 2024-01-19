@@ -18,8 +18,8 @@ Los ejercicios propuestos en este boletín se enfocan en la aplicación de conce
 
 ### Implementación ⚙️
 
-[Codigo del ejercicio 1](/src/Components/HolaMundo.js)
-<img src="/videos/Ejercicio1.gif"/>
+[Codigo del ejercicio 1](/reactricardo/src/Components/HolaMundo.js)
+<img src="/reactricardo//videos/Ejercicio1.gif"/>
 
 ### Pruebas
 
@@ -36,9 +36,9 @@ Hacer que ponga “Hola Mundo!” ver que se renderiza y que el componente funci
 
 ### Implementación ⚙️
 
-[Codigo del ejercicio 2](/src/Components/listaFruta.js)
+[Codigo del ejercicio 2](/reactricardo/src/Components/listaFruta.js)
 
-<img src="/videos/Ejercicio2.gif"/>
+<img src="/reactricardo/videos/Ejercicio2.gif"/>
 
 ### Pruebas
 
@@ -56,9 +56,9 @@ Hacer que aparezca la `ListaDeFrutas` y que se acepte un array de frutas y que s
 
 ### Implementación ⚙️
 
-[Codigo del ejercicio 3](/src/Components/contadorClicks.js)
+[Codigo del ejercicio 3](/reactricardo/src/Components/contadorClicks.js)
 
-<img src="/videos/Ejercicio3.gif"/>
+<img src="/reactricardo//videos/Ejercicio3.gif"/>
 
 ### Pruebas
 
@@ -77,9 +77,9 @@ Descargar un autoclicker y usarlo para que se registren muchos clicks para una d
 
 ### Implementación ⚙️
 
-[Codigo del ejercicio 4](/src/Components/Tareas.js)
+[Codigo del ejercicio 4](/reactricardo/src/Components/Tareas.js)
 
-<img src="/videos/Ejercicio4.gif"/>
+<img src="/reactricardo//videos/Ejercicio4.gif"/>
 
 ### Pruebas
 
@@ -103,9 +103,9 @@ Haz una prueba para añadir un par de tareas, otra prueba para completar una tar
 
 ### Implementación ⚙️
 
-[Codigo del ejercicio 5](/src/Components/TareasComplejas.js)
+[Codigo del ejercicio 5](/reactricardo/src/Components/TareasComplejas.js)
 
-<img src="/videos/Ejercicio5.gif"/>
+<img src="/reactricardo//videos/Ejercicio5.gif"/>
 
 ### Pruebas
 
