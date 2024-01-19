@@ -58,7 +58,7 @@ Hacer que aparezca la `ListaDeFrutas` y que se acepte un array de frutas y que s
 
 [Codigo del ejercicio 3](/reactricardo/src/Components/contadorClicks.js)
 
-<img src="/reactricardo//videos/Ejercicio3.gif"/>
+<img src="reactricardo\videos\Ejercicio3.gif"/>
 
 ### Pruebas
 
