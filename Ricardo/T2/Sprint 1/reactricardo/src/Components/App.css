@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+.listaSinPuntos {
+  list-style-type: none; /* Elimina los puntos */
+  padding: 0; /* Elimina el padding predeterminado, opcional */
+}
+
+.texto-tachado {
+  text-decoration: line-through;
+}
