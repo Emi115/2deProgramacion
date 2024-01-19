@@ -1,6 +1,6 @@
 # Boletín de Ejercicios - T2 Sprint 1
 
-## Análisis 
+## Análisis
 
 Los ejercicios propuestos en este boletín se enfocan en la aplicación de conceptos fundamentales de React, como componentes funcionales, props, estado y manejo de eventos. Cada ejercicio plantea un escenario distinto que permite explorar y reforzar estos conceptos a través de la implementación de componentes sencillos pero representativos de situaciones reales en el desarrollo de aplicaciones web.
 
@@ -18,7 +18,7 @@ Los ejercicios propuestos en este boletín se enfocan en la aplicación de conce
 
 ### Implementación ⚙️
 
-[Codigo del ejercicio 1](/reactricardo/src/Components/HolaMundo.js)
+[Codigo del ejercicio 1](reactricardo/src/Components/HolaMundo.js)
 <img src="reactricardo//videos/Ejercicio1.gif"/>
 
 ### Pruebas
@@ -36,7 +36,7 @@ Hacer que ponga “Hola Mundo!” ver que se renderiza y que el componente funci
 
 ### Implementación ⚙️
 
-[Codigo del ejercicio 2](/reactricardo/src/Components/listaFruta.js)
+[Codigo del ejercicio 2](reactricardo/src/Components/listaFruta.js)
 
 <img src="reactricardo/videos/Ejercicio2.gif"/>
 
@@ -77,7 +77,7 @@ Descargar un autoclicker y usarlo para que se registren muchos clicks para una d
 
 ### Implementación ⚙️
 
-[Codigo del ejercicio 4](/reactricardo/src/Components/Tareas.js)
+[Codigo del ejercicio 4](reactricardo/src/Components/Tareas.js)
 
 <img src="reactricardo//videos/Ejercicio4.gif"/>
 
