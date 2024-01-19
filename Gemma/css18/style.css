@@ -1,0 +1,20 @@
+/* Aumenta el tamaño de la primera letra de los encabezados h2 */
+h2::first-letter {
+  font-size: 2em; /* Ajusta el tamaño según sea necesario */
+}
+
+/* Añade un sangrado en la primera línea del primer párrafo siguiente a cada encabezado h2 */
+h2 + p::first-line {
+  text-indent: 2em;
+}
+
+/* Añade una flecha antes de cada enlace */
+a::before {
+  content: '→ ';
+  padding-right: 0.5em; /* Ajusta el espacio según sea necesario */
+}
+
+/* Muestra el título de la abreviatura después de la abreviatura */
+abbr::after {
+  content: ' (' attr(title) ')';
+}

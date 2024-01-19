@@ -1,0 +1,40 @@
+/* Estilo general para todas las listas */
+ul, ol {
+    list-style-position: inside;
+    padding-left: 0;
+  }
+  
+  /* Lista sin elemento gráfico */
+  ul {
+    list-style-type: none;
+  }
+  
+  /* Lista con círculos */
+  ul:nth-of-type(2) {
+    list-style-type: circle;
+  }
+  
+  /* Lista con cuadrados */
+  ul:nth-of-type(3) {
+    list-style-type: square;
+  }
+  
+  /* Lista con números romanos */
+  ol {
+    list-style-type: lower-roman;
+  }
+  
+  /* Lista con letras griegas - esto requiere una clase adicional o un identificador ya que HTML no tiene un estilo de lista predefinido para letras griegas */
+  ol:nth-of-type(2) {
+    list-style-type: none; /* Remover estilo de lista por defecto */
+  }
+  
+  ol:nth-of-type(2) li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item;
+  }
+  
+  ol:nth-of-type(2) li:nth-child(1):before { content: "α. "; }
+  ol:nth-of-type(2) li:nth-child(2):before { content: "β. "; }
+  ol:nth-of-type(2) li:nth-child(3):before { content: "γ. "; }
+  

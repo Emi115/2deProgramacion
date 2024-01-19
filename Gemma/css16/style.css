@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.form-container {
+  width: 50%; /* Tamaño reducido de la tabla */
+  margin: auto;
+  padding: 20px; /* Espaciado interno */
+  border: 1px solid #000;
+}
+
+.section {
+  border: 1px solid #000;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+
+/* Aplica el color de fondo que cambia solo al campo con id="nombre" */
+#nombre {
+  animation: background-fade 3s infinite;
+}
+
+@keyframes background-fade {
+  0% { background-color: #ffffff; }
+  50% { background-color: #ffcc00; }
+  100% { background-color: #ffffff; }
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+label.checkbox {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+input[type="checkbox"] + label {
+  display: inline;
+}
+
+select#pais {
+  display: block;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-align: left;
+}

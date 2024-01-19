@@ -1,0 +1,37 @@
+/* Aplica la fuente Calibri a todo el texto de la página, con alternativas */
+body {
+  font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+
+/* Personaliza los encabezados de nivel 1 con Cambria, color y otros estilos */
+h1 {
+  font-family: Cambria, Times, serif;
+  color: #1F497D;
+  background-color: #BFBFBF;
+  font-size: 24px;
+  letter-spacing: 0.5em;
+  word-spacing: 1.5em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Aplica estilos similares a los encabezados de nivel 2 */
+h2 {
+  font-family: Cambria, Times, serif;
+  color: #632423;
+  font-size: 18px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+/* Cursiva y negrita para elementos de la lista */
+li {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Especifica el estilo para el contenido marcado como <strong> */
+strong {
+  font-weight: normal;
+  font-variant: small-caps;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <!-- Sección de información personal -->
+      <div class="section" id="personal-info">
+        <h2>¿QUIÉN ERES?</h2>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" class="nombre" />
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" />
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" />
+        <label for="fecha-nacimiento">Fecha de nacimiento</label>
+        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+        
+
+        <!-- Agregar listas desplegables para día, mes y año -->
+      </div>
+
+      <!-- Sección de ubicación -->
+      <div class="section" id="location-info">
+        <h2>¿DE DÓNDE ERES?</h2>
+        <label for="ciudad">Ciudad</label>
+        <input type="text" id="ciudad" name="ciudad" />
+        <label for="codigo-postal">Código postal</label>
+        <input type="text" id="codigo-postal" name="codigo-postal" />
+        <label for="pais">País</label>
+        <select id="pais" name="pais">
+          <option value="espana">España</option>
+          <option value="francia">Francia</option>
+          <option value="alemania">Alemania</option>
+          <option value="italia">Italia</option>
+          <option value="portugal">Portugal</option>
+          <!-- Añade más opciones según sea necesario -->
+        </select>
+      </div>
+
+      <!-- Sección de inicio de sesión -->
+      <div class="section" id="login-info">
+        <h2>¿CÓMO QUIERES INICIAR SESIÓN?</h2>
+        <label for="usuario">Nombre de usuario</label>
+        <input type="text" id="usuario" name="usuario" />
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" />
+        <label for="contrasena-repetir">Vuelve a escribir la contraseña</label>
+        <input
+          type="password"
+          id="contrasena-repetir"
+          name="contrasena-repetir"
+        />
+      </div>
+
+      <!-- Sección de condiciones de registro -->
+      <div class="section" id="registration-terms">
+        <h2>CONDICIONES DE REGISTRO</h2>
+        <div class="offers">
+          <input type="radio" id="daily" name="frequency" value="daily" />
+          <label for="daily">Una vez al día</label>
+          <input type="radio" id="weekly" name="frequency" value="weekly" />
+          <label for="weekly">Una vez a la semana</label>
+          <input type="radio" id="monthly" name="frequency" value="monthly" />
+          <label for="monthly">Una vez al mes</label>
+        </div>
+        <label class="checkbox" for="terms">
+          <input type="checkbox" id="terms" name="terms" />
+          Acepto el acuerdo de servicios, la declaración de privacidad y la
+          declaración del uso de cookies
+        </label>
+      </div>
+
+      <button type="submit">Crear cuenta</button>
+    </div>
+  </body>
+</html>
