@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
-import './Css/style.css';
+import '../Css/style.css';
 
 function MyApp() {
   const images = [
