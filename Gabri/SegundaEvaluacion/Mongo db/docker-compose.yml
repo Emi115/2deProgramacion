@@ -1,0 +1,38 @@
+version: '3.1'
+# Esta línea especifica la versión de Docker Compose que se está utilizando. 
+# La versión 3.1 es una de las versiones más comunes y soporta la mayoría de las características modernas.
+
+services:
+  # La sección de servicios define los contenedores que se ejecutarán.
+
+  mongo:
+    # Este es el nombre del servicio, en este caso 'mongo', que probablemente se refiere a MongoDB.
+
+    image: mongo
+    # Especifica la imagen de Docker que se utilizará para este servicio. 
+    # Aquí se está utilizando la imagen oficial de MongoDB.
+
+    restart: always
+    # Configura el servicio para que siempre se reinicie, lo que significa que si el contenedor falla, 
+    # Docker intentará reiniciarlo automáticamente.
+
+    ports: 
+      - 27017:27017 
+    # Mapea el puerto 27017 del contenedor al puerto 27017 del host. 
+    # Esto permite que el servicio de MongoDB sea accesible desde fuera del contenedor en el puerto 27017.
+
+    volumes: 
+      - mongo:/data/db 
+    # Monta un volumen para el almacenamiento persistente de datos. 
+    # Esto significa que los datos de MongoDB se almacenarán en un volumen llamado 'mongo', 
+    # y se montarán en '/data/db' dentro del contenedor. 
+    # Esto es útil para asegurar que los datos no se pierdan cuando el contenedor se reinicie o se destruya.
+
+volumes:
+  # Define los volúmenes utilizados por los servicios.
+
+  mongo:
+    external: false 
+    # Crea un nuevo volumen llamado 'mongo'. 
+    # 'external: false' significa que el volumen es gestionado por Docker Compose 
+    # y se creará automáticamente si no existe.
