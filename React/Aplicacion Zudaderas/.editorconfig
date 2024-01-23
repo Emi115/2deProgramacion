@@ -1,0 +1,17 @@
+# EditorConfig: http://EditorConfig.org
+
+# Configuración de nivel superior
+root = true
+
+# Reglas por defecto
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Reglas específicas para archivos Markdown
+[*.md]
+trim_trailing_whitespace = false

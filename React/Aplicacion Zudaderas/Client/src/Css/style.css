@@ -108,3 +108,38 @@ button:hover {
   font-size: 36px;
   text-shadow: 0 0 20px rgba(0, 0, 255, 0.9);
 }
+
+/* Media query para pantallas con un ancho máximo de 768px */
+@media (max-width: 768px) {
+  body {
+    /* Ajustes para el cuerpo de la página en pantallas pequeñas */
+    font-size: 14px;
+    background: linear-gradient(to bottom, #f5d7db, #f1916d);
+  }
+
+  .carrusel {
+    /* Ajustes para el carrusel en pantallas pequeñas */
+    width: 150px;
+    height: 150px;
+    animation: slid 20s linear infinite;
+  }
+
+  .carrusel span {
+    /* Ajustes para cada elemento del carrusel en pantallas pequeñas */
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(250px);
+  }
+
+  #Texto1 {
+    /* Ajustes para el título en pantallas pequeñas */
+    font-size: 24px;
+    top: 60px;
+  }
+
+  button {
+    /* Ajustes para el botón en pantallas pequeñas */
+    font-size: 24px;
+    top: 700px;
+  }
+}
+
+/* Puedes añadir más media queries para diferentes tamaños de pantalla si es necesario */
