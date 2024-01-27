@@ -1,0 +1,135 @@
+ul.hebrew {
+    list-style-type: hebrew;
+}
+
+ul.armenian {
+    list-style-type: armenian;
+}
+
+ul.georgian {
+    list-style-type: georgian;
+}
+
+ul.cjk-ideographic {
+    list-style-type: cjk-ideographic;
+}
+
+ul.decimal-leading-zero {
+    list-style-type: decimal-leading-zero;
+}
+
+ul.lower-greek {
+    list-style-type: lower-greek;
+}
+
+ul.upper-greek {
+    list-style-type: upper-greek;
+}
+
+ul.lower-latin {
+    list-style-type: lower-latin;
+}
+
+ul.upper-latin {
+    list-style-type: upper-latin;
+}
+
+ul.circle-outside {
+    list-style-type: circle outside;
+}
+
+ul.disc-outside {
+    list-style-type: disc outside;
+}
+
+ul.circle {
+    list-style-type: circle;
+}
+
+ul.disc {
+    list-style-type: disc;
+}
+
+ul.square {
+    list-style-type: square;
+}
+
+ul.none {
+    list-style-type: none;
+}
+
+ul.square-outside {
+    list-style: square outside;
+}
+
+ul.image {
+    list-style-image: url('list-style.gif');
+}
+
+ul.upper-alpha {
+    list-style-type: upper-alpha;
+}
+
+ul.lower-roman {
+    list-style-type: lower-roman;
+}
+
+ul.decimal {
+    list-style-type: decimal;
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.cabesa {
+    list-style-type: "# "; /* Usar el carácter "•" como marcador de lista */
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.doce {
+    list-style-type: "д "; /* Usar el carácter "•" como marcador de lista */
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.trese {
+    list-style-type: "п "; /* Usar el carácter "•" como marcador de lista */
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.catorce {
+    list-style-type: "я "; /* Usar el carácter "•" como marcador de lista */
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.quince {
+    list-style-type: "ш "; /* Usar el carácter "•" como marcador de lista */
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.diezyseis {
+    list-style-type: "ф "; /* Usar el carácter "•" como marcador de lista */
+}
+
+
+ul.aure {
+    list-style-type: "Æ "; /* Usar el carácter "•" como marcador de lista */
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.flamenca {
+    list-style-type: "💃 "; /* Usar el carácter "•" como marcador de lista */
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.robot {
+    list-style-type: "🤖 "; /* Usar el carácter "•" como marcador de lista */
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.corazon {
+    list-style-type: "♥️ "; /* Usar el carácter "•" como marcador de lista */
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.pica {
+    list-style-type: "♠️ "; /* Usar el carácter "•" como marcador de lista */
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.trebol {
+    list-style-type: "♣️ "; /* Usar el carácter "•" como marcador de lista */
+}
+ul.rombo {
+    list-style-type: "♦️ "; /* Usar el carácter "•" como marcador de lista */
+}
+/* Cambia el tipo de marcador de lista por un emoticono (punto) */
+ul.yoenestaactividad {
+    list-style-type: "🤡 "; /* Usar el carácter "•" como marcador de lista */
+}
