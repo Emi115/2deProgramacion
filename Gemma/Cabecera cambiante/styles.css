@@ -1,0 +1,60 @@
+/* Estilo para pantallas pequeñas (hasta 600px) */
+@media screen and (max-width: 600px) {
+    .header-image {
+        background-image: url('/Anakin1.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 300px;
+    }
+}
+
+/* Estilo para pantallas medianas (601px - 900px) */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .header-image {
+        background-image: url('/Anakin2.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 450px;
+    }
+}
+
+/* Estilo para pantallas grandes (más de 900px) */
+@media screen and (min-width: 901px) {
+    .header-image {
+        background-image: url('/Anakin3.jpeg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 600px;
+    }
+}
+
+/* Estilos para la imagen y el texto */
+.image-container {
+    text-align: center;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    font-size: 24px;
+    margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+    color: rgb(0, 0, 0);
+    text-align: center; /* Centra el texto horizontalmente dentro del elemento <p> */
+}
+
+/* Estilos generales */
+.header-image {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

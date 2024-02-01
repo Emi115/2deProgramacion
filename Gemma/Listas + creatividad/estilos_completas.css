@@ -1,0 +1,114 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.lista1 li:before {
+    content: "\1f300 ";
+}
+
+.lista2 li:before {
+    content: "\1f301 ";
+}
+
+.lista3 li:before {
+    content: "\1f302 ";
+}
+
+.lista4 li:before {
+    content: "\1f303 ";
+}
+
+.lista5 li:before {
+    content: "\1f304 ";
+}
+
+.lista6 li:before {
+    content: "\1f305 ";
+}
+
+.lista7 li:before {
+    content: "\1f306 ";
+}
+
+.lista8 li:before {
+    content: "\1f307 ";
+}
+
+.lista9 li:before {
+    content: "\1f308 ";
+}
+
+.lista10 li:before {
+    content: "\1f309 ";
+}
+
+.lista11 li:before {
+    content: "\1f30a ";
+}
+
+.lista12 li:before {
+    content: "\1f30b ";
+}
+
+.lista13 li:before {
+    content: "\1f30c ";
+}
+
+.lista14 li:before {
+    content: "\1f30d ";
+}
+
+.lista15 li:before {
+    content: "\1f30e ";
+}
+
+.lista16 li:before {
+    content: "\1f30f ";
+}
+
+.lista17 li:before {
+    content: "\1f310 ";
+}
+
+.lista18 li:before {
+    content: "\1f311 ";
+}
+
+.lista19 li:before {
+    content: "\1f312 ";
+}
+
+.lista20 li:before {
+    content: "\1f313 ";
+}
+
+.lista21 li:before {
+    content: "\1f314 ";
+}
+
+.lista22 li:before {
+    content: "\1f315 ";
+}
+
+.lista23 li:before {
+    content: "\1f316 ";
+}
+
+.lista24 li:before {
+    content: "\1f317 ";
+}
+
+.lista25 li:before {
+    content: "\1f318 ";
+}
+
+.lista26 li:before {
+    content: "\1f319 ";
+}
