@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "../resources/descarga.png";
 import "./App.css";
+import FormularioRegistro from "./FormularioRegistro"; // Importa el componente FormularioRegistro
+import Cronometro from "./cronometro.js"; // Importa el componente Cronometro
 
 function App() {
   return (
@@ -19,7 +21,15 @@ function App() {
       </header>
 
       {/* Título de la aplicación */}
-      <h1>Mi Aplicación React</h1>
+      <h1>2 Sprint de React</h1>
+      <hr />
+
+      {/* Renderiza el componente FormularioRegistro */}
+      <FormularioRegistro />
+      <hr />
+
+      {/* Renderiza el componente Cronometro */}
+      <Cronometro />
       <hr />
     </div>
   );

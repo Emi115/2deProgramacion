@@ -1,0 +1,38 @@
+/* FormularioRegistro.css */
+
+/* Estilos para el contenedor del formulario */
+.FormularioRegistro {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra el formulario en la página */
+  }
+  
+  /* Estilos para los campos de entrada */
+  .FormularioRegistro input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para los mensajes de error */
+  .FormularioRegistro .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* Estilos para el botón de registro */
+  .FormularioRegistro button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .FormularioRegistro button:hover {
+    background-color: #0056b3;
+  }
+  
