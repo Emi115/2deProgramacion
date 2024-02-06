@@ -5,6 +5,7 @@ import FormularioRegistro from "./FormularioRegistro"; // Importa el componente 
 import Cronometro from "./cronometro.js"; // Importa el componente Cronometro
 import AppTareas from './Apptareas'; // Asegúrate de que la ruta sea correcta
 import GaleriaImagenes from './GaleriaImagenes'; // Asegúrate de que la ruta sea correcta
+import GaleriaImagenesAvanzada from './GaleriaImagenesAvanzada'; // Asegúrate de que la ruta sea correcta
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
       <hr />
        {/* Renderiza el componente GaleriaImagenes */}
        <GaleriaImagenes />
+      <hr />
+       {/* Renderiza el componente GaleriaImagenesAvanzada */}
+       <GaleriaImagenesAvanzada />
       <hr />
     </div>
   );

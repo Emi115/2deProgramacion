@@ -115,7 +115,7 @@ Tareas:
   - Renderiza GaleriaImagenesAvanzada en App y prueba la carga de imágenes, la funcionalidad del modal, la búsqueda y la paginación.
 
 ### Implementación ⚙️
-[Código del ejercicio 5](reactricardo/src/Components/TareasComplejas.js)
+[Código del ejercicio 5](reactricardo/src/Components/GaleriaImagenesAvanzada.js)
 
 ![Ejercicio 5 GIF](reactricardo/videos/Ejercicio5.gif)
 
@@ -125,4 +125,4 @@ Tareas:
   - Comprueba que el modal se abre al hacer clic en las imágenes y permite navegar entre ellas.
   - Confirma que todas las funcionalidades se integran armoniosamente y ofrecen una experiencia de usuario fluida.
 
-[Plan de Pruebas](Plan_de_Pruebas.xlsx)
+[Plan de Pruebas](Plan_pruebas.xlsx)
