@@ -1,0 +1,71 @@
+/* Estilos para AppTareas */
+.app-tareas {
+    max-width: 600px;
+    margin: 20px auto; /* Ajuste para agregar espacio arriba y abajo */
+    padding: 20px;
+    background-color: #333; /* Color de fondo más oscuro para coincidir con tu cronómetro */
+    border-radius: 8px;
+    color: #fff; /* Texto blanco para mayor legibilidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+  }
+  
+  .app-tareas input[type="text"] {
+    width: calc(100% - 120px); /* Ajuste de ancho para dejar espacio para el botón */
+    padding: 10px;
+    margin: 0 10px 10px 0; /* Espacio entre el input y los botones */
+    border: 1px solid #555; /* Borde más claro */
+    border-radius: 4px;
+    background-color: #222; /* Fondo más oscuro para el input */
+    color: #ddd; /* Color de texto más claro */
+  }
+  
+  .app-tareas button {
+    padding: 10px 15px;
+    margin: 15px 30px 15px 0; /* Aumentar el margen superior e inferior a 15px y derecho a 30px */
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Color azul para los botones, similar al del cronómetro */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none; /* Quitar el borde de enfoque para un estilo más limpio */
+  }
+  
+  .app-tareas button:last-child {
+    margin-right: 0; /* Quitar el margen derecho para el último botón */
+  }
+  
+  .app-tareas button:hover {
+    background-color: #0056b3; /* Un azul más oscuro para el efecto hover */
+  }
+  
+  .app-tareas ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px; /* Espacio antes de la lista de tareas */
+  }
+  
+  .app-tareas li {
+    background-color: #222; /* Fondo más oscuro para los elementos de la lista */
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+  }
+  
+  .app-tareas li span {
+    cursor: pointer;
+    color: #ddd; /* Color de texto más claro para los elementos de la lista */
+  }
+  
+  .app-tareas li button {
+    background-color: #dc3545; /* Color rojo para botones de eliminar, similar al del cronómetro */
+  }
+  
+  .app-tareas li button:hover {
+    background-color: #bd2130; /* Un rojo más oscuro para el efecto hover */
+  }
+  

@@ -3,6 +3,8 @@ import logo from "../resources/descarga.png";
 import "./App.css";
 import FormularioRegistro from "./FormularioRegistro"; // Importa el componente FormularioRegistro
 import Cronometro from "./cronometro.js"; // Importa el componente Cronometro
+import AppTareas from './Apptareas'; // Asegúrate de que la ruta sea correcta
+import GaleriaImagenes from './GaleriaImagenes'; // Asegúrate de que la ruta sea correcta
 
 function App() {
   return (
@@ -30,6 +32,12 @@ function App() {
 
       {/* Renderiza el componente Cronometro */}
       <Cronometro />
+      <hr />
+      {/* Renderiza el componente AppTareas */}
+      <AppTareas />
+      <hr />
+       {/* Renderiza el componente GaleriaImagenes */}
+       <GaleriaImagenes />
       <hr />
     </div>
   );

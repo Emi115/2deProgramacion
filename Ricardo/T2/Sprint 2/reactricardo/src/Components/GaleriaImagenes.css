@@ -1,0 +1,54 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+    grid-gap: 10px; /* Espacio entre las imágenes */
+    padding: 10px;
+  }
+  
+  .grid-item {
+    width: 75%; /* Reducción del ancho al 75% del contenedor de la celda */
+    height: auto;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out; /* Animación suave */
+    place-self: center; /* Centra el elemento en la celda de la cuadrícula */
+  }
+  
+  .grid-item:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el cursor */
+  }
+  .modal {
+    display: none; /* Cambia a block en la función renderModal si hay una imagen seleccionada */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 100px; /* Ajuste para que el modal no esté en la parte superior de la ventana */
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: auto; /* Ajuste para que la imagen mantenga su aspecto */
+    max-width: 90%; /* Para asegurarse de que la imagen no sea demasiado grande */
+    max-height: 80vh; /* Para asegurarse de que la imagen no sea demasiado alta */
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Estilo para cuando el modal está abierto */
+  .modal.show {
+    display: block;
+  }
