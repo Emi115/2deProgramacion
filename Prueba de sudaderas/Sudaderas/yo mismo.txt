@@ -1,3 +1,34 @@
 primero creo el models y le especifico las cosas de la sudadera
 luego me voy al controlador que le he creado
 por ultimo (creo) le creo una ruta
+
+Hoy 9 del 2 de 2024 a las 1:12 he hecho esto 
+
+    Docker Compose:
+        Discutimos cómo crear un archivo docker-compose.yml para configurar un servicio de MongoDB.
+
+    Servidor Express y Docker:
+        Hablamos sobre la ejecución de tu configuración de Docker en una nueva máquina.
+        Revisamos cómo lidiar con la creación accidental de múltiples contenedores Docker.
+
+    Rutas y Controladores en Express:
+        Corregimos el problema de la ruta incorrecta en el index.js de las rutas, cambiando /sudadera a /sudaderas.
+        Verificamos que los controladores de Express estaban configurados correctamente para manejar las operaciones CRUD de las sudaderas.
+
+    Postman y Operaciones CRUD:
+        Expliqué cómo usar Postman para crear, obtener, actualizar y eliminar sudaderas mediante tu API.
+
+    Formulario HTML para Crear Sudaderas:
+        Proporcioné un ejemplo de un formulario HTML simple para crear sudaderas y cómo enviar esos datos a tu backend usando JavaScript y la API fetch.
+
+    Servir el Frontend con Express:
+        Configuramos tu servidor Express para servir archivos estáticos, permitiendo que tu formulario HTML sea accesible a través del servidor.
+
+    Errores y Depuración:
+        Diagnosticamos y solucionamos un error de __dirname no definido en el contexto de módulos ES6, usando import.meta.url y fileURLToPath.
+
+    CSS para Estilizar el Formulario:
+        Proporcioné un conjunto de reglas CSS para mejorar la apariencia de tu formulario y hacerlo responsive.
+
+    Ajustes Visuales Adicionales:
+        Realicé cambios en el CSS para personalizar aún más el estilo del formulario, como ajustar el color del encabezado h2 y el estilo del botón de envío.
