@@ -25,19 +25,6 @@ export async function createSudadera(req, res, next) {
   }
 }
 
-// Función para obtener todas las sudaderas
-export async function getSudaderas(req, res, next) {
-  try {
-    // Busca todas las sudaderas en la base de datos
-    const results = await Sudadera.find();
-
-    // Envía los resultados al cliente
-    return res.send(results);
-  } catch (error) {
-    // Maneja cualquier error que pueda ocurrir
-    next(error);
-  }
-}
 
 // Función para actualizar una sudadera
 export async function updateSudadera(req, res, next) {
@@ -97,6 +84,24 @@ export async function searchSudaderas(req, res, next) {
 
     // Busca sudaderas que coincidan con los criterios de búsqueda
     const results = await Sudadera.find(searchCriteria);
+
+    // Envía los resultados al cliente
+    return res.send(results);
+  } catch (error) {
+    // Maneja cualquier error que pueda ocurrir
+    next(error);
+  }
+}
+
+// Función para obtener todas las sudaderas paginadas
+export async function getSudaderas(req, res, next) {
+  try {
+    const page = parseInt(req.query.page) || 1; // Página actual, por defecto es 1
+    const pageSize = 8; // Tamaño de la página ahora es 8
+    const skip = (page - 1) * pageSize; // Cantidad de documentos para omitir
+
+    // Busca las sudaderas en la base de datos paginadas
+    const results = await Sudadera.find().skip(skip).limit(pageSize);
 
     // Envía los resultados al cliente
     return res.send(results);
