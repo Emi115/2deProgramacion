@@ -1,7 +1,5 @@
 import { HttpStatusError } from "common-errors";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
-import { getUserByName } from "../services/database/user-db-service.js";
 import config from "../config.js";
 import { checkHash } from "../utils/encrypt.js";
 

@@ -1,0 +1,3 @@
+primero creo el models y le especifico las cosas de la sudadera
+luego me voy al controlador que le he creado
+por ultimo (creo) le creo una ruta
