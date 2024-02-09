@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "c574f39b-667c-4d41-9c71-5703774f96e1",
+		"name": "Sudaderas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31612848"
+	},
+	"item": [
+		{
+			"name": "CrearSudadera",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Sudadera para eliminar\",\r\n  \"color\": \"Azul\",\r\n  \"dibujo\": \"Void\",\r\n  \"talla\": \"L\",\r\n  \"foto\": \"#\",\r\n  \"capucha\": false,\r\n  \"precio\": 1000,\r\n  \"descripcion\": \"Esta sudadera se va a borrar\",\r\n  \"stock\": 1,\r\n  \"valoraciones\": []\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sudadera",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sudadera"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSudadera",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sudadera",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sudadera"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarSudadera",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sudadera/search?talla=L&precio=1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sudadera",
+						"search"
+					],
+					"query": [
+						{
+							"key": "talla",
+							"value": "L"
+						},
+						{
+							"key": "precio",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateSudadera",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Sudadera para eliminar\",\r\n  \"color\": \"Azul\",\r\n  \"dibujo\": \"Void\",\r\n  \"talla\": \"L\",\r\n  \"foto\": \"#\",\r\n  \"capucha\": false,\r\n  \"precio\": 1000,\r\n  \"descripcion\": \"Esta sudadera se va a borrar\",\r\n  \"stock\": 1,\r\n  \"valoraciones\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sudadera/65c56292f23be990f039aaaa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sudadera",
+						"65c56292f23be990f039aaaa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteSudadera",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sudadera/65c566a68eaae1ad5da9f2ce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sudadera",
+						"65c566a68eaae1ad5da9f2ce"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

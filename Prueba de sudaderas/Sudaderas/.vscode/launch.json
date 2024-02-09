@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Configuración para arrancar la aplicación sin importar donde está
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\src\\index.js"
+    },
+    {
+      // Configuración base para ejecutar el archivo abierto en el editor
+      "type": "node",
+      "request": "launch",
+      "name": "Current file",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}"
+    }
+  ]
+}
