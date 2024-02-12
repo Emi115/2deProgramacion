@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle de Sudaderas</title>
+    <link rel="stylesheet" href="css/obtenerSudaderas.css" />
+  </head>
+  <body>
+    <div id="sudaderasContainer" class="sudaderas-container">
+      <!-- Las sudaderas cargadas desde la API se mostrarán aquí -->
+    </div>
+    <div id="botonContainer">
+      <button id="cargarMasBtn">Cargar más</button>
+    </div>
+    <p id="errorMensaje" style="display: none; color: red">
+      No hay más sudaderas disponibles.
+    </p>
+
+    <!-- Detalles de la sudadera -->
+    <div id="detalleSudadera" class="detalle-sudadera" style="display: none">
+      <form id="detalleSudaderaForm" class="detalle-form">
+        <!-- Los campos del formulario se llenarán dinámicamente con JavaScript -->
+      </form>
+      <button id="volverLista" style="margin-top: 10px">
+        Volver a la lista
+      </button>
+    </div>
+
+    <script src="js/obtenerSudaderas.js"></script>
+  </body>
+</html>
