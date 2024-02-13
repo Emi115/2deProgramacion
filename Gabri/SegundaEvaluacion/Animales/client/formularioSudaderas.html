@@ -44,7 +44,7 @@
         autocomplete="off"
       /><br />
 
-      <label for="foto">Foto (URL):</label><br />
+      <label for="foto">Foto Principal (URL):</label><br />
       <input
         type="text"
         id="foto"
@@ -52,6 +52,18 @@
         required
         autocomplete="off"
       /><br />
+
+      <!-- Nuevo campo para fotos secundarias -->
+      <label for="fotosSecundarias"
+        >Fotos Secundarias (URLs separadas por espacios):</label
+      ><br />
+      <input
+        type="text"
+        id="fotosSecundarias"
+        name="fotosSecundarias"
+        autocomplete="off"
+      /><br />
+      <!-- Fin del nuevo campo -->
 
       <label for="capucha">Capucha:</label><br />
       <input type="checkbox" id="capucha" name="capucha" /><br />
@@ -90,6 +102,5 @@
     <!-- Div para mostrar el mensaje de advertencia -->
 
     <script src="js/formularioSudaderas.js"></script>
-
   </body>
 </html>

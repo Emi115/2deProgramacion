@@ -11,6 +11,7 @@ const sudaderaSchema = new Schema({
   dibujo: String, // Diseño o estampado de la sudadera
   talla: String, // Talla de la sudadera (S, M, L, etc.)
   foto: String, // Ruta de la imagen de la sudadera
+  fotosSecundarias: [String], // Array de rutas de imágenes secundarias de la sudadera
   capucha: Boolean, // Indicador si la sudadera tiene capucha o no
   precio: Number, // Precio de la sudadera
   descripcion: String, // Descripción de la sudadera
