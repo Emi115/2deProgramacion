@@ -25,6 +25,8 @@ body {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto;
+  width: auto;
 }
 
 .sudaderaCard:hover {
@@ -34,12 +36,15 @@ body {
 
 .sudaderaCard img {
   max-width: 100%;
-  height: auto;
+  height: 288px;
+  width: 216px;
   border-radius: 5px;
   margin-bottom: 10px;
+  object-fit: cover;
 }
 
-.sudaderaCard h3, .sudaderaCard p {
+.sudaderaCard h3,
+.sudaderaCard p {
   margin: 5px 0;
 }
 

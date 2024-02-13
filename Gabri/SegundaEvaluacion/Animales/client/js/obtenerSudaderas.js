@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     card.innerHTML = `
           <img src="/fotos/${sudadera.foto}" alt="${sudadera.nombre}">
           <h3>${sudadera.nombre}</h3>
-          <p>Precio: $${sudadera.precio}</p>
+          <p>Precio: ${sudadera.precio}€</p>
       `;
     card.addEventListener("click", () => {
       localStorage.setItem("sudaderaSeleccionada", JSON.stringify(sudadera));

@@ -1,72 +1,76 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #333; /* Fondo más oscuro para contraste */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column; /* Alineación vertical */
-    justify-content: center; /* Centrado vertical */
-    align-items: center; /* Centrado horizontal */
-    height: 100vh;
+  font-family: "Arial", sans-serif;
+  background-color: #333; /* Fondo más oscuro para contraste */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Alineación vertical */
+  justify-content: center; /* Centrado vertical */
+  align-items: center; /* Centrado horizontal */
+  height: 100vh;
 }
 
 h2 {
-    color: #ff6347; /* Color vistoso para el título */
-    margin-bottom: 20px;
+  color: #ff6347; /* Color vistoso para el título */
+  margin-bottom: 20px;
 }
 
 form {
-    background: #222; /* Fondo oscuro para el formulario */
-    color: #fff; /* Texto claro para el formulario */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    max-width: 400px; /* Ajusta el ancho máximo del formulario */
+  background: #222; /* Fondo oscuro para el formulario */
+  color: #fff; /* Texto claro para el formulario */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px; /* Ajusta el ancho máximo del formulario */
 }
 
-label, input, textarea {
-    width: 100%;
-    margin-bottom: 10px;
+label,
+input,
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 label {
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 input[type="text"],
 input[type="number"],
 textarea {
-    padding: 8px;
-    border: none; /* Remover el borde para una apariencia más limpia */
-    border-radius: 4px;
-    background: #444; /* Fondo para los inputs */
-    color: #ddd; /* Color de texto para los inputs */
-    box-sizing: border-box;
+  padding: 8px;
+  border: none; /* Remover el borde para una apariencia más limpia */
+  border-radius: 4px;
+  background: #444; /* Fondo para los inputs */
+  color: #ddd; /* Color de texto para los inputs */
+  box-sizing: border-box;
 }
 
 input[type="submit"] {
-    padding: 10px;
-    border: none;
-    border-radius: 20px; /* Más redondeado */
-    background-color: #007bff; /* Azul */
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Transición suave para el hover */
+  padding: 10px;
+  border: none;
+  border-radius: 20px; /* Más redondeado */
+  background-color: #007bff; /* Azul */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transición suave para el hover */
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3; /* Un azul más oscuro al pasar el mouse */
+  background-color: #0056b3; /* Un azul más oscuro al pasar el mouse */
 }
 
 /* Estilos para mejorar la responsividad en dispositivos móviles */
 @media (max-width: 600px) {
-    body {
-        padding: 20px;
-        height: auto;
-    }
-    form {
-        width: calc(100% - 40px); /* Ajusta el ancho teniendo en cuenta el padding */
-    }
+  body {
+    padding: 20px;
+    height: auto;
+  }
+  form {
+    width: calc(
+      100% - 40px
+    ); /* Ajusta el ancho teniendo en cuenta el padding */
+  }
 }

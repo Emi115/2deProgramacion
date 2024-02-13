@@ -1,60 +1,107 @@
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.detalles-container, .detalle-sudadera {
-  max-width: 800px;
-  margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  min-height: 100vh; /* Asegura que el body tome al menos el alto de la pantalla */
+}
+
+#detalleSudadera {
+  display: flex;
+  flex-direction: row; /* Cambio para disposición en fila */
+  justify-content: center; /* Centra los elementos en el eje principal */
+  align-items: start; /* Alinea los elementos al inicio en el eje cruzado */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan si no hay suficiente espacio */
+  gap: 20px; /* Espacio entre los elementos */
+  width: auto;
+  height: auto;
+  max-width: 100%; /* Asegura que no exceda el ancho de la pantalla */
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 50px; /* Espacio entre el detalle y cualquier contenido siguiente */
+}
+
+#fotitos {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Centra los elementos horizontalmente si se necesita */
+  justify-content: flex-start; /* Alinea los elementos al inicio en el eje vertical */
 }
 
-#fotoPrincipal, #contenedorFotosSecundarias img {
-  border-radius: 5px;
-  margin-bottom: 10px;
+.detalle-producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea los elementos al inicio en el eje vertical */
 }
 
+/* Contenedor y estilos de las imágenes */
 #fotoPrincipal {
-  max-width: 400px;
+  width: 250px; /* Ajusta según necesidad */
+  height: 250px;
+  border-radius: 10px;
+  align-self: flex-start;
+  /*object-fit: contain;*/
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 #contenedorFotosSecundarias {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 10px;
+  display: flex;
+  flex-direction: row-reverse; /* Cambia a disposición en fila */
+  justify-content: space-around; /* Centra los elementos hijos horizontalmente */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola línea */
+  margin-top: 10px;
+  align-self: flex-start;
 }
 
 #contenedorFotosSecundarias img {
-  max-width: 100px;
+  width: 75px; /* Ajusta según necesidad */
+  height: 75px;
+  max-width: 100px; /* Tamaño de fotos secundarias */
+  margin: 5px; /* Ajusta el espaciado alrededor de las fotos para un diseño uniforme */
+  border-radius: 5px;
 }
 
-.detalles-container h2, .detalles-container p, .detalle-sudadera h2, .detalle-sudadera p {
-  margin: 10px 0;
-  color: #333;
-  text-align: center;
+#ContenerdorTodasfotos {
+  display: flex;
+}
+/* Contenedor y estilos de los detalles del producto */
+
+.detalle-producto h2,
+.detalle-producto p {
+  margin: 5px 0;
 }
 
+/* Estilos para el botón 'Volver' */
 .btn-volver {
-  display: inline-block;
+  background-color: #007bff; /* Azul medio para el botón */
+  color: white;
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  margin-top: 20px;
+  display: block; /* Hace que el botón sea un bloque para aplicar margen automático */
+  margin: 0 auto; /* Centra el botón horizontalmente */
 }
 
-.btn-volver:hover {
-  background-color: #0056b3;
+/* Ajustes para responsividad */
+@media (max-width: 768px) {
+  #detalleSudadera {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #fotoPrincipal,
+  #contenedorFotosSecundarias img {
+    max-width: 100%;
+  }
+
+  .detalle-producto {
+    margin-left: 0;
+    margin-top: 20px;
+  }
 }
