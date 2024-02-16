@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React from "react";
+import { useParams } from "react-router-dom";
 
 const PerfilUsuario = () => {
   // Extrayendo el ID del usuario de los parámetros de la ruta

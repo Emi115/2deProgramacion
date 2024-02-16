@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import "./FormularioContacto.css"; // Asegúrate de que la ruta de importación sea correcta
+import "./FormularioContacto.module.css"; // Asegúrate de que la ruta de importación sea correcta
 
 const FormularioContacto = () => {
   const {

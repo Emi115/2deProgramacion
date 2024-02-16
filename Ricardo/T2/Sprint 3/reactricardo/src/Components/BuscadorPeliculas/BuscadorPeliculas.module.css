@@ -1,0 +1,48 @@
+.buscadorForm {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.inputBusqueda {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.botonBuscar {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.botonBuscar:hover {
+  background-color: #0056b3;
+}
+
+.peliculasContenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.peliculaCarta {
+  width: calc(33.333% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poster {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.peliculaInfo {
+  text-align: center;
+}

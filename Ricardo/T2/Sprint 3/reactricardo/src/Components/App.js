@@ -4,8 +4,8 @@ import logo from "../resources/descarga.png";
 import "./App.css";
 import Inicio from "./Inicio/Inicio.js";
 import PerfilUsuario from "./PerfilUsuario/PerfilUsuario.js";
-import FormularioContacto from './FormularioContacto/FormularioContacto.js'; // Asegúrate de que la ruta de importación sea correcta
-
+import FormularioContacto from "./FormularioContacto/FormularioContacto.js"; // Asegúrate de que la ruta de importación sea correcta
+import BuscadorPeliculas from "./BuscadorPeliculas/BuscadorPeliculas.js"; // Asegúrate de que la ruta de importación sea correcta
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
           <Route path="/" element={<Inicio />} />
           <Route path="/usuario/:id" element={<PerfilUsuario />} />
           <Route path="/contacto" element={<FormularioContacto />} />
+          <Route path="/buscadorPeliculas" element={<BuscadorPeliculas />} />
         </Routes>
       </BrowserRouter>
     </div>
