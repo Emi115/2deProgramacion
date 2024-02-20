@@ -69,17 +69,6 @@
 
 ---
 
-## Ejercicio 5: 
-
-### Detalles del Ejercicio
-
-
-
-### Implementación ⚙️
-
-[Codigo del ejercicio 5](reactricardo/src/Components/TareasComplejas.js)
-
-<img src="reactricardo/videos/Ejercicio5.gif"/>
 
 ### Pruebas
 
