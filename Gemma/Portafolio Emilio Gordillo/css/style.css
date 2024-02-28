@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  font-family: "Nunito", "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 255, 0, 0.9);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  }
+}
+
+.pulso {
+  color: rgb(0, 255, 0);
+  animation: pulse 2s infinite;
+  text-decoration: none;
+  font-size: 45px;
+}
+.textoGuapo{
+  color: #fff;
+  font-size: 20px;
+}
+.nav-contenedor {
+  width: 100vw;
+  height: 100vh;
+  background-color: #06151f;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  background-color: #06151f;
+  position: fixed; /* Hace que la barra de navegación sea fija en la parte superior */
+  top: 0; /* Posición fija desde el borde superior de la ventana del navegador */
+  left: 0; /* Asegura que la barra de navegación se alinee con el lado izquierdo de la ventana */
+  width: 100%; /* Se extiende a lo largo de todo el ancho de la ventana */
+  height: 50px;
+  z-index: 1000; /* Se asegura de que la barra de navegación esté sobre otros contenidos */
+}
+
+.menu {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: #035400 0.5px solid;
+  background-color: #035400;
+  border-radius: 5px; /* Asegura bordes redondeados */
+  display: inline-block; /* Permite la transición y animación */
+  transition: 0.2s; /* Suaviza la transición de fondo y color */
+
+  box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); /* Inicializa el box-shadow para la animación */
+}
+
+.menu li:hover a {
+  background-color: #035400;
+  border: #035400 2px none;
+  color: #06151f;
+  border-radius: 20px; /* Asegura bordes redondeados */
+  animation: pulseBorder 1s infinite; /* Aplica la animación de 'borde' */
+}
+
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 5px 2px rgba(0, 255, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px 2px rgba(0, 255, 0, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 5px 2px rgba(0, 255, 0, 0.5);
+  }
+}
+
+.menu .active {
+  color: rgb(0, 255, 0);
+}
+
+.menu li a:hover {
+  color: #000504;
+}
+
+.main {
+  margin: 0 auto;
+  width: 80vw;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2em;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.2em;
+}
+
+.contenido-info span {
+  color: rgb(0, 255, 0);
+}
+
+/* Estilos para la imagen dentro de .main */
+.main img {
+  margin-top: 100px; /* Ajusta este valor según la altura real de tu navbar */
+  border: 0.5px solid rgb(0, 59, 0);
+  width: 350px;
+  height: 520px;
+  z-index: 1;
+  border-radius: 20px;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgb(0, 255, 0), rgb(0, 0, 255));
+  background-size: 200% 200%; /* Amplía el tamaño del fondo para el efecto */
+  animation: rotarDegradado 3s linear infinite; /* Aplica la animación */
+  margin-left: 27%;
+}
+
+/* Definición de los keyframes para simular la rotación del degradado */
+@keyframes rotarDegradado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  margin: 0 auto;
+  width: 100vw;
+  height: 80vh;
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  grid-column: 1/5;
+}
+
+.about-info {
+  grid-column: 5/10;
+  padding: 3em;
+}
+
+.about-info h2 {
+  font-size: 2em;
+  color: #06151f;
+}
+
+.divider {
+  height: 4px;
+  width: 60px;
+  background-color: rgb(4, 255, 0);
+  margin-top: 5px;
+  margin-bottom: 2em;
+}
+
+.about p {
+  margin-bottom: 1em;
+}
+
+/* Esta es la parte de proyectos */
+.proyecto-container {
+  margin-top: 250px;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #06151f;
+  display: flex;
+  justify-content: center; /* Asegura el centrado horizontal */
+  align-items: center; /* Asegura el centrado vertical */
+  flex-direction: column;
+  padding: 2em 0; /* Ajusta según necesidad para el espacio superior e inferior */
+}
+.proyecto-info {
+  text-align: center;
+}
+
+.proyecto-info h2 {
+  color: rgb(0, 255, 0);
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+
+.proyecto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  width: 80%; /* Puede ajustarse para controlar el ancho de la cuadrícula */
+  margin: 0 auto; /* Centra la cuadrícula horizontalmente */
+  justify-content: center; /* Centrado de los ítems dentro de la cuadrícula */
+}
+
+.proyecto-item {
+  background-color: #ffffffa1;
+  color: #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrado de contenido dentro de la tarjeta */
+  justify-content: space-between; /* Espacio distribuido dentro de la tarjeta */
+  overflow: hidden;
+  padding: 1em; /* Espacio interno para la tarjeta */
+}
+
+.proyecto-item img {
+  width: 100%; /* Asegura que la imagen cubra el ancho */
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.proyecto-item:hover {
+  transform: translateY(-5px);
+}
+
+.proyecto-item:hover img {
+  transform: scale(1.05);
+}
+
+.proyecto-item h3, .proyecto-item button {
+  margin-top: 1em; /* Espacio adicional arriba para texto y botón */
+  text-align: center;
+}
+
+.boton-ver-mas {
+  display: inline-block;
+  background-color: rgb(3, 67, 3); /* Color de fondo */
+  color: white; /* Color de texto */
+  text-align: center;
+  padding: 0.5em 1em; /* Espaciado interno */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor tipo mano */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.boton-ver-mas:hover {
+  background-color: rgb(0, 0, 0); /* Color de fondo al pasar el cursor */
+  /* No es necesario repetir las propiedades que no cambian */
+}
+.texto{
+  font-size: 30px;
+  color: #fff;
+}
+
+.imagen-proyecto {
+  filter: grayscale(100%); /* Imágenes comienzan en blanco y negro */
+  transition: filter 0.3s ease; /* Transición suave para el efecto */
+}
+
+.imagen-proyecto:hover {
+  filter: grayscale(0%); /* Al hacer hover, la imagen recupera sus colores */
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
