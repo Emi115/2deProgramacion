@@ -1,142 +1,236 @@
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Portafolio Emilio Gordillo</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
-  />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-</head>
+        <title>Portafolio Emilio Gordillo</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+        />
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+    </head>
 
-<body>
-  <div class="nav-contenedor">
-    <header>
-      <nav class="navbar">
-        <ul class="menu">
-          <li><a href="#inicio" class="active">Inicio</a></li>
-          <li><a href="#sobremi">Sobre mi</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#tecnologias">Tecnologias</a></li>
-        </ul>
-      </nav>
-    </header>
+    <body>
+        <div class="nav-contenedor">
+            <header>
+                <nav class="navbar">
+                    <ul class="menu">
+                        <li><a href="#inicio" class="active">Inicio</a></li>
+                        <li><a href="#sobremi">Sobre mi</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#tecnologias">Tecnologias</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-    <main class="main" id="inicio">
-      <div class="contenido-info" data-aos="zoom-in-right">
-        <h1><span class="pulso">Emilio </span> Gordillo</h1>
+            <main class="main" id="inicio">
+                <div class="contenido-info" data-aos="zoom-in-right">
+                    <h1><span class="pulso">Emilio </span> Gordillo</h1>
 
-        <h2>
-          Developer y estudiante de
-          <a class="pulso" href="https://adaits.es/" target="_blank">Ada-Its</a>
-        </h2>
-        <br />
-        <a id="texto-escritura" class="TextoGuapo"></a>
-        <br />
-      </div>
+                    <h2>
+                        Developer y estudiante de
+                        <a
+                            class="pulso"
+                            href="https://adaits.es/"
+                            target="_blank"
+                            >Ada-Its</a
+                        >
+                    </h2>
+                    <br />
+                    <a id="texto-escritura" class="TextoGuapo"></a>
+                    <br />
+                </div>
 
-      <img src="/img/FotoEmiRojo.png" alt="" data-aos="zoom-in-up" />
-    </main>
-  </div>
-  <!-- Sobre mi-->
-  <div class="about" id="sobremi">
-    <img src="/img/fotosudadera.jpg" alt="Programming master Emilio" />
-
-    <div class="about-info" data-aos="zoom-in">
-      <h2>Sobre mi</h2>
-      <div class="divider"></div>
-      <p>
-        Hola soy Emilio Gordillo me gusta la cyberseguridad y el tema militar.
-        <br />
-        Me encantaria trabajar de la cyberseguridad en indra en unos años en
-        cuanto apruebe programacion
-      </p>
-      <p>
-        Actualmente estoy estudiando el grado superior de programacion web en
-        Ada-Its
-      </p>
-
-      <p>
-        Mi plan a futuro es sacarme el master en cyberseguridad y trabajar en
-        indra
-      </p>
-      <p>
-        Estoy desarrollando una pagina web de venta de sudaderas para el
-        proyecto final gracias a que mi abuelo es un gran pintor y juntos hemos
-        hecho sudaderas muy buenas pintadas a mano
-      </p>
-    </div>
-  </div>
-
-  <div class="proyecto-container" id="proyectos">
-    <div class="proyecto-info" data-aos="zoom-in-right">
-      <h2>Proyectos de Programacion</h2>
-      <div class="proyecto-grid">
-        <!-- Proyecto de Programación 1 -->
-        <div class="proyecto-item">
-          <img
-            src="foto_programacion1.jpg"
-            alt="Proyecto de Programación 1"
-            class="imagen-proyecto"
-          />
-          <h3>Proyecto de Programación 1</h3>
-          <a href="#" class="boton-ver-mas"> Ver más </a>
+                <img src="/img/FotoEmiRojo.png" alt="" data-aos="zoom-in-up" />
+            </main>
         </div>
-        <!-- Proyecto de Programación 2 -->
-        <div class="proyecto-item">
-          <img
-            src="foto_programacion2.jpg"
-            alt="Proyecto de Programación 2"
-            class="imagen-proyecto"
-          />
-          <h3>Proyecto de Programación 2</h3>
-          <a href="#" class="boton-ver-mas"> Ver más </a>
-        </div>
-        <!-- Proyecto de Programación 3 -->
-        <div class="proyecto-item">
-          <img
-            src="foto_programacion3.jpg"
-            alt="Proyecto de Programación 3"
-            class="imagen-proyecto"
-          />
-          <h3>Proyecto de Programación 3</h3>
-          <a href="#" class="boton-ver-mas"> Ver más </a>
-        </div>
-        <br />
-        <a class="texto">Sudaderas que he diseñado</a>
-        <br />
-        <!-- Sudadera 1 -->
-        <div class="proyecto-item">
-          <img src="/img/Nieves.png" alt="Sudadera 1" class="imagen-proyecto" />
-          <h3>Sudadera Shingeki</h3>
-          <a href="#" class="boton-ver-mas"> Ver más </a>
-        </div>
-        <!-- Sudadera 2 -->
-        <div class="proyecto-item">
-          <img
-            src="/img/NievesSara.png"
-            alt="Sudadera 2"
-            class="imagen-proyecto"
-          />
-          <h3>Sudaderas Shingeki y Spiderman</h3>
-          <a href="#" class="boton-ver-mas"> Ver más </a>
-        </div>
-        <!-- Sudadera 3 -->
-        <div class="proyecto-item">
-          <img src="/img/Sara.png" alt="Lakers" class="imagen-proyecto" />
-          <h3>Sudadera Lakers</h3>
-          <a href="#" class="boton-ver-mas"> Ver más </a>
-        </div>
-      </div>
-    </div>
-  </div>
+        <!-- Sobre mi-->
+        <div class="about" id="sobremi">
+            <img src="/img/fotosudadera.jpg" alt="Programming master Emilio" />
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="/Js/efectoEscritura.js"></script>
-</body>
+            <div class="about-info" data-aos="zoom-in">
+                <h2>Sobre mi</h2>
+                <div class="divider"></div>
+                <p>
+                    Hola soy Emilio Gordillo me gusta la cyberseguridad y el
+                    tema militar.
+                    <br />
+                    Me encantaria trabajar de la cyberseguridad en indra en unos
+                    años en cuanto apruebe programacion
+                </p>
+                <p>
+                    Actualmente estoy estudiando el grado superior de
+                    programacion web en Ada-Its
+                </p>
+
+                <p>
+                    Mi plan a futuro es sacarme el master en cyberseguridad y
+                    trabajar en indra
+                </p>
+                <p>
+                    Estoy desarrollando una pagina web de venta de sudaderas
+                    para el proyecto final gracias a que mi abuelo es un gran
+                    pintor y juntos hemos hecho sudaderas muy buenas pintadas a
+                    mano
+                </p>
+            </div>
+        </div>
+
+        <div class="proyecto-container" id="proyectos">
+            <div class="proyecto-info" data-aos="zoom-in-right">
+                <h2>Proyectos de Programacion</h2>
+                <div class="proyecto-grid">
+                    <!-- Proyecto de Programación 1 -->
+                    <div class="proyecto-item">
+                        <img
+                            src="/img/TiendaSudaderas.webp"
+                            alt="Proyecto de Programación 1"
+                            class="imagen-proyecto"
+                        />
+                        <h3>Proyecto de Venta de Sudaderas</h3>
+                        <a
+                            href="https://github.com/Emi115/Zudaderas"
+                            class="comprar-boton"
+                            target="_blank"
+                        >
+                            Ver más
+                        </a>
+                    </div>
+                    <!-- Proyecto de Programación 2 -->
+                    <div class="proyecto-item">
+                        <img
+                            src="/img/Buhonero.webp"
+                            alt="Proyecto de JavaSwing"
+                            class="imagen-proyecto"
+                        />
+                        <h3>Proyecto JavaSwing</h3>
+                        <a
+                            href="https://github.com/Emi115/Proyecto-bonito"
+                            class="comprar-boton"
+                            target="_blank"
+                        >
+                            Ver más
+                        </a>
+                    </div>
+                    <!-- Proyecto de Programación 3 -->
+                    <div class="proyecto-item">
+                        <img
+                            src="/img/ProyectoLightsaber.webp"
+                            alt="Proyecto Lightsaber"
+                            class="imagen-proyecto"
+                        />
+                        <h3>Proyecto Lightsaber</h3>
+                        <a
+                            href="https://github.com/Emi115/Proyecto-Lightsaber"
+                            class="comprar-boton"
+                            target="_blank"
+                        >
+                            Ver más
+                        </a>
+                    </div>
+                    <br />
+                    <a class="texto">Sudaderas que he diseñado</a>
+                    <br />
+                    <!-- Sudadera 1 -->
+                    <div class="proyecto-item">
+                        <img
+                            src="/img/Nieves.png"
+                            alt="Sudadera 1"
+                            class="imagen-proyecto"
+                        />
+                        <h3>Sudadera Shingeki</h3>
+                        <a
+                            href="https://www.joom.com/es/products/60fa9062ba907e01983ed582"
+                            class="comprar-boton"
+                            target="_blank"
+                            >Comprar</a
+                        >
+                    </div>
+                    <!-- Sudadera 2 -->
+                    <div class="proyecto-item">
+                        <img
+                            src="/img/NievesSara.png"
+                            alt="Sudadera 2"
+                            class="imagen-proyecto"
+                        />
+                        <h3>Sudaderas Shingeki y Spiderman</h3>
+                        <a
+                            href="https://pbs.twimg.com/media/ECdwxRbXsAA-wJ-.jpg"
+                            class="comprar-boton"
+                            target="_blank"
+                        >
+                            Comprar
+                        </a>
+                    </div>
+                    <!-- Sudadera 3 -->
+                    <div class="proyecto-item">
+                        <img
+                            src="/img/Sara.png"
+                            alt="Lakers"
+                            class="imagen-proyecto"
+                        />
+                        <h3>Sudadera Lakers</h3>
+                        <a
+                            href="https://www.amazon.es/CLDP-Sudaderas-Deportiva-Baloncesto-Sudadera/dp/B0BJW3Q76C"
+                            class="comprar-boton"
+                            target="_blank"
+                        >
+                            Comprar</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tecnologia-container" id="tecnologias">
+            <div class="tecnologia-info" data-aos="zoom-in-right">
+                <h2>Tecnologías que Uso</h2>
+                <div class="tecnologia-grid">
+                    <!-- Tecnología 1: JavaScript -->
+                    <div class="tecnologia-item">
+                        <i class="fab fa-js-square fa-3x"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <!-- Tecnología 2: Docker -->
+                    <div class="tecnologia-item">
+                        <i class="fab fa-docker fa-3x"></i>
+                        <h3>Docker</h3>
+                    </div>
+                    <!-- Tecnología 3: MongoDB -->
+                    <div class="tecnologia-item">
+                        <i class="fas fa-database fa-3x"></i>
+                        <h3>MongoDB</h3>
+                    </div>
+                    <!-- Tecnología 4: Node.js -->
+                    <div class="tecnologia-item">
+                        <i class="fab fa-node-js fa-3x"></i>
+                        <h3>Node.js</h3>
+                    </div>
+                    <!-- Tecnología 5: Express -->
+                    <div class="tecnologia-item">
+                        <i class="fas fa-server fa-3x"></i>
+                        <h3>Express</h3>
+                    </div>
+                    <!-- Tecnología 6: Cisco -->
+                    <div class="tecnologia-item">
+                        <i class="fab fa-connectdevelop fa-3x"></i>
+                        <h3>Cisco</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script src="/Js/efectoEscritura.js"></script>
+    </body>
+</html>
