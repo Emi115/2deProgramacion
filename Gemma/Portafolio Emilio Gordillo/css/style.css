@@ -286,7 +286,6 @@ h2 {
     filter: grayscale(0%); /* Al hacer hover, la imagen recupera sus colores */
 }
 
-/* =================================================================
 /* Estilos específicos para la sección de tecnologías */
 .tecnologia-container {
     margin-top: 50px;
@@ -295,9 +294,9 @@ h2 {
     background-color: #ffffff;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
     flex-direction: column;
-    padding: 2em 0;
+    padding: 1em 0;
 }
 
 .tecnologia-info {
@@ -305,36 +304,42 @@ h2 {
 }
 
 .tecnologia-info h2 {
-    color: rgb(0, 255, 0);
-    margin-bottom: 50px;
+    color: #06151f;
+    padding-top: 10px;
+    margin-bottom: 5px;
 }
 
 .tecnologia-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2em;
-    width: 80%;
+    gap: 1em;
+    width: 50%;
     margin: 0 auto;
 }
 
-/* Adaptando el estilo de .proyecto-item para .tecnologia-item */
 .tecnologia-item {
     background-color: #ffffffa1;
     color: #000;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.267);
     transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Ajuste para centrar verticalmente el contenido */
-    padding: 2em; /* Espacio interno para la tarjeta */
+    justify-content: center; /* Ajustado para centrar verticalmente el contenido */
+    padding: 1em; /* Espacio interno para la tarjeta */
     text-align: center; /* Asegura que el texto esté centrado */
+
 }
 
 .tecnologia-item i {
     margin-bottom: 20px; /* Espacio entre el icono y el texto */
-    color: rgb(3, 67, 3); /* Color de los iconos */
+    color: rgba(0,0,0); /* Color de los iconos */
+}
+
+.tecnologia-item a {
+    text-decoration: none; /* Elimina la línea de subrayado de los enlaces */
+    color: black; /* Establece el color del texto de los enlaces a negro */
 }
 
 /* Mejoras en la interacción */
@@ -344,9 +349,33 @@ h2 {
 }
 
 .tecnologia-item:hover i {
-    color: rgb(0, 0, 0); /* Cambio de color de iconos al hacer hover */
+    color: rgb(8, 95, 0); /* Cambio de color de iconos al hacer hover */
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+/* Media Query para dispositivos con pantalla menor a 768px */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Oculta la navbar en pantallas pequeñas */
+    }
+
+    .main, .about, .proyecto-container, .tecnologia-container {
+        width: 95vw; /* Ajusta el ancho para pantallas pequeñas */
+        grid-template-columns: 1fr; /* Cambia la disposición de las grillas para que sean verticales */
+    }
+
+    .main img, .about img {
+        width: 50%; /* Reduce el tamaño de las imágenes */
+        height: auto; /* Mantiene la proporción de las imágenes */
+        margin-left: auto; /* Centra las imágenes en la pantalla */
+        margin-right: auto;
+        display: block; /* Asegura que la imagen no mantenga configuraciones de flex */
+    }
+
+    .proyecto-grid, .tecnologia-grid {
+        grid-template-columns: 1fr; /* Ajusta las grillas de proyectos y tecnologías para una sola columna */
+    }
 }
