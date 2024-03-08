@@ -21,9 +21,14 @@ Este boletín se centra en un ejercicio práctico esencial dentro del desarrollo
 
 Este carrito de compra esta directamente implementado con mi api en el proyecto final asi que no puedo revelar el codigo
 
-![Carrito de Compras]()
+> [Enlace al archivo CarritoModal.js](./ComponeteCarrito/CarritoModal.js)
 
 ### Pruebas
+
+![Intentar añadir al carrito](video/IntentoCompra.gif)
+![Registrarse para acceder al carrito](video/RegistroYlogin.gif)
+![Modificar datos usuario](video/CambioDatos.gif)
+![Añadir al carrito](video/CompraFinal.gif)
 
 - **Añadir productos al carrito:** Verificar la funcionalidad de añadir productos desde la lista de productos simulada al carrito de compras.
 - **Modificar cantidades de productos:** Comprobar la capacidad de modificar la cantidad de los productos añadidos al carrito y que el total se actualice correctamente.
@@ -34,3 +39,6 @@ Este carrito de compra esta directamente implementado con mi api en el proyecto 
 ### Pruebas Generales
 
 Es esencial llevar a cabo un conjunto de pruebas que simulen escenarios de uso real, incluyendo la interacción con el carrito de compras con varios productos, la modificación de cantidades y la eliminación de productos, para garantizar una experiencia de usuario fluida y libre de errores.
+
+<br>  
+>[Plan de pruebas](./PlanDePruebas.xlsx)
